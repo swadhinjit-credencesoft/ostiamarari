@@ -62,21 +62,21 @@ export default function Navbar() {
         background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.92)',
         backdropFilter: 'blur(12px)',
         borderBottom: scrolled ? '1px solid var(--border)' : '1px solid rgba(255,255,255,0.1)',
-        padding: scrolled ? '8px 0' : '14px 0',
+        padding: scrolled ? '6px 0' : '12px 0',
       }}
     >
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <div className="w-full px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-4">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <Image
             src="/ostiamararilogo.png"
             alt="Ostia Marari"
-            width={scrolled ? 52 : 62}
-            height={scrolled ? 52 : 62}
+            width={scrolled ? 64 : 80}
+            height={scrolled ? 64 : 80}
             priority
             className="rounded-sm object-cover transition-all duration-300"
-            style={{ width: scrolled ? 52 : 62, height: scrolled ? 52 : 62 }}
+            style={{ width: scrolled ? 64 : 80, height: scrolled ? 64 : 80 }}
           />
           <div className="hidden sm:flex flex-col leading-tight">
             <span
@@ -157,7 +157,7 @@ export default function Navbar() {
             overflowY: 'auto',
           }}
         >
-          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-4">
+          <div className="w-full px-4 sm:px-6 py-4">
             {/* Links grid — 2 columns on sm+ */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
               {NAV_LINKS.map((link) => (

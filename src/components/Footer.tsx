@@ -69,8 +69,8 @@ export default function Footer() {
             <Image
               src="/ostiamararilogo.png"
               alt="Ostia Marari Logo"
-              width={62}
-              height={62}
+              width={80}
+              height={80}
               className="rounded object-cover"
             />
 
