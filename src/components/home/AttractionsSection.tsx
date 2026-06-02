@@ -8,79 +8,79 @@ const attractions = [
     name: 'Alleppey Main Beach',
     distance: '5 km',
     desc: 'A beautiful coastal destination known for golden sunsets, lighthouse views, and relaxing beachside experiences.',
-    icon: '🌅',
+    image: '/alpeybeach.png',
   },
   {
     name: 'Marari Beach',
     distance: '10 km',
     desc: 'A peaceful and scenic beach destination famous for swaying coconut palms, calm waters, and authentic Kerala charm.',
-    icon: '🌴',
+    image: '/mararibeach.png',
   },
   {
     name: 'Thumpoly Beach',
     distance: '50 Steps',
     desc: 'Step directly onto the serene shores of Thumpoly Beach — our nearest gem, just 50 steps from the property.',
-    icon: '🏖️',
+    image: '/images/ostia4.png',
   },
   {
     name: 'Alleppey Backwaters',
     distance: '6 km',
     desc: 'Experience Kerala\'s iconic backwaters with serene houseboat cruises through lush canals and scenic village landscapes.',
-    icon: '⛵',
+    image: '/backwater.png',
   },
   {
     name: 'Jain Temple',
     distance: '6 km',
     desc: 'A historic and architecturally beautiful Jain temple showcasing intricate craftsmanship and spiritual serenity.',
-    icon: '🛕',
+    image: '/images/ostia1.png',
   },
   {
     name: 'Snake Temple (Mannarasala Temple)',
     distance: '30 km',
     desc: 'A revered Hindu temple dedicated to serpent deities, famous for its ancient rituals and dense forest surroundings.',
-    icon: '🐍',
+    image: '/images/ostia2.png',
   },
   {
     name: 'Ambalapuzha Temple',
     distance: '20 km',
     desc: 'Renowned for its divine Palpayasam prasad, this ancient temple is a spiritual landmark of Alleppey.',
-    icon: '🪔',
+    image: '/images/ostia3.png',
   },
   {
     name: 'Thumpoly Church',
     distance: '1 km',
     desc: 'A serene historic church located within walking distance, offering a peaceful retreat and stunning architecture.',
-    icon: '⛪',
+    image: '/images/ostia5.png',
   },
   {
     name: 'Arthunkal Basilica Church',
     distance: '17 km',
     desc: 'A famous basilica known for its annual pilgrimages, stunning interiors, and beautiful coastal setting.',
-    icon: '✝️',
+    image: '/images/ostia6.png',
   },
   {
     name: 'Revi Karunakaran Museum',
     distance: 'Nearby',
     desc: 'An impressive private museum showcasing rare antiques, art collections, and curios from across the world.',
-    icon: '🏛️',
+    image: '/images/ostia8.png',
   },
   {
     name: 'Alleppey Lighthouse',
     distance: 'Nearby',
     desc: 'A historic lighthouse offering panoramic views of the Arabian Sea and the scenic Alleppey coastline.',
-    icon: '🗼',
+    image: '/images/ostia9.png',
   },
   {
     name: 'International Coir Museum',
     distance: 'Nearby',
     desc: 'Explore the history and craft of Kerala\'s coir industry in this unique museum celebrating local heritage.',
-    icon: '🌿',
+    image: '/images/ostia10.png',
   },
   {
     name: 'Mullackal Temple',
     distance: 'Nearby',
     desc: 'The presiding deity of Alleppey, this vibrant temple is at the heart of the city\'s cultural and spiritual life.',
-    icon: '🏯',
+    image: '/images/ostia11.png',
   },
 ]
 
@@ -99,7 +99,7 @@ export default function AttractionsSection() {
   const scroll = (dir: 'left' | 'right') => {
     const el = scrollRef.current
     if (!el) return
-    el.scrollBy({ left: dir === 'left' ? -360 : 360, behavior: 'smooth' })
+    el.scrollBy({ left: dir === 'left' ? -380 : 380, behavior: 'smooth' })
     setTimeout(updateScrollState, 400)
   }
 
@@ -172,12 +172,12 @@ export default function AttractionsSection() {
               WebkitOverflowScrolling: 'touch',
             }}
           >
-            {attractions.map(({ name, distance, desc, icon }) => (
+            {attractions.map(({ name, distance, desc, image }) => (
               <div
                 key={name}
                 className="flex-shrink-0 group overflow-hidden rounded-sm"
                 style={{
-                  width: 270,
+                  width: 350,
                   scrollSnapAlign: 'start',
                   background: '#ffffff',
                   border: '1px solid var(--border)',
@@ -194,22 +194,32 @@ export default function AttractionsSection() {
                   ;(e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'
                 }}
               >
-                {/* Icon Header */}
+                {/* Image Header with overflow hidden wrapper */}
                 <div
-                  className="flex items-center justify-center text-4xl"
+                  className="relative overflow-hidden"
                   style={{
-                    height: 110,
-                    background: 'linear-gradient(135deg, var(--light-2) 0%, var(--light-3) 100%)',
+                    height: 200,
                     borderBottom: '1px solid var(--border)',
                   }}
                 >
-                  {icon}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{
+                      backgroundImage: `url('${image}')`,
+                    }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 60%)',
+                    }}
+                  />
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin size={12} style={{ color: '#c9a84c', flexShrink: 0 }} />
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <MapPin size={13} style={{ color: '#c9a84c', flexShrink: 0 }} />
                     <span
                       className="text-xs font-semibold uppercase tracking-wider"
                       style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
@@ -219,14 +229,14 @@ export default function AttractionsSection() {
                   </div>
 
                   <h3
-                    className="text-dark text-base font-semibold mb-2"
+                    className="text-dark text-lg font-semibold mb-2.5"
                     style={{ fontFamily: 'var(--font-playfair)' }}
                   >
                     {name}
                   </h3>
 
                   <p
-                    className="text-xs leading-relaxed"
+                    className="text-sm leading-relaxed"
                     style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
                   >
                     {desc}
