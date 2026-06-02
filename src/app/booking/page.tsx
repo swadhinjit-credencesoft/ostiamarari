@@ -27,7 +27,7 @@ const ROOM_OPTIONS = [
 
 function BookingFormInner() {
   const searchParams = useSearchParams()
-  const preselect = searchParams.get('select') || ''
+  const preselect = searchParams ? (searchParams.get('select') || '') : ''
 
   const [form, setForm] = useState<FormState>({
     title: 'Mr',
