@@ -5,12 +5,6 @@ import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const attractions = [
   {
-    name: 'Thumpoly Beach',
-    distance: '50 Steps',
-    desc: 'Step directly onto the serene shores of Thumpoly Beach — our nearest gem, just 50 steps from the property.',
-    icon: '🏖️',
-  },
-  {
     name: 'Alleppey Main Beach',
     distance: '5 km',
     desc: 'A beautiful coastal destination known for golden sunsets, lighthouse views, and relaxing beachside experiences.',
@@ -21,6 +15,12 @@ const attractions = [
     distance: '10 km',
     desc: 'A peaceful and scenic beach destination famous for swaying coconut palms, calm waters, and authentic Kerala charm.',
     icon: '🌴',
+  },
+  {
+    name: 'Thumpoly Beach',
+    distance: '50 Steps',
+    desc: 'Step directly onto the serene shores of Thumpoly Beach — our nearest gem, just 50 steps from the property.',
+    icon: '🏖️',
   },
   {
     name: 'Alleppey Backwaters',
@@ -35,7 +35,7 @@ const attractions = [
     icon: '🛕',
   },
   {
-    name: 'Mannarasala Snake Temple',
+    name: 'Snake Temple (Mannarasala Temple)',
     distance: '30 km',
     desc: 'A revered Hindu temple dedicated to serpent deities, famous for its ancient rituals and dense forest surroundings.',
     icon: '🐍',
@@ -77,7 +77,7 @@ const attractions = [
     icon: '🌿',
   },
   {
-    name: 'Mullakkal Temple',
+    name: 'Mullackal Temple',
     distance: 'Nearby',
     desc: 'The presiding deity of Alleppey, this vibrant temple is at the heart of the city\'s cultural and spiritual life.',
     icon: '🏯',

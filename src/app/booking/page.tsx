@@ -16,6 +16,15 @@ type FormState = {
   selectedRoom: string
 }
 
+const ROOM_OPTIONS = [
+  'Premium Top Suites (4 Bedrooms – Up to 12 Guests)',
+  'Premium Floor Suites (2 Bedrooms – Up to 6 Guests)',
+  'Premium Full Suites (6 Bedrooms – Entire Property, Up to 18 Guests)',
+  'Premium Double Suites (1 Bedroom – Up to 3 Guests)',
+  'Beach & Boats Package – 2 Nights · 3 Days (₹14,800 / 2 Persons)',
+  'Beach & Boats Package – 3 Nights · 4 Days (₹18,800 / 2 Persons)',
+]
+
 function BookingFormInner() {
   const searchParams = useSearchParams()
   const preselect = searchParams.get('select') || ''
@@ -51,13 +60,13 @@ function BookingFormInner() {
 
 I would like to enquire about the following booking:
 
-Room / Package: ${form.selectedRoom || 'Not specified'}
-Name: ${form.title} ${form.fullName}
-Check-In: ${form.checkIn}
-Check-Out: ${form.checkOut}
-Rooms: ${form.rooms}
-Adults: ${form.adults}
-Children (4-10 Years): ${form.children}
+Selected Room / Package: ${form.selectedRoom || 'Not specified'}
+Name: ${form.title}. ${form.fullName}
+Check-In Date: ${form.checkIn}
+Check-Out Date: ${form.checkOut}
+Number of Rooms: ${form.rooms}
+Number of Adults: ${form.adults}
+Number of Children (Age 4–10): ${form.children}
 
 Please share availability and pricing details.
 
@@ -67,7 +76,9 @@ Thank You.`
   }
 
   const whatsappUrl = `https://wa.me/919846044955?text=${encodeURIComponent(generatedMsg)}`
-  const emailUrl = `mailto:info@ostiamarari.com?subject=${encodeURIComponent(`Booking Enquiry – ${form.selectedRoom || 'General'}`)}&body=${encodeURIComponent(generatedMsg)}`
+  const emailUrl = `mailto:info@ostiamarari.com?subject=${encodeURIComponent(
+    `Booking Enquiry – ${form.selectedRoom || 'General'}`
+  )}&body=${encodeURIComponent(generatedMsg)}`
 
   if (submitted) {
     return (
@@ -99,7 +110,9 @@ Thank You.`
             whiteSpace: 'pre-line',
           }}
         >
-          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#c9a84c' }}>Your Enquiry Message</p>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#c9a84c' }}>
+            Your Enquiry Message
+          </p>
           {generatedMsg}
         </div>
 
@@ -154,7 +167,13 @@ Thank You.`
         <button
           onClick={() => setSubmitted(false)}
           className="mt-8 inline-flex items-center gap-2 text-sm"
-          style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)', background: 'none', border: 'none', cursor: 'pointer' }}
+          style={{
+            color: 'var(--text-muted)',
+            fontFamily: 'var(--font-raleway)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+          }}
         >
           <ArrowLeft size={14} /> Edit Enquiry
         </button>
@@ -189,29 +208,37 @@ Thank You.`
     <div className="max-w-2xl mx-auto px-4">
       <form onSubmit={handleSubmit} className="space-y-5">
 
-        {/* Hidden: Selected Room */}
-        <input type="hidden" name="selectedRoom" value={form.selectedRoom} />
-
-        {/* Selected Room Display */}
-        {form.selectedRoom && (
-          <div
-            className="p-4 text-sm"
-            style={{
-              background: 'rgba(201,168,76,0.06)',
-              border: '1px solid rgba(201,168,76,0.3)',
-              fontFamily: 'var(--font-raleway)',
-              color: 'var(--text)',
-            }}
+        {/* Room / Package Selection */}
+        <div>
+          <label style={labelStyle}>Room / Package *</label>
+          <select
+            name="selectedRoom"
+            value={form.selectedRoom}
+            onChange={handleChange}
+            style={inputStyle}
+            required
           >
-            <span style={{ color: '#c9a84c', fontWeight: 600 }}>Selected: </span>
-            {form.selectedRoom}
-          </div>
-        )}
+            <option value="">— Select a Room or Package —</option>
+            {ROOM_OPTIONS.map(opt => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+          {form.selectedRoom && (
+            <p
+              className="mt-1.5 text-xs"
+              style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
+            >
+              ✓ Selected: {form.selectedRoom}
+            </p>
+          )}
+        </div>
 
         {/* Title + Full Name */}
         <div className="grid grid-cols-3 gap-4">
           <div>
-            <label style={labelStyle}>Title</label>
+            <label style={labelStyle}>Title *</label>
             <select
               name="title"
               value={form.title}
@@ -219,13 +246,13 @@ Thank You.`
               style={inputStyle}
               required
             >
-              <option value="Mr">Mr</option>
-              <option value="Mrs">Mrs</option>
-              <option value="Ms">Ms</option>
+              <option value="Mr">Mr.</option>
+              <option value="Mrs">Mrs.</option>
+              <option value="Ms">Ms.</option>
             </select>
           </div>
           <div className="col-span-2">
-            <label style={labelStyle}>Full Name</label>
+            <label style={labelStyle}>Full Name *</label>
             <input
               name="fullName"
               value={form.fullName}
@@ -240,7 +267,7 @@ Thank You.`
         {/* Check-In / Check-Out */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label style={labelStyle}>Check-In Date</label>
+            <label style={labelStyle}>Check-In Date *</label>
             <input
               type="date"
               name="checkIn"
@@ -251,7 +278,7 @@ Thank You.`
             />
           </div>
           <div>
-            <label style={labelStyle}>Check-Out Date</label>
+            <label style={labelStyle}>Check-Out Date *</label>
             <input
               type="date"
               name="checkOut"
@@ -268,24 +295,35 @@ Thank You.`
           <div>
             <label style={labelStyle}>Number of Rooms</label>
             <select name="rooms" value={form.rooms} onChange={handleChange} style={inputStyle}>
-              {[1,2,3,4,5,6].map(n => (
-                <option key={n} value={n}>{n}</option>
+              {[1, 2, 3, 4, 5, 6].map(n => (
+                <option key={n} value={n}>
+                  {n} Room{n > 1 ? 's' : ''}
+                </option>
               ))}
             </select>
           </div>
           <div>
             <label style={labelStyle}>Adults</label>
             <select name="adults" value={form.adults} onChange={handleChange} style={inputStyle}>
-              {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18].map(n => (
-                <option key={n} value={n}>{n}</option>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(n => (
+                <option key={n} value={n}>
+                  {n} Adult{n > 1 ? 's' : ''}
+                </option>
               ))}
             </select>
           </div>
           <div>
             <label style={labelStyle}>Children (Age 4–10)</label>
-            <select name="children" value={form.children} onChange={handleChange} style={inputStyle}>
-              {[0,1,2,3,4,5,6,7,8].map(n => (
-                <option key={n} value={n}>{n}</option>
+            <select
+              name="children"
+              value={form.children}
+              onChange={handleChange}
+              style={inputStyle}
+            >
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(n => (
+                <option key={n} value={n}>
+                  {n} {n === 1 ? 'Child' : 'Children'}
+                </option>
               ))}
             </select>
           </div>
@@ -330,7 +368,13 @@ export default function BookingPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/ostia5.png')" }}
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.78) 100%)' }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.78) 100%)',
+          }}
+        />
         <div className="relative z-10 text-center px-4">
           <span className="section-label">Reserve Your Stay</span>
           <span className="gold-line" />
@@ -358,22 +402,42 @@ export default function BookingPage() {
             >
               Make a Booking Enquiry
             </h2>
-            <p className="mt-3 text-sm" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
+            <p
+              className="mt-3 text-sm"
+              style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+            >
               Complete the form below and send your enquiry directly via WhatsApp or Email.
             </p>
           </div>
 
-          <Suspense fallback={<div className="text-center py-10" style={{ color: 'var(--text-muted)' }}>Loading form…</div>}>
+          <Suspense
+            fallback={
+              <div className="text-center py-10" style={{ color: 'var(--text-muted)' }}>
+                Loading form…
+              </div>
+            }
+          >
             <BookingFormInner />
           </Suspense>
 
           {/* Contact Note */}
           <div className="mt-10 text-center">
-            <p className="text-xs" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)' }}>
+            <p
+              className="text-xs"
+              style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)' }}
+            >
               Or contact us directly:{' '}
-              <a href="tel:+919846044955" className="hover:underline" style={{ color: '#c9a84c' }}>+91 98460 44955</a>
+              <a href="tel:+919846044955" className="hover:underline" style={{ color: '#c9a84c' }}>
+                +91 98460 44955
+              </a>
               {' '}·{' '}
-              <a href="mailto:info@ostiamarari.com" className="hover:underline" style={{ color: '#c9a84c' }}>info@ostiamarari.com</a>
+              <a
+                href="mailto:info@ostiamarari.com"
+                className="hover:underline"
+                style={{ color: '#c9a84c' }}
+              >
+                info@ostiamarari.com
+              </a>
             </p>
           </div>
 

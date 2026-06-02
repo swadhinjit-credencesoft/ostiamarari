@@ -11,21 +11,19 @@ const features = [
     Icon: Waves,
     title: 'Direct Beach Access',
     desc:
-      'Enjoy peaceful mornings and breathtaking sunsets with direct access to the serene shores of Thumpoly Beach, Alleppey, near Marari.',
+      'Enjoy peaceful mornings and breathtaking sunsets with direct access to the serene beaches of Thumpoly Beach at Alleppey, near Marari.',
   },
-
   {
     Icon: Sparkles,
     title: 'Luxury Boutique Stay',
     desc:
       'Experience elegant interiors, personalized hospitality, and premium comfort crafted for unforgettable stays.',
   },
-
   {
     Icon: MountainSnow,
     title: 'Scenic Coastal Views',
     desc:
-      'Wake up to calming ocean breezes, lush surroundings, and stunning coastal fisherman village landscapes every day.',
+      'Wake up to calming ocean breezes, lush surroundings, and stunning coastal Fisherman Village landscapes every day.',
   },
 ]
 

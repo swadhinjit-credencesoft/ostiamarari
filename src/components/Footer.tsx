@@ -69,15 +69,15 @@ export default function Footer() {
             <Image
               src="/ostiamararilogo.png"
               alt="Ostia Marari Logo"
-              width={80}
-              height={80}
+              width={96}
+              height={96}
               className="rounded object-cover"
             />
 
             <div className="flex flex-col leading-tight">
               <span
-                className="heading text-white font-semibold"
-                style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1rem', letterSpacing: '0.05em' }}
+                className="heading text-white font-semibold text-lg uppercase tracking-wider"
+                style={{ fontFamily: 'var(--font-playfair)' }}
               >
                 Ostia Marari
               </span>

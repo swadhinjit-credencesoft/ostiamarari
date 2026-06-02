@@ -72,16 +72,16 @@ export default function Navbar() {
           <Image
             src="/ostiamararilogo.png"
             alt="Ostia Marari"
-            width={scrolled ? 64 : 80}
-            height={scrolled ? 64 : 80}
+            width={scrolled ? 80 : 96}
+            height={scrolled ? 80 : 96}
             priority
             className="rounded-sm object-cover transition-all duration-300"
-            style={{ width: scrolled ? 64 : 80, height: scrolled ? 64 : 80 }}
+            style={{ width: scrolled ? 80 : 96, height: scrolled ? 80 : 96 }}
           />
           <div className="hidden sm:flex flex-col leading-tight">
             <span
-              className="font-semibold tracking-wide"
-              style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.05rem', color: '#1a1a1a', letterSpacing: '0.06em' }}
+              className="font-semibold text-xl uppercase tracking-wide"
+              style={{ fontFamily: 'var(--font-playfair)', color: '#1a1a1a' }}
             >
               Ostia Marari
             </span>
