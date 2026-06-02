@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <section className="relative flex items-end justify-center overflow-hidden" style={{ height: 240, paddingBottom: 36 }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-06-at-1.08.00-PM-2.jpeg')" }} />
+      <section className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24" style={{ minHeight: 240, paddingBottom: 36 }}>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia4.png')" }} />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.7)' }} />
         <div className="relative z-10 text-center px-4">
           <span className="section-label">Legal</span>
@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
 
       <section className="py-16" style={{ background: '#ffffff' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-10 space-y-8 text-sm leading-relaxed" style={{ fontFamily: 'var(--font-raleway)', color: 'var(--text-light)' }}>
-          <p className="text-xs tracking-widest" style={{ color: 'var(--text-muted)' }}>Last Updated: October 2025</p>
+          <p className="text-xs tracking-widest" style={{ color: 'var(--text-muted)' }}>Last Updated: June 2026</p>
 
           {[
             {
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
             },
             {
               title: '5. Contact Us',
-              text: 'If you have questions about this Privacy Policy, please contact us at mudravillaresort@gmail.com or call +91 8591139011.',
+              text: 'If you have questions about this Privacy Policy, please contact us at info@ostiamarari.com or call +91 98460 44955.',
             },
           ].map(({ title, text }) => (
             <div key={title}>

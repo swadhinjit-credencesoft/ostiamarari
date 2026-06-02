@@ -12,6 +12,19 @@ import {
 } from '@/components/icons'
 
 export default function Footer() {
+  const handleNavClick = (href: string, e: React.MouseEvent) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault()
+      const id = href.replace('/#', '')
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      } else {
+        window.location.href = href
+      }
+    }
+  }
+
   return (
     <footer
       style={{
@@ -39,36 +52,42 @@ export default function Footer() {
           Book Your Stay at Ostia Marari
         </h2>
 
-        <a
-          href="https://ostiamarari.com"
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          href="/booking"
           className="btn-primary"
         >
           Book Now
-        </a>
+        </Link>
       </div>
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        
+
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-5">
             <Image
               src="/ostiamararilogo.png"
               alt="Ostia Marari Logo"
-              width={50}
-              height={50}
+              width={62}
+              height={62}
               className="rounded object-cover"
             />
 
-            <span
-              className="heading text-white text-lg font-semibold capitalize"
-              style={{ fontFamily: 'var(--font-playfair)' }}
-            >
-              Ostia Marari
-            </span>
+            <div className="flex flex-col leading-tight">
+              <span
+                className="heading text-white font-semibold"
+                style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1rem', letterSpacing: '0.05em' }}
+              >
+                Ostia Marari
+              </span>
+              <span
+                className="text-[9px] uppercase tracking-[0.25em]"
+                style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
+              >
+                Boutique Beach Stay
+              </span>
+            </div>
           </div>
 
           <p
@@ -134,22 +153,22 @@ export default function Footer() {
           <ul className="space-y-3">
             {[
               { label: 'Home', href: '/' },
+              { label: 'About Us', href: '/#why-choose' },
               { label: 'Rooms & Suites', href: '/rooms-suites' },
-              { label: 'Gallery', href: '/#gallery' },
+              { label: 'Packages', href: '/#packages' },
+              { label: 'Price', href: '/#rooms' },
+              { label: 'Blogs', href: '/blogs' },
+              { label: 'Gallery', href: '/gallery' },
+              { label: 'Booking', href: '/booking' },
               { label: 'Contact', href: '/contact' },
               { label: 'Privacy Policy', href: '/privacy-policy' },
-              {
-                label: 'Cancellation Policy',
-                href: '/cancellation-policy',
-              },
-              {
-                label: 'Terms & Conditions',
-                href: '/terms',
-              },
+              { label: 'Cancellation Policy', href: '/cancellation-policy' },
+              { label: 'Terms & Conditions', href: '/terms' },
             ].map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
+                  onClick={(e) => handleNavClick(l.href, e)}
                   className="text-sm hover:text-[#c9a84c] transition-colors flex items-center gap-2"
                   style={{ color: 'rgba(255,255,255,0.5)' }}
                 >
@@ -272,30 +291,30 @@ export default function Footer() {
           borderTop: '1px solid rgba(255,255,255,0.06)',
         }}
       >
-      <p
-  className="text-xs tracking-widest"
-  style={{ color: 'rgba(255,255,255,0.3)' }}
->
-  Designed and Developed By{' '}
-  <a
-    href="https://www.credencesoft.in/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:underline"
-  >
-    CredenceSoft
-  </a>
-  , Powered By{' '}
-  <a
-    href="https://bookonepms.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:underline"
-  >
-    BookOne
-  </a>
-  .
-</p>
+        <p
+          className="text-xs tracking-widest"
+          style={{ color: 'rgba(255,255,255,0.3)' }}
+        >
+          Designed and Developed By{' '}
+          <a
+            href="https://www.credencesoft.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            CredenceSoft
+          </a>
+          , Powered By{' '}
+          <a
+            href="https://bookonepms.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            BookOne
+          </a>
+          .
+        </p>
       </div>
     </footer>
   )

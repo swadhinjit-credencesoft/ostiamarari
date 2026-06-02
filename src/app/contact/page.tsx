@@ -50,8 +50,8 @@ export default function ContactPage() {
     <>
       {/* HERO */}
       <section
-        className="relative flex items-end justify-center overflow-hidden"
-        style={{ height: 280, paddingBottom: 40 }}
+        className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24"
+        style={{ minHeight: 280, paddingBottom: 40 }}
       >
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -99,28 +99,22 @@ export default function ContactPage() {
               <div className="space-y-4">
                 {/* ADDRESS */}
                 <div className="flex gap-4 p-5 border border-gray-200">
-                  <MapPin className="text-[#c9a84c]" size={18} />
+                  <MapPin className="text-[#c9a84c]" size={18} style={{ flexShrink: 0 }} />
                   <div className="text-sm text-gray-600">
                     <p className="font-semibold text-gray-800">Address</p>
-                    <p>Marari Beach Road, Alappuzha, Kerala, India</p>
+                    <p>Kurisadi Road, Beach, Thumpoly, Alappuzha, Kerala 688008</p>
                   </div>
                 </div>
 
                 {/* PHONE */}
                 <div className="flex gap-4 p-5 border border-gray-200">
-                  <Phone className="text-[#c9a84c]" size={18} />
+                  <Phone className="text-[#c9a84c]" size={18} style={{ flexShrink: 0 }} />
                   <div className="text-sm">
                     <a
-                      href="tel:+918591139011"
+                      href="tel:+919846044955"
                       className="block text-gray-600 hover:text-[#c9a84c]"
                     >
-                      +91 85911 39011
-                    </a>
-                    <a
-                      href="tel:+919820771844"
-                      className="block text-gray-600 hover:text-[#c9a84c]"
-                    >
-                      +91 98207 71844
+                      +91 98460 44955
                     </a>
                   </div>
                 </div>
@@ -149,16 +143,30 @@ export default function ContactPage() {
               {/* SOCIAL */}
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/ostiamarari/"
                   className={socialIconCls}
                   aria-label="Instagram"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <InstagramIcon size={16} />
                 </a>
-                <a href="#" className={socialIconCls} aria-label="WhatsApp">
+                <a
+                  href="https://wa.me/919846044955"
+                  className={socialIconCls}
+                  aria-label="WhatsApp"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <WhatsAppIcon size={16} />
                 </a>
-                <a href="#" className={socialIconCls} aria-label="Facebook">
+                <a
+                  href="https://www.facebook.com/"
+                  className={socialIconCls}
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FacebookIcon size={16} />
                 </a>
               </div>
@@ -235,7 +243,7 @@ export default function ContactPage() {
           {/* MAP */}
           <div className="mt-14 h-[380px] border border-gray-200 overflow-hidden">
             <iframe
-              src="https://maps.google.com/maps?q=Marari%20Beach%20Kerala&t=m&z=13&output=embed"
+              src="https://maps.google.com/maps?q=Ostia%20Marari%20Alappuzha%20Kerala&t=m&z=13&output=embed&iwloc=near"
               width="100%"
               height="100%"
               loading="lazy"

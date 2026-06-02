@@ -5,26 +5,29 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 
 export const metadata: Metadata = {
-  title: 'Ostia Marari – Ostia Marari',
+  title: 'Ostia Marari – Boutique Beach Stay | Thumpoly Beach, Alleppey',
   description:
-    'Discover a blend of comfort, elegance, and exceptional hospitality at Ostia Marari. Luxury stay near Nagaon Beach, Alibaug.',
+    'Discover a blend of comfort, elegance, and exceptional hospitality at Ostia Marari. Luxury boutique beach stay near Thumpoly Beach, Alleppey, Kerala.',
   keywords: [
     'Ostia Marari',
-    'Alibag resort',
-    'Nagaon beach',
-    'luxury villa Alibaug',
+    'Thumpoly Beach',
+    'Alleppey boutique stay',
+    'Marari beach resort',
+    'luxury villa Kerala',
+    'beachfront stay Alleppey',
+    'Alappuzha beach house',
   ],
 
   icons: {
-    icon: '/ostiamararilogo.png', 
+    icon: '/ostiamararilogo.png',
     shortcut: '/ostiamararilogo.png',
     apple: '/ostiamararilogo.png',
   },
 
   openGraph: {
-    title: 'Ostia Marari – Ostia Marari',
+    title: 'Ostia Marari – Boutique Beach Stay | Thumpoly Beach, Alleppey',
     description:
-      'Discover a blend of comfort, elegance, and exceptional hospitality at Ostia Marari.',
+      'Discover a blend of comfort, elegance, and exceptional hospitality at Ostia Marari. Luxury boutique beach stay near Thumpoly Beach, Alleppey, Kerala.',
     url: 'https://ostiamarari.com/',
     siteName: 'Ostia Marari',
     type: 'website',

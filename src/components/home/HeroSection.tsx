@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-// import { ChevronDown } from 'lucide-react'
 
 const HERO_IMAGES = [
   '/images/ostia11.png',
@@ -10,11 +9,11 @@ const HERO_IMAGES = [
   '/images/ostia3.png',
   '/images/ostia4.png',
   '/images/ostia5.png',
-   '/images/ostia6.png',
-   '/images/ostia7.png',
-   '/images/ostia8.png',
-   '/images/ostia9.png',
-   '/images/ostia10.png',
+  '/images/ostia6.png',
+  '/images/ostia7.png',
+  '/images/ostia8.png',
+  '/images/ostia9.png',
+  '/images/ostia10.png',
 ]
 
 export default function HeroSection() {
@@ -75,7 +74,7 @@ export default function HeroSection() {
 
         <h1
           className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight"
-          style={{ fontFamily: 'var(--font-playfair)', fontWeight: 700 }}
+          style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700, letterSpacing: '0.05em' }}
         >
           Ostia Marari
         </h1>
@@ -93,23 +92,12 @@ export default function HeroSection() {
         </p>
 
         <a
-          href="https://bookone.io/Mudra-Villa-and-Resort?bookingEngine=true"
-          target="_blank" rel="noreferrer"
+          href="/booking"
           className="btn-primary text-sm"
         >
           Book Now
         </a>
       </div>
-
-      {/* Scroll arrow */}
-      {/* <button
-        onClick={() => document.getElementById('why-choose')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 anim-float"
-        style={{ color: 'rgba(201,168,76,0.8)', textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer' }}
-      >
-        <span style={{ fontSize: 10, letterSpacing: '3px', fontFamily: 'var(--font-raleway)', color: 'rgba(255,255,255,0.5)' }}>SCROLL</span>
-        <ChevronDown size={18} />
-      </button> */}
     </section>
   )
 }

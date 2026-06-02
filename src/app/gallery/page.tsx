@@ -4,24 +4,24 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 
-type Cat = 'All' | 'Rooms' | 'Pool' | 'Exterior'
+type Cat = 'All' | 'Rooms' | 'Beach' | 'Exterior'
 
 const gallery: { src: string; alt: string; cat: Cat }[] = [
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-06-at-1.08.03-PM-1-2.jpeg', alt: 'Resort pool area', cat: 'Pool' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-06-at-1.08.00-PM-2.jpeg', alt: 'Resort exterior', cat: 'Exterior' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-1.12.31-PM.jpeg', alt: 'Luxury Villa with Jacuzzi', cat: 'Rooms' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-12.55.06-PM.jpeg', alt: 'Villa Premium', cat: 'Rooms' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-1.12.32-PM-1.jpeg', alt: 'Deluxe Group Room', cat: 'Rooms' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-12.55.05-PM-scaled.jpeg', alt: 'Deluxe Room', cat: 'Rooms' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-1.12.33-PM.jpeg', alt: 'Resort interior', cat: 'Exterior' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-06-at-1.08.03-PM-1-2.jpeg', alt: 'Pool view 2', cat: 'Pool' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-06-at-1.08.00-PM-2.jpeg', alt: 'Exterior view 2', cat: 'Exterior' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-1.12.31-PM.jpeg', alt: 'Luxury Villa 2', cat: 'Rooms' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-12.55.06-PM.jpeg', alt: 'Villa Premium 2', cat: 'Rooms' },
-  { src: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-12.55.05-PM-scaled.jpeg', alt: 'Deluxe Room 2', cat: 'Rooms' },
+  { src: '/images/ostia11.png', alt: 'Ostia Marari beach view', cat: 'Beach' },
+  { src: '/images/ostia1.png', alt: 'Ostia Marari exterior', cat: 'Exterior' },
+  { src: '/images/ostia2.png', alt: 'Luxury room interior', cat: 'Rooms' },
+  { src: '/images/ostia3.png', alt: 'Premium suite', cat: 'Rooms' },
+  { src: '/images/ostia4.png', alt: 'Beachfront view', cat: 'Beach' },
+  { src: '/images/ostia5.png', alt: 'Boutique stay exterior', cat: 'Exterior' },
+  { src: '/images/ostia6.png', alt: 'Coastal view', cat: 'Beach' },
+  { src: '/images/ostia7.png', alt: 'Resort interior', cat: 'Exterior' },
+  { src: '/images/ostia8.png', alt: 'Luxury bedroom', cat: 'Rooms' },
+  { src: '/images/ostia9.png', alt: 'Garden area', cat: 'Exterior' },
+  { src: '/images/ostia10.png', alt: 'Sea view terrace', cat: 'Beach' },
+  { src: '/room1.jpg', alt: 'Premium Top Suite', cat: 'Rooms' },
 ]
 
-const CATS: Cat[] = ['All', 'Rooms', 'Pool', 'Exterior']
+const CATS: Cat[] = ['All', 'Rooms', 'Beach', 'Exterior']
 
 export default function GalleryPage() {
   const [active, setActive] = useState<Cat>('All')
@@ -41,10 +41,10 @@ export default function GalleryPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-end justify-center overflow-hidden" style={{ height: 280, paddingBottom: 40 }}>
+      <section className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24" style={{ minHeight: 280, paddingBottom: 40 }}>
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-06-at-1.08.03-PM-1-2.jpeg')" }}
+          style={{ backgroundImage: "url('/images/ostia6.png')" }}
         />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.65)' }} />
         <div className="relative z-10 text-center px-4">
@@ -53,6 +53,9 @@ export default function GalleryPage() {
           <h1 className="text-4xl md:text-5xl text-white font-semibold" style={{ fontFamily: 'var(--font-playfair)' }}>
             Our Gallery
           </h1>
+          <p className="text-white/55 mt-2 text-sm">
+            A glimpse of Ostia Marari — where the beach meets luxury
+          </p>
         </div>
       </section>
 
@@ -94,6 +97,7 @@ export default function GalleryPage() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 50vw, 33vw"
+                    unoptimized
                   />
                 </div>
                 <div
@@ -136,7 +140,7 @@ export default function GalleryPage() {
             }}
             onClick={e => e.stopPropagation()}
           >
-            <Image src={lightbox} alt="Gallery" fill className="object-contain" />
+            <Image src={lightbox} alt="Gallery" fill className="object-contain" unoptimized />
           </div>
         </div>
       )}

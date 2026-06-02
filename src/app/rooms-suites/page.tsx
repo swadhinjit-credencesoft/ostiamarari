@@ -1,64 +1,106 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Check, Users, Maximize2, ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Rooms & Suites | Ostia Marari',
-  description: 'Explore our luxury rooms and suites at Ostia Marari — from the Luxury Villa with Jacuzzi to the Deluxe Room.',
+  title: 'Rooms & Suites | Ostia Marari – Boutique Beach Stay, Alleppey',
+  description: 'Explore our luxury rooms and suites at Ostia Marari — Premium Top Suites (4 bedrooms), Premium Floor Suites (2 bedrooms), Premium Full Suites (entire property), and Premium Double Suites near Thumpoly Beach, Alleppey.',
 }
 
 const rooms = [
   {
-    id: 'luxury-villa-jacuzzi',
-    name: 'Luxury Villa with Jacuzzi',
-    price: '₹8,500',
+    id: 'premium-top-suites',
+    name: 'Premium Top Suites',
     tag: 'Most Popular',
     tagColor: '#c9a84c',
-    capacity: '2',
-    size: '650 sq ft',
-    shortDesc: 'Spacious private villa with a poolside view and premium amenities.',
-    fullDesc: 'Our flagship suite, the Luxury Villa with Jacuzzi, offers an unmatched blend of space, privacy, and opulence. The private jacuzzi, premium king bed, and poolside view make it the most coveted stay at Mudra. Ideal for couples seeking an extraordinary romantic escape, this villa ensures every moment is absolutely memorable.',
-    amenities: ['Private Jacuzzi', 'King Bed', 'Pool View', 'Air Conditioning', 'Smart TV', 'Mini Bar', 'Private Balcony', '24/7 Room Service', 'Free Breakfast', 'Complimentary WiFi', 'Luxury Toiletries', 'Daily Housekeeping'],
-    image: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-1.12.31-PM.jpeg',
+    capacity: '12',
+    size: '1000 sq ft',
+    shortDesc: 'Flagship Luxury 4 Bedroom Suite on the top floor with ocean views and private balcony.',
+    fullDesc: 'Our flagship Luxury 4 Bedroom Suite offers an unmatched blend of space, privacy, and comfort. Featuring premium king or twin beds, garden and beach views, and a private balcony, it is ideal for families and groups seeking a memorable coastal getaway.',
+    amenities: [
+      'King or Twin Beds',
+      'Air Conditioning',
+      'Smart TV',
+      'Private Balcony',
+      '24/7 Room Service',
+      'Free Breakfast',
+      'Complimentary WiFi',
+      'Complimentary Toiletries',
+      'Daily Housekeeping',
+      'Ocean View',
+      'Luxury 4 Bedrooms',
+    ],
+    image: '/room1.jpg',
   },
   {
-    id: 'villa-premium',
-    name: 'Villa Premium',
-    price: '₹6,500',
-    tag: 'Sea View',
+    id: 'premium-floor-suites',
+    name: 'Premium Floor Suites',
+    tag: 'Garden View',
     tagColor: '#4a9fd4',
-    capacity: '2',
-    size: '500 sq ft',
-    shortDesc: 'Wake up to stunning sunrises and the sound of the waves.',
-    fullDesc: 'The Villa Premium offers sweeping sunrise views and a refined ambience. Wake up to the sound of the waves with premium furnishings, a cozy lounge corner, and all modern comforts. A dreamy retreat for couples and solo travelers seeking peace, elegance, and a deep connection with nature.',
-    amenities: ['Sea View', 'King Bed', 'Air Conditioning', 'Smart TV', 'Private Balcony', '24/7 Room Service', 'Free Breakfast', 'Complimentary WiFi', 'Luxury Toiletries', 'Daily Housekeeping', 'Pool Access', 'Lounge Area'],
-    image: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-12.55.06-PM.jpeg',
-  },
-  {
-    id: 'deluxe-group-room',
-    name: 'Deluxe Group Room',
-    price: '₹5,500',
-    tag: 'Best for Groups',
-    tagColor: '#5da86c',
     capacity: '6',
-    size: '850 sq ft',
-    shortDesc: 'Perfect for families and groups with a spacious scenic balcony.',
-    fullDesc: 'Perfect for groups and families, the Deluxe Group Room features multiple beds, a spacious layout, and a scenic balcony. Enjoy shared luxury without compromise. The room is designed to accommodate larger groups while providing an intimate and comfortable experience for every guest.',
-    amenities: ['Multiple Beds', 'Air Conditioning', 'Smart TV', 'Scenic Balcony', '24/7 Room Service', 'Free Breakfast', 'Pool Access', 'Complimentary WiFi', 'Luxury Toiletries', 'Daily Housekeeping', 'Large Lounge Area', 'Extra Bedding'],
-    image: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-1.12.32-PM-1.jpeg',
+    size: '500 sq ft',
+    shortDesc: 'Elegant 2 Bedroom Suite on the bottom floor with garden views and premium comfort.',
+    fullDesc: 'Our Luxury 2 Bedroom Suite combines comfort, privacy, and elegance. Featuring premium king or twin beds and spacious interiors, it is ideal for couples and families seeking a peaceful beachside stay.',
+    amenities: [
+      'King or Twin Beds',
+      'Air Conditioning',
+      'Smart TV',
+      '24/7 Room Service',
+      'Free Breakfast',
+      'Complimentary WiFi',
+      'Complimentary Toiletries',
+      'Daily Housekeeping',
+      'Garden View',
+      'Luxury 2 Bedrooms',
+    ],
+    image: '/room2.jpg',
   },
   {
-    id: 'deluxe-room',
-    name: 'Deluxe Room',
-    price: '₹4,000',
+    id: 'premium-full-suites',
+    name: 'Premium Full Suites',
+    tag: 'Entire Property',
+    tagColor: '#5da86c',
+    capacity: '18',
+    size: '1500 sq ft',
+    shortDesc: 'Exclusive access to the entire property — all 6 bedrooms, perfect for large families and events.',
+    fullDesc: 'Our Luxury 6 Bedroom Suite offers exclusive access to the entire property. Perfect for large families, celebrations, and group vacations seeking privacy and premium comfort.',
+    amenities: [
+      'King Beds & Extra Beds',
+      'Air Conditioning',
+      'Smart TV',
+      '24/7 Room Service',
+      'Free Breakfast',
+      'Complimentary WiFi',
+      'Complimentary Toiletries',
+      'Daily Housekeeping',
+      'Ocean View',
+      'Private Balcony',
+      'Luxury 6 Bedrooms',
+    ],
+    image: '/room3.jpg',
+  },
+  {
+    id: 'premium-double-suites',
+    name: 'Premium Double Suites',
     tag: 'Best Value',
     tagColor: '#c97d4c',
-    capacity: '2',
-    size: '400 sq ft',
-    shortDesc: 'Elegant interiors, scenic balcony view, and absolute comfort.',
-    fullDesc: 'Our Deluxe Room is the perfect balance of style and value. With elegant interiors, a cozy double bed, and a beautiful balcony view, it offers everything you need for a memorable stay. Ideal for couples and solo travelers who want the full Mudra experience at an accessible price point.',
-    amenities: ['Double Bed', 'Air Conditioning', 'Smart TV', 'Balcony', '24/7 Room Service', 'Free Breakfast', 'Complimentary WiFi', 'Luxury Toiletries', 'Daily Housekeeping', 'Pool Access'],
-    image: 'https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-12.55.05-PM-scaled.jpeg',
+    capacity: '3',
+    size: '150 sq ft',
+    shortDesc: 'Cozy 1 Bedroom Suite designed for couples and solo travelers with private balcony.',
+    fullDesc: 'Our Luxury Double Suite is designed for couples and solo travelers seeking comfort, privacy, and a relaxing beachside experience.',
+    amenities: [
+      'King Bed',
+      'Air Conditioning',
+      'Smart TV',
+      '24/7 Room Service',
+      'Free Breakfast',
+      'Complimentary WiFi',
+      'Complimentary Toiletries',
+      'Daily Housekeeping',
+      'Private Balcony',
+    ],
+    image: '/room4.jpg',
   },
 ]
 
@@ -66,10 +108,10 @@ export default function RoomsSuitesPage() {
   return (
     <>
       {/* Page hero */}
-      <section className="relative flex items-end justify-center overflow-hidden" style={{ height: 340, paddingBottom: 48 }}>
+      <section className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24" style={{ minHeight: 340, paddingBottom: 48 }}>
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://mudravillaandresort.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-04-at-1.12.31-PM.jpeg')" }}
+          style={{ backgroundImage: "url('/images/ostia3.png')" }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.78) 100%)' }} />
         <div className="relative z-10 text-center px-4">
@@ -79,7 +121,19 @@ export default function RoomsSuitesPage() {
             Rooms &amp; Suites
           </h1>
           <p className="text-white/55 mt-3 text-sm max-w-md mx-auto">
-            Luxury stays designed for your comfort &amp; unforgettable moments
+            Luxury stays designed for your comfort &amp; unforgettable coastal moments
+          </p>
+        </div>
+      </section>
+
+      {/* Description Banner */}
+      <section className="py-10" style={{ background: '#faf9f7', borderBottom: '1px solid var(--border)' }}>
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
+            Discover elegant <strong style={{ color: 'var(--text)' }}>6 Bedrooms</strong> crafted for comfort —{' '}
+            <span style={{ color: '#c9a84c' }}>Bottom Floor: 2 Bedrooms</span> &amp;{' '}
+            <span style={{ color: '#c9a84c' }}>Top Floor: 4 Bedrooms</span> with an Elegant Beach View Terrace.
+            Experience relaxation and create unforgettable coastal memories at Ostia Marari.
           </p>
         </div>
       </section>
@@ -102,6 +156,7 @@ export default function RoomsSuitesPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  unoptimized
                 />
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, transparent 60%, rgba(0,0,0,0.05))' }} />
                 {/* Tag */}
@@ -115,20 +170,8 @@ export default function RoomsSuitesPage() {
 
               {/* Details */}
               <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-                {/* Price */}
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span className="text-3xl font-bold" style={{ fontFamily: 'var(--font-playfair)', color: '#c9a84c' }}>
-                    {room.price}
-                  </span>
-                  <span className="text-sm" style={{ color: 'var(--text-light)' }}>/ night</span>
-                </div>
-
-                <h2 className="text-dark text-2xl lg:text-3xl font-semibold mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
-                  {room.name}
-                </h2>
-
                 {/* Meta */}
-                <div className="flex items-center gap-5 mb-4">
+                <div className="flex items-center gap-5 mb-3">
                   <span className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-light)' }}>
                     <Users size={13} style={{ color: '#c9a84c' }} />
                     Up to {room.capacity} guests
@@ -138,6 +181,10 @@ export default function RoomsSuitesPage() {
                     {room.size}
                   </span>
                 </div>
+
+                <h2 className="text-dark text-2xl lg:text-3xl font-semibold mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  {room.name}
+                </h2>
 
                 {/* Gold line */}
                 <div style={{ width: 48, height: 2, background: '#c9a84c', marginBottom: 16 }} />
@@ -155,13 +202,12 @@ export default function RoomsSuitesPage() {
                 </div>
 
                 <div className="flex items-center gap-4 flex-wrap">
-                  <a
-                    href="https://bookone.io/Mudra-Villa-and-Resort?bookingEngine=true"
-                    target="_blank" rel="noreferrer"
+                  <Link
+                    href={`/booking?select=${encodeURIComponent(room.name)}`}
                     className="btn-primary"
                   >
                     Book This Room <ArrowRight size={14} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

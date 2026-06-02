@@ -9,9 +9,9 @@ import {
 const features = [
   {
     Icon: Waves,
-    title: 'Private Beach Access',
+    title: 'Direct Beach Access',
     desc:
-      'Enjoy peaceful mornings and breathtaking sunsets with direct access to the serene beaches of Alleppey.',
+      'Enjoy peaceful mornings and breathtaking sunsets with direct access to the serene shores of Thumpoly Beach, Alleppey, near Marari.',
   },
 
   {
@@ -25,7 +25,7 @@ const features = [
     Icon: MountainSnow,
     title: 'Scenic Coastal Views',
     desc:
-      'Wake up to calming ocean breezes, lush surroundings, and stunning coastal landscapes every day.',
+      'Wake up to calming ocean breezes, lush surroundings, and stunning coastal fisherman village landscapes every day.',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function WhyChooseSection() {
       style={{ background: '#ffffff' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <span className="section-label">
@@ -113,7 +113,7 @@ export default function WhyChooseSection() {
                   'translateY(0px)'
               }}
             >
-              
+
               {/* Icon Circle */}
               <div
                 className="w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-all duration-300"
