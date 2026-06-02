@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 const attractions = [
   {
@@ -99,7 +100,8 @@ export default function AttractionsSection() {
   const scroll = (dir: 'left' | 'right') => {
     const el = scrollRef.current
     if (!el) return
-    el.scrollBy({ left: dir === 'left' ? -380 : 380, behavior: 'smooth' })
+    const scrollAmount = el.clientWidth * 0.85
+    el.scrollBy({ left: dir === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' })
     setTimeout(updateScrollState, 400)
   }
 
@@ -175,9 +177,8 @@ export default function AttractionsSection() {
             {attractions.map(({ name, distance, desc, image }) => (
               <div
                 key={name}
-                className="flex-shrink-0 group overflow-hidden rounded-sm"
+                className="flex-shrink-0 group overflow-hidden rounded-sm w-[290px] xs:w-[340px] sm:w-[390px] md:w-[430px] lg:w-[460px]"
                 style={{
-                  width: 350,
                   scrollSnapAlign: 'start',
                   background: '#ffffff',
                   border: '1px solid var(--border)',
@@ -196,20 +197,21 @@ export default function AttractionsSection() {
               >
                 {/* Image Header with overflow hidden wrapper */}
                 <div
-                  className="relative overflow-hidden"
+                  className="relative overflow-hidden h-44 xs:h-52 sm:h-60 md:h-64 lg:h-72 w-full shrink-0"
                   style={{
-                    height: 200,
                     borderBottom: '1px solid var(--border)',
                   }}
                 >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{
-                      backgroundImage: `url('${image}')`,
-                    }}
+                  <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    unoptimized
                   />
                   <div
-                    className="absolute inset-0"
+                    className="absolute inset-0 pointer-events-none"
                     style={{
                       background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 60%)',
                     }}
