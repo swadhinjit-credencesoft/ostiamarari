@@ -3,17 +3,17 @@
 import { useEffect, useState } from 'react'
 
 const HERO_IMAGES = [
-  '/images/ostia11.png',
-  '/images/ostia1.png',
-  '/images/ostia2.png',
-  '/images/ostia3.png',
-  '/images/ostia4.png',
-  '/images/ostia5.png',
-  '/images/ostia6.png',
-  '/images/ostia7.png',
-  '/images/ostia8.png',
-  '/images/ostia9.png',
-  '/images/ostia10.png',
+  '/images/ostia11.avif',
+  '/images/ostia1.avif',
+  '/images/ostia2.avif',
+  '/images/ostia3.avif',
+  '/images/ostia4.avif',
+  '/images/ostia5.avif',
+  '/images/ostia6.avif',
+  '/images/ostia7.avif',
+  '/images/ostia8.avif',
+  '/images/ostia9.avif',
+  '/images/ostia10.avif',
 ]
 
 export default function HeroSection() {

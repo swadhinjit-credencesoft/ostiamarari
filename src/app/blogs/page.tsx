@@ -16,7 +16,7 @@ const blogs = [
     date: 'May 15, 2026',
     readTime: '5 min read',
     category: 'Beach Guide',
-    image: '/alpeybeach.png',
+    image: '/alpeybeach.avif',
     color: '#1b6ca8',
   },
   {
@@ -28,7 +28,7 @@ const blogs = [
     date: 'April 28, 2026',
     readTime: '7 min read',
     category: 'Travel Guide',
-    image: '/backwater.png',
+    image: '/backwater.avif',
     color: '#16a085',
   },
   {
@@ -40,7 +40,7 @@ const blogs = [
     date: 'April 10, 2026',
     readTime: '6 min read',
     category: 'Destination',
-    image: '/mararibeach.png',
+    image: '/mararibeach.avif',
     color: '#5da86c',
   },
 ]
@@ -52,7 +52,7 @@ export default function BlogsPage() {
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/ostia7.png')" }}
+          style={{ backgroundImage: "url('/images/ostia7.avif')" }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.78) 100%)' }} />
         <div className="relative z-10 max-w-2xl text-center">

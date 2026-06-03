@@ -32,7 +32,7 @@ const rooms = [
       'Complimentary Breakfast',
     ],
     highlights: ['Ocean View', 'Queen & Twin Beds', 'Private Balcony', 'AC'],
-    image: '/room1.jpg',
+    image: '/room1.avif',
   },
   {
     id: 'boutique-deluxe-room',
@@ -58,7 +58,7 @@ const rooms = [
       'Complimentary Breakfast',
     ],
     highlights: ['Garden View', 'Twin Beds', 'Ensuite Bathroom', 'AC'],
-    image: '/room2.jpg',
+    image: '/room2.avif',
   },
   {
     id: 'family-beach-villa',
@@ -84,7 +84,7 @@ const rooms = [
       'Complimentary Breakfast',
     ],
     highlights: ['Ocean View', 'Queen & Twin Beds', 'Private Balcony', 'Private Lawn'],
-    image: '/room3.jpg',
+    image: '/room3.avif',
   },
   {
     id: 'premium-double-suites',
@@ -110,7 +110,7 @@ const rooms = [
       'Complimentary Breakfast',
     ],
     highlights: ['Beach Access (50m)', 'Twin / Queen Bed', 'Private Balcony', 'AC'],
-    image: '/room4.jpg',
+    image: '/room4.avif',
   },
 ]
 
@@ -132,7 +132,7 @@ export default function RoomsSuitesPage() {
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/ostia3.png')" }}
+          style={{ backgroundImage: "url('/images/ostia3.avif')" }}
         />
         <div
           className="absolute inset-0"

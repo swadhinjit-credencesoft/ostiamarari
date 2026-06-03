@@ -14,7 +14,7 @@ const rooms = [
     capacity: '12',
     size: '1000 sq ft',
     amenities: ['Ocean View', 'King or Twin Beds', 'Private Balcony', 'Air Conditioning'],
-    image: '/room1.jpg',
+    image: '/room1.avif',
   },
   {
     id: 'boutique-deluxe-room',
@@ -25,7 +25,7 @@ const rooms = [
     capacity: '6',
     size: '500 sq ft',
     amenities: ['Garden View', 'King or Twin Beds', 'Air Conditioning'],
-    image: '/room2.jpg',
+    image: '/room2.avif',
   },
   {
     id: 'family-beach-villa',
@@ -36,7 +36,7 @@ const rooms = [
     capacity: '18',
     size: '1500 sq ft',
     amenities: ['Ocean View', 'King or Twin Beds', 'Private Balcony', 'Air Conditioning'],
-    image: '/room3.jpg',
+    image: '/room3.avif',
   },
   {
     id: 'premium-double-suites',
@@ -47,7 +47,7 @@ const rooms = [
     capacity: '3',
     size: '150 sq ft',
     amenities: ['King or Twin Beds', 'Private Balcony', 'Air Conditioning'],
-    image: '/room4.jpg',
+    image: '/room4.avif',
   },
 ]
 

@@ -21,7 +21,7 @@ export const seoConfig = {
     latitude: 9.4981,
     longitude: 76.3388,
   },
-  primaryImage: `${siteUrl}/images/ostia11.png`,
+  primaryImage: `${siteUrl}/images/ostia11.avif`,
   logo: `${siteUrl}/ostiamararilogo.png`,
   sameAs: [
     'https://www.instagram.com/ostiamarari',
@@ -84,63 +84,63 @@ export const pageSeo = {
     path: '/',
     title: homepageSeo.title,
     description: homepageSeo.description,
-    image: '/images/ostia11.png',
+    image: '/images/ostia11.avif',
   },
   roomsSuites: {
     path: '/rooms-suites',
     title: 'Sea View Rooms Alleppey | Luxury Suites at Ostia Marari',
     description:
       'Explore premium sea-view rooms and luxury suites at Ostia Marari, a boutique beachfront stay in Alleppey for couples, families and groups.',
-    image: '/room1.jpg',
+    image: '/room1.avif',
   },
   booking: {
     path: '/booking',
     title: 'Book Ostia Marari Direct | Beachfront Stay Alleppey',
     description:
       'Book Ostia Marari direct for luxury beachfront accommodation in Alleppey with sea-view suites, breakfast, WiFi and WhatsApp booking support.',
-    image: '/images/ostia5.png',
+    image: '/images/ostia5.avif',
   },
   gallery: {
     path: '/gallery',
     title: 'Ostia Marari Gallery | Beach Villa and Sea View Rooms',
     description:
       'View photos of Ostia Marari, including sea-view rooms, boutique interiors, beachfront access, private lawn and coastal spaces in Alleppey.',
-    image: '/images/ostia6.png',
+    image: '/images/ostia6.avif',
   },
   blogs: {
     path: '/blogs',
     title: 'Alleppey Beach Travel Blog | Ostia Marari Guides',
     description:
       'Read Alleppey beach guides, Kerala backwater travel tips, Marari Beach inspiration and direct booking advice from Ostia Marari.',
-    image: '/images/ostia7.png',
+    image: '/images/ostia7.avif',
   },
   contact: {
     path: '/contact',
     title: 'Contact Ostia Marari | Beach Stay in Alleppey Kerala',
     description:
       'Contact Ostia Marari for direct bookings, availability, location details and special requests for your luxury beach stay in Alleppey.',
-    image: '/images/ostia2.png',
+    image: '/images/ostia2.avif',
   },
   privacyPolicy: {
     path: '/privacy-policy',
     title: 'Privacy Policy | Ostia Marari',
     description:
       'Read the Ostia Marari privacy policy for booking enquiries, guest communication and website data handling.',
-    image: '/images/ostia4.png',
+    image: '/images/ostia4.avif',
   },
   terms: {
     path: '/terms',
     title: 'Terms and Conditions | Ostia Marari',
     description:
       'Read the booking terms and guest conditions for Ostia Marari, a boutique beach stay in Alleppey, Kerala.',
-    image: '/images/ostia4.png',
+    image: '/images/ostia4.avif',
   },
   cancellationPolicy: {
     path: '/cancellation-policy',
     title: 'Cancellation Policy | Ostia Marari',
     description:
       'Review Ostia Marari cancellation terms, refund conditions and booking cancellation contact details.',
-    image: '/images/ostia4.png',
+    image: '/images/ostia4.avif',
   },
 } satisfies Record<SeoPageKey, { path: string; title: string; description: string; image: string }>
 
@@ -570,11 +570,11 @@ export function buildSchemaGraph() {
         url: siteUrl,
         image: [
           seoConfig.primaryImage,
-          `${siteUrl}/images/ostia1.png`,
-          `${siteUrl}/room1.jpg`,
-          `${siteUrl}/room2.jpg`,
-          `${siteUrl}/room3.jpg`,
-          `${siteUrl}/room4.jpg`,
+          `${siteUrl}/images/ostia1.avif`,
+          `${siteUrl}/room1.avif`,
+          `${siteUrl}/room2.avif`,
+          `${siteUrl}/room3.avif`,
+          `${siteUrl}/room4.avif`,
         ],
         logo: seoConfig.logo,
         description: homepageSeo.description,

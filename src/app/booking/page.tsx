@@ -369,7 +369,7 @@ export default function BookingPage() {
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/ostia5.png')" }}
+          style={{ backgroundImage: "url('/images/ostia5.avif')" }}
         />
         <div
           className="absolute inset-0"

@@ -8,7 +8,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <section className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24" style={{ minHeight: 240, paddingBottom: 36 }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia4.png')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia4.avif')" }} />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.7)' }} />
         <div className="relative z-10 text-center px-4">
           <span className="section-label">Legal</span>

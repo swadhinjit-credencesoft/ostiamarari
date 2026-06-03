@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/ostia11.png',
+        url: '/images/ostia11.avif',
         width: 1200,
         height: 630,
         alt: 'Ostia Marari luxury beachfront boutique stay in Alleppey Kerala',
       },
       {
-        url: '/images/ostia1.png',
+        url: '/images/ostia1.avif',
         width: 1200,
         height: 630,
         alt: 'Sea-view rooms and beachfront access at Ostia Marari',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     description: homepageSeo.whatsappShare.description,
     images: [
       {
-        url: '/images/ostia11.png',
+        url: '/images/ostia11.avif',
         alt: 'Ostia Marari boutique beach stay near Thumpoly Beach Alleppey',
       },
     ],

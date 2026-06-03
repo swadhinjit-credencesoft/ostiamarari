@@ -15,7 +15,7 @@ export default function ContactPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('/images/ostia2.png')",
+              "url('/images/ostia2.avif')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
