@@ -136,7 +136,7 @@ export default function ContactPage() {
           {/* MAP */}
           <div className="mt-14 h-[380px] border border-gray-200 overflow-hidden">
             <iframe
-              src="https://maps.google.com/maps?q=Ostia%20Marari%20Alappuzha%20Kerala&t=m&z=13&output=embed&iwloc=near"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3!2d76.3124823!3d9.5198796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08858cbba3d117%3A0x4e2c2db4bf5d8165!2sOstia%20Marari%20-%20a%20Boutique%20Beach%20Stay!5e0!3m2!1sen!2sin!4v1"
               width="100%"
               height="100%"
               loading="lazy"
