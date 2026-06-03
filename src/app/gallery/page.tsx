@@ -4,24 +4,39 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 
-type Cat = 'All' | 'Rooms' | 'Beach' | 'Exterior'
+type Cat = 'All' | 'Rooms' | 'Beach' | 'Exterior'| 'interior'
 
 const gallery: { src: string; alt: string; cat: Cat }[] = [
-  { src: '/images/ostia11.png', alt: 'Ostia Marari beach view', cat: 'Beach' },
-  { src: '/images/ostia1.png', alt: 'Ostia Marari exterior', cat: 'Exterior' },
-  { src: '/images/ostia2.png', alt: 'Luxury room interior', cat: 'Rooms' },
-  { src: '/images/ostia3.png', alt: 'Premium suite', cat: 'Rooms' },
-  { src: '/images/ostia4.png', alt: 'Beachfront view', cat: 'Beach' },
+  { src: '/images/ostia11.png', alt: 'Ostia Marari beach view', cat: 'Exterior' },
+  { src: '/images/ostia1.png', alt: 'Ostia Marari exterior', cat: 'Beach' },
+  { src: '/images/ostia2.png', alt: 'Luxury room interior', cat: 'Exterior' },
+  { src: '/images/ostia3.png', alt: 'Premium suite', cat: 'Exterior' },
+  { src: '/images/ostia4.png', alt: 'Beachfront view', cat: 'interior' },
   { src: '/images/ostia5.png', alt: 'Boutique stay exterior', cat: 'Exterior' },
-  { src: '/images/ostia6.png', alt: 'Coastal view', cat: 'Beach' },
-  { src: '/images/ostia7.png', alt: 'Resort interior', cat: 'Exterior' },
-  { src: '/images/ostia8.png', alt: 'Luxury bedroom', cat: 'Rooms' },
+  { src: '/images/ostia6.png', alt: 'Coastal view', cat: 'interior' },
+  { src: '/images/ostia7.png', alt: 'Resort interior', cat: 'interior' },
+  { src: '/images/ostia8.png', alt: 'Luxury bedroom', cat: 'interior' },
   { src: '/images/ostia9.png', alt: 'Garden area', cat: 'Exterior' },
-  { src: '/images/ostia10.png', alt: 'Sea view terrace', cat: 'Beach' },
+  { src: '/images/ostia10.png', alt: 'Sea view terrace', cat: 'interior' },
+  { src: '/images/ostia12.png', alt: 'Boutique stay exterior', cat: 'Exterior' },
+  { src: '/images/ostia13.png', alt: 'Boutique stay exterior', cat: 'Exterior' },
+  { src: '/images/ostia14.png', alt: 'Boutique stay exterior', cat: 'Exterior' },
+  { src: '/images/ostia15.png', alt: 'Boutique stay exterior', cat: 'Exterior' },
+  { src: '/images/ostia16.png', alt: 'Boutique stay exterior', cat: 'Exterior' },
+  { src: '/images/interior2.png', alt: 'Sea view terrace', cat: 'interior' },
+  { src: '/images/interior3.png', alt: 'Sea view terrace', cat: 'interior' },
+  { src: '/images/interior4.png', alt: 'Sea view terrace', cat: 'interior' },
+  
+
   { src: '/room1.jpg', alt: 'Premium Top Suite', cat: 'Rooms' },
+  { src: '/room2.jpg', alt: 'Premium Top Suite', cat: 'Rooms' },
+  { src: '/room3.jpg', alt: 'Premium Top Suite', cat: 'Rooms' },
+  { src: '/room4.jpg', alt: 'Premium Top Suite', cat: 'Rooms' },
+  { src: '/room5.jpg', alt: 'Premium Top Suite', cat: 'Rooms' },
+ 
 ]
 
-const CATS: Cat[] = ['All', 'Rooms', 'Beach', 'Exterior']
+const CATS: Cat[] = ['All', 'Rooms', 'Beach', 'Exterior','interior']
 
 export default function GalleryPage() {
   const [active, setActive] = useState<Cat>('All')

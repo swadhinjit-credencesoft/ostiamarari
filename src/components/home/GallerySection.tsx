@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 
-type Cat = 'All' | 'Rooms' | 'Pool' | 'Exterior'
+type Cat = 'All' | 'Rooms' | 'Exterior'
 
 const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   {
     src: '/images/ostia11.png',
     alt: 'Resort pool area',
-    cat: 'Pool',
+    cat: 'Exterior',
     aspect: 'aspect-[4/3]',
   },
   {
@@ -22,25 +22,25 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   {
     src: '/images/ostia2.png',
     alt: 'Luxury Villa with Jacuzzi',
-    cat: 'Rooms',
+    cat: 'Exterior',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/ostia3.png',
     alt: 'Villa Premium',
-    cat: 'Rooms',
+    cat: 'Exterior',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/ostia4.png',
     alt: 'Deluxe Group Room',
-    cat: 'Rooms',
+    cat: 'Exterior',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/ostia5.png',
     alt: 'Deluxe Room',
-    cat: 'Rooms',
+    cat: 'Exterior',
     aspect: 'aspect-[4/3]',
   },
   {
@@ -52,7 +52,7 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   {
     src: '/images/ostia7.png',
     alt: 'Pool view',
-    cat: 'Pool',
+    cat: 'Exterior',
     aspect: 'aspect-[4/3]',
   },
   {
@@ -61,9 +61,27 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
     cat: 'Exterior',
     aspect: 'aspect-[4/3]',
   },
+   {
+    src: '/room2.jpg',
+    alt: 'Deluxe Group Room',
+    cat: 'Rooms',
+    aspect: 'aspect-[4/3]',
+  },
+   {
+    src: '/room3.jpg',
+    alt: 'Deluxe Group Room',
+    cat: 'Rooms',
+    aspect: 'aspect-[4/3]',
+  },
+   {
+    src: '/room1.jpg',
+    alt: 'Deluxe Group Room',
+    cat: 'Rooms',
+    aspect: 'aspect-[4/3]',
+  },
 ]
 
-const CATS: Cat[] = ['All', 'Rooms', 'Pool', 'Exterior']
+const CATS: Cat[] = ['All', 'Rooms', 'Exterior']
 
 export default function GallerySection() {
   const [active, setActive] = useState<Cat>('All')

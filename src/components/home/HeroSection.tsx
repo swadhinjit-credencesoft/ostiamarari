@@ -54,10 +54,10 @@ export default function HeroSection() {
       />
 
       {/* Decorative corner frames */}
-      <div className="absolute top-28 left-10 w-16 h-16 border-t-2 border-l-2 hidden lg:block" style={{ borderColor: 'rgba(201,168,76,0.5)' }} />
+      {/* <div className="absolute top-28 left-10 w-16 h-16 border-t-2 border-l-2 hidden lg:block" style={{ borderColor: 'rgba(201,168,76,0.5)' }} />
       <div className="absolute top-28 right-10 w-16 h-16 border-t-2 border-r-2 hidden lg:block" style={{ borderColor: 'rgba(201,168,76,0.5)' }} />
       <div className="absolute bottom-20 left-10 w-16 h-16 border-b-2 border-l-2 hidden lg:block" style={{ borderColor: 'rgba(201,168,76,0.5)' }} />
-      <div className="absolute bottom-20 right-10 w-16 h-16 border-b-2 border-r-2 hidden lg:block" style={{ borderColor: 'rgba(201,168,76,0.5)' }} />
+      <div className="absolute bottom-20 right-10 w-16 h-16 border-b-2 border-r-2 hidden lg:block" style={{ borderColor: 'rgba(201,168,76,0.5)' }} /> */}
 
       {/* Content */}
       <div
