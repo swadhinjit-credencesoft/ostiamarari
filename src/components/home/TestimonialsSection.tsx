@@ -264,7 +264,7 @@ export default function TestimonialsSection() {
                   'var(--font-playfair)',
               }}
             >
-              5.0
+              4.9
             </span>
 
             <span
@@ -273,7 +273,7 @@ export default function TestimonialsSection() {
                 color: 'var(--text-muted)',
               }}
             >
-              · Trusted by Guests Across India
+              · 7 Reviews &nbsp;·&nbsp; ⭐ Guest Favourite on StayVista
             </span>
           </div>
         </div>

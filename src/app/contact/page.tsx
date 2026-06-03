@@ -134,7 +134,7 @@ export default function ContactPage() {
                 <div className="flex gap-4 p-5 border border-gray-200">
                   <Clock className="text-[#c9a84c]" size={18} />
                   <div className="text-sm text-gray-600">
-                    <p>Check-in: 12:00 PM</p>
+                    <p>Check-in: 2:00 PM</p>
                     <p>Check-out: 11:00 AM</p>
                   </div>
                 </div>
