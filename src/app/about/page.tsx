@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import Accordion from '@/components/Accordion'
 
 export const metadata: Metadata = {
@@ -101,6 +102,56 @@ export default function AboutPage() {
                   height={200}
                   className="w-full h-full object-cover"
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Meet Our Founder & Owner ── */}
+      <section className="py-20 md:py-24 bg-white border-t border-b border-[#e8e4dc]/50">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1 relative">
+              <div className="relative overflow-hidden shadow-md" style={{ border: '1px solid var(--border)' }}>
+                <Image
+                  src="/ostiamarariowneraboutimg.avif"
+                  alt="Founder & Owner of Ostia Marari"
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="section-label">Owner &amp; Founder</span>
+              <span className="gold-line-left" />
+              <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-dark" style={{ fontFamily: 'var(--font-playfair)' }}>
+                Meet the Visionary Behind Our Coastal Haven
+              </h2>
+              <div className="space-y-4 text-sm leading-relaxed mb-6" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
+                <p>
+                  Ostia Marari was envisioned and created by our founder, who wanted to bring
+                  a unique, high-end boutique beachfront living experience to Alleppey. Combining the rustic
+                  charms of traditional Kerala architecture with contemporary luxury, they set out to build a
+                  haven of peace and relaxation.
+                </p>
+                <p>
+                  Our owner believes in personalized hospitality and hand-crafted experiences, ensuring every
+                  guest feels like they are staying in their own luxury home on the beach. By partnering with
+                  local staff, fishermen, and artisans, the property remains deeply rooted in Kerala&apos;s
+                  warm community values.
+                </p>
+                <p>
+                  &ldquo;We wanted to build something more than just a place to sleep — a sanctuary where the
+                  ocean breeze, golden sands, and serene surroundings come together to rejuvenate your mind
+                  and soul. We welcome you to experience Ostia Marari.&rdquo;
+                </p>
+              </div>
+              <div className="pt-2">
+                <Link href="/contact" className="btn-outline">
+                  Contact Owner &amp; Team
+                </Link>
               </div>
             </div>
           </div>

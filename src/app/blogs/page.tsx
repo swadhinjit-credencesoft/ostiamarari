@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, Calendar, Clock, User } from 'lucide-react'
+import BlogGrid from '@/components/BlogGrid'
 import JsonLd from '@/components/JsonLd'
 import { buildCollectionSchema, buildWebPageSchema, createPageMetadata, seoConfig } from '@/lib/seo'
 
@@ -12,6 +12,19 @@ const blogs = [
     title: 'Thumpoly Beach: Alleppey\'s Hidden Coastal Gem',
     excerpt:
       'Nestled away from the crowds, Thumpoly Beach is one of Alleppey\'s most serene and untouched coastal stretches. From quiet morning walks to breathtaking sunsets, discover why this beach is a must-visit for anyone staying near Marari.',
+    content: `Nestled away from the crowds, Thumpoly Beach is one of Alleppey's most serene and untouched coastal stretches. From quiet morning walks to breathtaking sunsets, discover why this beach is a must-visit for anyone staying near Marari.
+
+Thumpoly Beach is a beautiful, quiet coastal stretch in Alappuzha, famous for its golden sands, scenic canals that meet the sea, and traditional fishing boats lining the shore. Unlike the more commercialized beaches in Kerala, Thumpoly offers a peaceful atmosphere where you can relax, take a leisurely stroll, and watch the local fishermen at work.
+
+Here is what you can look forward to at Thumpoly Beach:
+
+• Serene sunsets and sunrises away from major tourist crowds.
+
+• Scenic views of the Thumpoly canal connecting the backwaters to the Arabian Sea.
+
+• Opportunity to witness traditional fish harvesting and interact with local fishermen.
+
+• Coastal walks along the clean, unspoiled shoreline right next to Ostia Marari.`,
     author: 'Ostia Marari Team',
     date: 'May 15, 2026',
     readTime: '5 min read',
@@ -24,6 +37,17 @@ const blogs = [
     title: 'Your Complete Guide to Kerala Backwater Houseboat Stays',
     excerpt:
       'The Kerala backwaters are a world unto themselves — a labyrinth of lakes, canals, and lagoons stretching across the coast. Learn how to plan the perfect houseboat experience from Alleppey and what to expect on board.',
+    content: `The Kerala backwaters are a world unto themselves — a labyrinth of lakes, canals, and lagoons stretching across the coast. Learn how to plan the perfect houseboat experience from Alleppey and what to expect on board.
+
+Cruising along the backwaters of Alleppey in a traditional Kerala houseboat (Kettuvallam) is a signature travel experience. Floating past tranquil villages, coconut groves, and lush green paddy fields offers a unique perspective on rural life in Kerala.
+
+Tips for the perfect houseboat experience:
+
+• Choose the right route: The Alleppey-Kumarakom route is ideal for scenic beauty and open lake vistas.
+
+• Opt for the right time: Daytime cruises are excellent for photography and sightseeing, while overnight stays offer unparalleled peace under the starlit sky.
+
+• Sample authentic cuisine: Indulge in freshly prepared traditional Kerala meals on board, including Karimeen Pollichathu (pearl spot fish) and local vegetable preparations.`,
     author: 'Ostia Marari Team',
     date: 'April 28, 2026',
     readTime: '7 min read',
@@ -36,6 +60,21 @@ const blogs = [
     title: '10 Reasons to Visit Marari Beach This Season',
     excerpt:
       'Marari Beach, just 10 km from Ostia Marari, is celebrated for its pristine sands, swaying palms, and authentic Kerala fishing village charm. Here are the top 10 reasons why Marari should be on every traveller\'s bucket list.',
+    content: `Marari Beach, just 10 km from Ostia Marari, is celebrated for its pristine sands, swaying palms, and authentic Kerala fishing village charm. Here are the top 10 reasons why Marari should be on every traveller's bucket list.
+
+Marari Beach is a pristine, tranquil beach located just 10 km from Alleppey, offering a calm alternative to Kerala's busier tourist hotspots. Celebrated for its white sands and swaying palms, it remains a favorite for wellness seekers and nature lovers.
+
+Top highlights of the Marari Beach experience:
+
+1. Peaceful ambiance with minimal commercial intrusion.
+
+2. Authentic fishing village culture that gives a glimpse into local life.
+
+3. Perfect spot for yoga, meditation, and Ayurveda treatments.
+
+4. Clean water suitable for swimming and sunbathing.
+
+5. Scenic pathways lined with coconut trees, perfect for evening bicycling.`,
     author: 'Ostia Marari Team',
     date: 'April 10, 2026',
     readTime: '6 min read',
@@ -91,93 +130,7 @@ export default function BlogsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogs.map((blog) => (
-              <article
-                key={blog.id}
-                className="group overflow-hidden rounded-sm transition-all duration-300 border border-[#e8e4dc] hover:border-[#c9a84c] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-lg hover:-translate-y-1.5 bg-white"
-              >
-                {/* Image */}
-                <div
-                  className="relative h-52 overflow-hidden"
-                  style={{ background: blog.color }}
-                >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{ backgroundImage: `url('${blog.image}')` }}
-                  />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)' }}
-                  />
-                  {/* Category Badge */}
-                  <div
-                    className="absolute top-4 left-4 px-3 py-1 text-xs font-semibold tracking-wider uppercase"
-                    style={{
-                      background: blog.color,
-                      color: '#fff',
-                      fontFamily: 'var(--font-raleway)',
-                    }}
-                  >
-                    {blog.category}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  {/* Meta */}
-                  <div className="flex items-center gap-4 mb-3 flex-wrap">
-                    <span
-                      className="flex items-center gap-1.5 text-xs"
-                      style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)' }}
-                    >
-                      <Calendar size={11} style={{ color: '#c9a84c' }} />
-                      {blog.date}
-                    </span>
-                    <span
-                      className="flex items-center gap-1.5 text-xs"
-                      style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)' }}
-                    >
-                      <Clock size={11} style={{ color: '#c9a84c' }} />
-                      {blog.readTime}
-                    </span>
-                    <span
-                      className="flex items-center gap-1.5 text-xs"
-                      style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)' }}
-                    >
-                      <User size={11} style={{ color: '#c9a84c' }} />
-                      {blog.author}
-                    </span>
-                  </div>
-
-                  <h3
-                    className="text-dark text-lg font-semibold mb-3 leading-snug"
-                    style={{ fontFamily: 'var(--font-playfair)' }}
-                  >
-                    {blog.title}
-                  </h3>
-
-                  <p
-                    className="text-sm leading-relaxed mb-5 line-clamp-3"
-                    style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
-                  >
-                    {blog.excerpt}
-                  </p>
-
-                  <div
-                    className="flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase pt-4"
-                    style={{
-                      borderTop: '1px solid var(--border)',
-                      color: '#c9a84c',
-                      fontFamily: 'var(--font-raleway)',
-                    }}
-                  >
-                    Read More <ArrowRight size={13} />
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <BlogGrid blogs={blogs} />
 
           {/* CTA */}
           <div className="text-center mt-16">
