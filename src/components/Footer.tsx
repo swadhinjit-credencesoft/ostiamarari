@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { MapPin, Phone, Mail } from 'lucide-react'
 import {
   WhatsAppIcon,
@@ -12,6 +13,9 @@ import {
 } from '@/components/icons'
 
 export default function Footer() {
+  const pathname = usePathname()
+  const hideCtaBanner = pathname?.startsWith('/booking')
+
   const handleNavClick = (href: string, e: React.MouseEvent) => {
     if (href.startsWith('/#')) {
       e.preventDefault()
@@ -32,33 +36,34 @@ export default function Footer() {
         borderTop: '1px solid rgba(201,168,76,0.15)',
       }}
     >
-      {/* CTA Banner */}
-      <div
-        className="text-center py-14 px-6"
-        style={{
-          background:
-            'linear-gradient(135deg, #222 0%, #1a1a1a 100%)',
-          borderBottom: '1px solid rgba(201,168,76,0.15)',
-        }}
-      >
-        <span className="section-label">
-          Ready for your beach escape?
-        </span>
-
-        <h2
-          className="heading text-3xl md:text-4xl text-white font-semibold mb-6 mt-2"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+      {!hideCtaBanner && (
+        <div
+          className="text-center py-14 px-6"
+          style={{
+            background:
+              'linear-gradient(135deg, #222 0%, #1a1a1a 100%)',
+            borderBottom: '1px solid rgba(201,168,76,0.15)',
+          }}
         >
-          Book Your Stay at Ostia Marari
-        </h2>
+          <span className="section-label">
+            Ready for your beach escape?
+          </span>
 
-        <Link
-          href="/booking"
-          className="btn-primary"
-        >
-          Book Now
-        </Link>
-      </div>
+          <h2
+            className="heading text-3xl md:text-4xl text-white font-semibold mb-6 mt-2"
+            style={{ fontFamily: 'var(--font-playfair)' }}
+          >
+            Book Your Stay at Ostia Marari
+          </h2>
+
+          <Link
+            href="/booking"
+            className="btn-primary"
+          >
+            Book Now
+          </Link>
+        </div>
+      )}
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
