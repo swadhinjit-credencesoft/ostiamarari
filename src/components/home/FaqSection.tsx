@@ -1,31 +1,5 @@
 import { HelpCircle } from 'lucide-react'
-
-const faqs = [
-  {
-    question: 'How far is the beach?',
-    answer: 'Thumpoly Beach is around 50 steps from the property, making it easy to enjoy quick beach walks and sunset time.',
-  },
-  {
-    question: 'Is breakfast included?',
-    answer: 'Yes, breakfast is included with the beach stay. Package bookings may also include additional meals as listed in the package details.',
-  },
-  {
-    question: 'Is parking available?',
-    answer: 'Yes, indoor parking is available at the property.',
-  },
-  {
-    question: 'Is WiFi available?',
-    answer: 'Yes, complimentary WiFi is available for guests.',
-  },
-  {
-    question: 'Can houseboat trips be arranged?',
-    answer: 'Yes, houseboat trips and beach plus backwater packages can be arranged for guests.',
-  },
-  {
-    question: 'What is the nearest airport?',
-    answer: 'Cochin International Airport, Nedumbassery is the nearest major airport, around 82 km from Ostia Marari.',
-  },
-]
+import { faqItems } from '@/lib/faq'
 
 export default function FaqSection() {
   return (
@@ -47,7 +21,7 @@ export default function FaqSection() {
         </div>
 
         <div className="space-y-4">
-          {faqs.map(({ question, answer }, index) => (
+          {faqItems.map(({ question, answer }, index) => (
             <details
               key={question}
               className="group p-5 md:p-6"

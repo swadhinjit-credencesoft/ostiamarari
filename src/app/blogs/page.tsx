@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, Calendar, Clock, User } from 'lucide-react'
+import JsonLd from '@/components/JsonLd'
+import { buildCollectionSchema, buildWebPageSchema, createPageMetadata, seoConfig } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Blogs | Ostia Marari – Travel Stories from Alleppey',
-  description: 'Read travel stories, guides, and tips about Alleppey, Thumpoly Beach, Kerala backwaters, and the best coastal experiences near Ostia Marari.',
-}
+export const metadata: Metadata = createPageMetadata('blogs')
 
 const blogs = [
   {
@@ -197,3 +196,4 @@ export default function BlogsPage() {
     </>
   )
 }
+

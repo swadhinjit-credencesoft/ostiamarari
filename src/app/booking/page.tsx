@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { Send, CheckCircle, MessageCircle, Mail, ArrowLeft } from 'lucide-react'
+import { MessageCircle, Mail, ArrowLeft } from 'lucide-react'
 
 type FormState = {
   title: string
@@ -111,8 +111,6 @@ function BookingFormInner() {
     selectedRoom: preselect,
   })
 
-  const [submitted, setSubmitted] = useState(false)
-  const [generatedMsg, setGeneratedMsg] = useState('')
 
   useEffect(() => {
     setForm(prev => ({ ...prev, selectedRoom: preselect }))
@@ -125,8 +123,10 @@ function BookingFormInner() {
     setForm(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const submitter = (e.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null
+    const sendMethod = submitter?.value
     const msg = `Hello Ostia Marari Team,
 
 I would like to enquire about the following booking:
@@ -142,114 +142,21 @@ Number of Children (Age 4–10): ${form.children}
 Please share availability and pricing details.
 
 Thank You.`
-    setGeneratedMsg(msg)
-    setSubmitted(true)
-  }
 
-  const whatsappUrl = `https://wa.me/919846044955?text=${encodeURIComponent(generatedMsg)}`
-  const emailUrl = `mailto:info@ostiamarari.com?subject=${encodeURIComponent(
-    `Booking Enquiry – ${form.selectedRoom || 'General'}`
-  )}&body=${encodeURIComponent(generatedMsg)}`
+    if (sendMethod === 'whatsapp') {
+      window.open(
+        `https://wa.me/919846044955?text=${encodeURIComponent(msg)}`,
+        '_blank',
+        'noopener,noreferrer'
+      )
+      return
+    }
 
-  if (submitted) {
-    return (
-      <div className="max-w-2xl mx-auto text-center py-10 px-4">
-        <div
-          className="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6"
-          style={{ background: 'rgba(201,168,76,0.1)', border: '2px solid #c9a84c' }}
-        >
-          <CheckCircle size={36} style={{ color: '#c9a84c' }} />
-        </div>
-        <h2
-          className="text-3xl font-semibold mb-3"
-          style={{ fontFamily: 'var(--font-playfair)', color: 'var(--text)' }}
-        >
-          Enquiry Ready!
-        </h2>
-        <p className="text-sm mb-8" style={{ color: 'var(--text-light)' }}>
-          Your booking enquiry has been prepared. Please send it to us via WhatsApp or Email.
-        </p>
-
-        {/* Message Preview */}
-        <div
-          className="text-left p-6 mb-8 text-sm leading-relaxed"
-          style={{
-            background: '#f8f8f8',
-            border: '1px solid var(--border)',
-            fontFamily: 'var(--font-raleway)',
-            color: 'var(--text)',
-            whiteSpace: 'pre-line',
-          }}
-        >
-          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#c9a84c' }}>
-            Your Enquiry Message
-          </p>
-          {generatedMsg}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-sm tracking-widest uppercase transition-all duration-300"
-            style={{
-              background: '#25d366',
-              color: '#ffffff',
-              border: '2px solid #25d366',
-              fontFamily: 'var(--font-raleway)',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.color = '#25d366'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = '#25d366'
-              e.currentTarget.style.color = '#ffffff'
-            }}
-          >
-            <MessageCircle size={18} />
-            Confirm via WhatsApp
-          </a>
-          <a
-            href={emailUrl}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-sm tracking-widest uppercase transition-all duration-300"
-            style={{
-              background: 'transparent',
-              color: '#c9a84c',
-              border: '2px solid #c9a84c',
-              fontFamily: 'var(--font-raleway)',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = '#c9a84c'
-              e.currentTarget.style.color = '#fff'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.color = '#c9a84c'
-            }}
-          >
-            <Mail size={18} />
-            Send via Email
-          </a>
-        </div>
-
-        <button
-          onClick={() => setSubmitted(false)}
-          className="mt-8 inline-flex items-center gap-2 text-sm"
-          style={{
-            color: 'var(--text-muted)',
-            fontFamily: 'var(--font-raleway)',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-          }}
-        >
-          <ArrowLeft size={14} /> Edit Enquiry
-        </button>
-      </div>
-    )
+    if (sendMethod === 'email') {
+      window.location.href = `mailto:info@ostiamarari.com?subject=${encodeURIComponent(
+        `Booking Enquiry - ${form.selectedRoom || 'General'}`
+      )}&body=${encodeURIComponent(msg)}`
+    }
   }
 
   const inputStyle: React.CSSProperties = {
@@ -400,28 +307,56 @@ Thank You.`
           </div>
         </div>
 
-        <button
-          type="submit"
-          className="w-full py-4 font-semibold text-sm tracking-[2px] uppercase transition-all duration-300 inline-flex items-center justify-center gap-2"
-          style={{
-            background: '#c9a84c',
-            color: '#ffffff',
-            border: '2px solid #c9a84c',
-            fontFamily: 'var(--font-raleway)',
-            cursor: 'pointer',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.background = '#b8942e'
-            e.currentTarget.style.borderColor = '#b8942e'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.background = '#c9a84c'
-            e.currentTarget.style.borderColor = '#c9a84c'
-          }}
-        >
-          <Send size={16} />
-          Submit Enquiry
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+          <button
+            type="submit"
+            name="sendMethod"
+            value="whatsapp"
+            className="inline-flex flex-1 items-center justify-center gap-2 px-8 py-4 font-semibold text-sm tracking-widest uppercase transition-all duration-300"
+            style={{
+              background: '#25d366',
+              color: '#ffffff',
+              border: '2px solid #25d366',
+              fontFamily: 'var(--font-raleway)',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.color = '#25d366'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = '#25d366'
+              e.currentTarget.style.color = '#ffffff'
+            }}
+          >
+            <MessageCircle size={18} />
+            Confirm via WhatsApp
+          </button>
+          <button
+            type="submit"
+            name="sendMethod"
+            value="email"
+            className="inline-flex flex-1 items-center justify-center gap-2 px-8 py-4 font-semibold text-sm tracking-widest uppercase transition-all duration-300"
+            style={{
+              background: 'transparent',
+              color: '#c9a84c',
+              border: '2px solid #c9a84c',
+              fontFamily: 'var(--font-raleway)',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = '#c9a84c'
+              e.currentTarget.style.color = '#fff'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.color = '#c9a84c'
+            }}
+          >
+            <Mail size={18} />
+            Send via Email
+          </button>
+        </div>
       </form>
     </div>
   )
@@ -523,3 +458,4 @@ export default function BookingPage() {
     </>
   )
 }
+

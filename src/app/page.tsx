@@ -9,10 +9,15 @@ import BeforeYouArriveSection from '@/components/home/BeforeYouArriveSection'
 import GallerySection from '@/components/home/GallerySection'
 import TestimonialsSection from '@/components/home/TestimonialsSection'
 import FaqSection from '@/components/home/FaqSection'
+import { buildSchemaGraph } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
 export default function HomePage() {
+  const schemaGraph = buildSchemaGraph()
+
   return (
     <>
+      <JsonLd data={schemaGraph} />
       <HeroSection />
       <WhyChooseSection />
       <RoomsSection />

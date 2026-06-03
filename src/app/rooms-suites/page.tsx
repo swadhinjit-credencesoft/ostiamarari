@@ -2,12 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Check, Users, Maximize2, ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { buildCollectionSchema, buildWebPageSchema, createPageMetadata, seoConfig } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Rooms & Suites | Ostia Marari – Boutique Beach Stay, Alleppey',
-  description:
-    'Explore our luxury rooms and suites at Ostia Marari — Premium Top Suites (4 bedrooms, up to 12 guests), Premium Floor Suites (2 bedrooms, up to 6 guests), Premium Full Suites (entire property, 6 bedrooms, up to 18 guests), and Premium Double Suites (1 bedroom) near Thumpoly Beach, Alleppey.',
-}
+export const metadata: Metadata = createPageMetadata('roomsSuites')
 
 const rooms = [
   {
@@ -117,8 +115,19 @@ const rooms = [
 ]
 
 export default function RoomsSuitesPage() {
+  const roomsSchema = buildCollectionSchema(
+    'roomsSuites',
+    rooms.map(room => ({
+      name: room.name,
+      url: `${seoConfig.siteUrl}/rooms-suites#${room.id}`,
+      image: `${seoConfig.siteUrl}${room.image}`,
+      description: room.shortDesc,
+    }))
+  )
+
   return (
     <>
+      <JsonLd data={[buildWebPageSchema('roomsSuites'), roomsSchema]} />
       {/* Page hero */}
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
@@ -303,3 +312,4 @@ export default function RoomsSuitesPage() {
     </>
   )
 }
+

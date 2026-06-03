@@ -88,7 +88,7 @@ export default function HeroSection() {
 
         <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10"
            style={{ fontFamily: 'var(--font-raleway)', letterSpacing: '0.03em' }}>
-          Discover a blend of comfort, elegance, and exceptional hospitality at Ostia Marari
+          Luxury boutique beach stay in Alleppey with sea-view rooms, direct beach access, and warm Kerala hospitality
         </p>
 
         <a
