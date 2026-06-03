@@ -1,7 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import {
   InstagramIcon,
   WhatsAppIcon,
@@ -9,43 +6,7 @@ import {
   socialIconCls,
 } from '@/components/icons'
 
-type FormState = {
-  name: string
-  email: string
-  phone: string
-  checkIn: string
-  checkOut: string
-  guests: string
-  message: string
-}
-
 export default function ContactPage() {
-  const [form, setForm] = useState<FormState>({
-    name: '',
-    email: '',
-    phone: '',
-    checkIn: '',
-    checkOut: '',
-    guests: '2',
-    message: '',
-  })
-
-  const [sent, setSent] = useState(false)
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSent(true)
-  }
-
   return (
     <>
       {/* HERO */}
@@ -77,9 +38,8 @@ export default function ContactPage() {
       {/* CONTENT */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-            {/* LEFT PANEL */}
-            <div className="lg:col-span-2 space-y-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="space-y-8">
               <div>
                 <span className="section-label">Get In Touch</span>
                 <span className="gold-line-left" />
@@ -96,7 +56,7 @@ export default function ContactPage() {
               </div>
 
               {/* INFO */}
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* ADDRESS */}
                 <div className="flex gap-4 p-5 border border-gray-200">
                   <MapPin className="text-[#c9a84c]" size={18} style={{ flexShrink: 0 }} />
@@ -170,73 +130,6 @@ export default function ContactPage() {
                   <FacebookIcon size={16} />
                 </a>
               </div>
-            </div>
-
-            {/* FORM */}
-            <div className="lg:col-span-3 p-8 border border-gray-200">
-              {sent ? (
-                <div className="text-center py-16">
-                  <Send className="mx-auto text-[#c9a84c]" size={30} />
-                  <h3 className="text-xl font-semibold mt-4">
-                    Message Sent!
-                  </h3>
-                  <p className="text-gray-600 mt-2">
-                    We will contact you soon.
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <h3 className="text-2xl font-semibold mb-6">
-                    Send a Message
-                  </h3>
-
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <input
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Full Name"
-                      className="w-full p-3 border"
-                      required
-                    />
-
-                    <input
-                      name="email"
-                      type="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="Email"
-                      className="w-full p-3 border"
-                      required
-                    />
-
-                    <input
-                      name="phone"
-                      value={form.phone}
-                      onChange={handleChange}
-                      placeholder="Phone"
-                      className="w-full p-3 border"
-                    />
-
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      placeholder="Message"
-                      className="w-full p-3 border"
-                      rows={4}
-                    />
-
-                    <button
-                      type="submit"
-                      className="w-full bg-[#c9a84c] text-white py-3"
-                    >
-                      <Send className="inline mr-2" size={16} />
-                      Send Message
-                    </button>
-                  </form>
-                </>
-              )}
             </div>
           </div>
 
