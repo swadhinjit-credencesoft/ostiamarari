@@ -104,25 +104,12 @@ export default function Footer() {
       )}
 
       {/* ── Main Footer ── */}
-      <div
-        style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '60px 28px 52px',
-        }}
-      >
+      <div className="w-full px-4 sm:px-6 lg:px-10 pt-12 pb-8">
         {/* 6-column grid: Brand | Quick Links | Legal | Get In Touch | Find Us | Socials */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '220px minmax(120px,1fr) minmax(140px,1fr) minmax(180px,1fr) 180px 100px',
-            columnGap: '20px',
-            alignItems: 'start',
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12 gap-8 xl:gap-6 items-start">
 
           {/* ── Col 1 : Brand ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div className="sm:col-span-2 lg:col-span-3 xl:col-span-3" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {/* Logo + Name */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <Image
@@ -178,7 +165,7 @@ export default function Footer() {
           </div>
 
           {/* ── Col 2 : Quick Links ── */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="col-span-1 lg:col-span-1 xl:col-span-2" style={{ display: 'flex', flexDirection: 'column' }}>
             <h4 style={colHeadingStyle}>Quick Links</h4>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
               {quickLinks.map((l) => (
@@ -198,7 +185,7 @@ export default function Footer() {
           </div>
 
           {/* ── Col 3 : Legal ── */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="col-span-1 lg:col-span-1 xl:col-span-2" style={{ display: 'flex', flexDirection: 'column' }}>
             <h4 style={colHeadingStyle}>Legal</h4>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
               {legalLinks.map((l) => (
@@ -217,7 +204,7 @@ export default function Footer() {
           </div>
 
           {/* ── Col 4 : Get In Touch ── */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="col-span-1 lg:col-span-1 xl:col-span-2" style={{ display: 'flex', flexDirection: 'column' }}>
             <h4 style={colHeadingStyle}>Get In Touch</h4>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
               <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -251,7 +238,7 @@ export default function Footer() {
           </div>
 
           {/* ── Col 5 : Find Us ── */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="col-span-1 lg:col-span-1 xl:col-span-2" style={{ display: 'flex', flexDirection: 'column' }}>
             <h4 style={colHeadingStyle}>Find Us</h4>
             <div
               style={{
@@ -274,7 +261,7 @@ export default function Footer() {
           </div>
 
           {/* ── Col 6 : Socials ── */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="col-span-1 lg:col-span-1 xl:col-span-1" style={{ display: 'flex', flexDirection: 'column' }}>
             <h4 style={colHeadingStyle}>Socials</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <a
@@ -325,7 +312,7 @@ export default function Footer() {
       <div
         style={{
           borderTop: '1px solid rgba(255,255,255,0.06)',
-          padding: '18px 0',
+          padding: '12px 0',
           textAlign: 'center',
         }}
       >

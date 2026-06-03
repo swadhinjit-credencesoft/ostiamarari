@@ -8,6 +8,8 @@ import { MessageCircle, Mail, ArrowLeft } from 'lucide-react'
 type FormState = {
   title: string
   fullName: string
+  mobile: string
+  email: string
   checkIn: string
   checkOut: string
   rooms: string
@@ -103,6 +105,8 @@ function BookingFormInner() {
   const [form, setForm] = useState<FormState>({
     title: 'Mr',
     fullName: '',
+    mobile: '',
+    email: '',
     checkIn: '',
     checkOut: '',
     rooms: '1',
@@ -133,6 +137,8 @@ I would like to enquire about the following booking:
 
 Selected Room / Package: ${form.selectedRoom || 'Not specified'}
 Name: ${form.title}. ${form.fullName}
+Mobile Number: ${form.mobile}
+Email ID: ${form.email}
 Check-In Date: ${form.checkIn}
 Check-Out Date: ${form.checkOut}
 Number of Rooms: ${form.rooms}
@@ -236,6 +242,34 @@ Thank You.`
               value={form.fullName}
               onChange={handleChange}
               placeholder="Your full name"
+              style={inputStyle}
+              required
+            />
+          </div>
+        </div>
+
+        {/* Mobile Number + Email ID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label style={labelStyle}>Mobile Number *</label>
+            <input
+              type="tel"
+              name="mobile"
+              value={form.mobile}
+              onChange={handleChange}
+              placeholder="Your mobile number"
+              style={inputStyle}
+              required
+            />
+          </div>
+          <div>
+            <label style={labelStyle}>Email ID *</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Your email address"
               style={inputStyle}
               required
             />
