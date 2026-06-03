@@ -10,10 +10,7 @@ export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section
-        className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24"
-        style={{ minHeight: 280, paddingBottom: 40 }}
-      >
+      <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -23,15 +20,18 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 bg-black/60" />
 
-        <div className="relative z-10 text-center px-4">
-          <span className="section-label">Reach Out</span>
+        <div className="relative z-10 max-w-2xl text-center">
+          <span className="section-label">Contact</span>
           <span className="gold-line" />
           <h1
-            className="text-4xl md:text-5xl text-white font-semibold"
+            className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold"
             style={{ fontFamily: 'var(--font-playfair)' }}
           >
-            Contact Us
+            Contact
           </h1>
+          <p className="text-white/70 mt-3 text-sm md:text-base leading-relaxed">
+            Reach our team for bookings, availability, location details, and special requests.
+          </p>
         </div>
       </section>
 

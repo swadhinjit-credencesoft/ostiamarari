@@ -50,26 +50,23 @@ export default function BlogsPage() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24"
-        style={{ minHeight: 300, paddingBottom: 44 }}
-      >
+      <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/ostia7.png')" }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.78) 100%)' }} />
-        <div className="relative z-10 text-center px-4">
-          <span className="section-label">Travel Stories</span>
+        <div className="relative z-10 max-w-2xl text-center">
+          <span className="section-label">Blogs</span>
           <span className="gold-line" />
           <h1
-            className="text-4xl md:text-5xl text-white font-semibold"
+            className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold"
             style={{ fontFamily: 'var(--font-playfair)' }}
           >
-            Our Blogs
+            Blogs
           </h1>
-          <p className="text-white/55 mt-2 text-sm max-w-sm mx-auto">
-            Discover stories, guides, and tips about Alleppey and coastal Kerala
+          <p className="text-white/70 mt-3 text-sm md:text-base leading-relaxed">
+            Read destination guides, beach stories, and travel tips from Alleppey and coastal Kerala.
           </p>
         </div>
       </section>
