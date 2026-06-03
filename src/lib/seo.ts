@@ -70,6 +70,7 @@ export const homepageSeo = {
 
 export type SeoPageKey =
   | 'home'
+  | 'about'
   | 'roomsSuites'
   | 'booking'
   | 'gallery'
@@ -85,6 +86,13 @@ export const pageSeo = {
     title: homepageSeo.title,
     description: homepageSeo.description,
     image: '/images/ostia11.avif',
+  },
+  about: {
+    path: '/about',
+    title: 'About Ostia Marari | Boutique Beach Stay Alleppey Kerala',
+    description:
+      'Learn about Ostia Marari, a boutique beachfront stay in Alleppey near Thumpoly Beach. Discover our story, rooms, amenities and the coastal experience.',
+    image: '/images/ostia2.avif',
   },
   roomsSuites: {
     path: '/rooms-suites',

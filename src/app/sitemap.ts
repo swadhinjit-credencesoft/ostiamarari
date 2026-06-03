@@ -3,6 +3,7 @@ import { seoConfig } from '@/lib/seo'
 
 const routes = [
   { path: '/', priority: 1, changeFrequency: 'weekly' },
+  { path: '/about', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/rooms-suites', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/booking', priority: 0.95, changeFrequency: 'daily' },
   { path: '/gallery', priority: 0.8, changeFrequency: 'monthly' },
