@@ -34,6 +34,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  /* Lock body scroll when mobile menu is open */
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
   /* Close mobile menu on resize to desktop */
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 1280) setOpen(false) }
@@ -187,13 +197,6 @@ export default function Navbar() {
                 </a>
                 <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls}>
                   <FacebookIcon size={17} />
-                </a>
-                <a
-                  href="tel:+919846044955"
-                  className="text-sm font-medium"
-                  style={{ color: '#1a1a1a', fontFamily: 'var(--font-raleway)' }}
-                >
-                  +91 98460 44955
                 </a>
               </div>
 

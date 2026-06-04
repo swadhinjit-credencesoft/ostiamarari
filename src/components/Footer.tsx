@@ -261,7 +261,8 @@ export default function Footer() {
           {/* ── Col 6 : Socials ── */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-1" style={{ display: 'flex', flexDirection: 'column' }}>
             <h4 style={colHeadingStyle}>Socials</h4>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '12px' }}>
+            {/* Mobile: horizontal row | Desktop (xl): vertical column */}
+            <div className="flex flex-row flex-wrap xl:flex-col gap-3">
               <a
                 href="https://www.instagram.com/ostiamarari"
                 target="_blank"
