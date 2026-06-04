@@ -7,25 +7,22 @@ export default function AboutPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section
-        className="relative flex items-center justify-center overflow-hidden px-4"
-        style={{ minHeight: 360, paddingTop: 96, paddingBottom: 48 }}
-      >
+      <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/ostia2.avif')" }}
         />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.60)' }} />
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 max-w-2xl text-center">
           <span className="section-label">About Us</span>
           <span className="gold-line" />
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold mt-2"
+            className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold"
             style={{ fontFamily: 'var(--font-playfair)' }}
           >
             Discover Ostia Marari
           </h1>
-          <p className="mt-4 text-white/70 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-white/70 text-sm md:text-base leading-relaxed">
             A boutique beachfront stay in Alleppey, Kerala — where luxury meets the coast.
           </p>
         </div>
