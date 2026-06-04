@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 
-type Cat = 'All' | 'Rooms' | 'Exterior'
+type Cat = 'All' | 'Rooms' | 'Exterior'| "interior"
 
 const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   {
@@ -34,7 +34,7 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   {
     src: '/images/ostia4.avif',
     alt: 'Deluxe Group Room',
-    cat: 'Exterior',
+    cat: 'interior',
     aspect: 'aspect-[4/3]',
   },
   {
@@ -46,19 +46,19 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   {
     src: '/images/ostia6.avif',
     alt: 'Resort interior',
-    cat: 'Exterior',
+    cat: 'interior',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/ostia7.avif',
     alt: 'Pool view',
-    cat: 'Exterior',
+    cat: 'interior',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/ostia8.avif',
     alt: 'Exterior view 2',
-    cat: 'Exterior',
+    cat: 'interior',
     aspect: 'aspect-[4/3]',
   },
    {
@@ -81,7 +81,7 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   },
 ]
 
-const CATS: Cat[] = ['All', 'Rooms', 'Exterior']
+const CATS: Cat[] = ['All', 'Rooms', 'Exterior','interior']
 
 export default function GallerySection() {
   const [active, setActive] = useState<Cat>('All')
