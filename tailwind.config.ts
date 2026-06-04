@@ -17,7 +17,7 @@ const config: Config = {
       },
       fontFamily: {
         heading: ['var(--font-playfair)', 'Georgia', 'serif'],
-        body: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-barlow)', 'system-ui', 'sans-serif'],
       },
       screens: {
         xs: '480px',
