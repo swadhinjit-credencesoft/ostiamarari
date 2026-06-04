@@ -241,15 +241,16 @@ export default function Footer() {
               style={{
                 border: '1px solid rgba(201,168,76,0.25)',
                 overflow: 'hidden',
-                width: '180px',
-                height: '180px',
+                width: '100%',
+                maxWidth: '200px',
+                height: '160px',
                 flexShrink: 0,
               }}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3!2d76.3124823!3d9.5198796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08858cbba3d117%3A0x4e2c2db4bf5d8165!2sOstia%20Marari%20-%20a%20Boutique%20Beach%20Stay!5e0!3m2!1sen!2sin!4v1"
-                width="180"
-                height="180"
+                width="100%"
+                height="160"
                 loading="lazy"
                 title="Ostia Marari Location"
                 style={{ filter: 'grayscale(80%) invert(90%)', display: 'block' }}
@@ -258,16 +259,16 @@ export default function Footer() {
           </div>
 
           {/* ── Col 6 : Socials ── */}
-          <div className="col-span-1 lg:col-span-1 xl:col-span-1" style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-1" style={{ display: 'flex', flexDirection: 'column' }}>
             <h4 style={colHeadingStyle}>Socials</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '12px' }}>
               <a
                 href="https://www.instagram.com/ostiamarari"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px' }}
+                style={{ width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <InstagramIcon size={18} />
               </a>
@@ -277,7 +278,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label="WhatsApp"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px' }}
+                style={{ width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <WhatsAppIcon size={18} />
               </a>
@@ -285,7 +286,7 @@ export default function Footer() {
                 href="tel:+919846044955"
                 aria-label="Call"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px' }}
+                style={{ width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <PhoneCallIcon size={18} />
               </a>
@@ -295,7 +296,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label="Facebook"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px' }}
+                style={{ width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <FacebookIcon size={18} />
               </a>
