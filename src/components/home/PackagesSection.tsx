@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Check, ArrowRight, Anchor, Ship, ChevronDown, ChevronUp } from 'lucide-react'
+import { Check, ArrowRight, Anchor, Ship, ChevronDown, ChevronUp, CalendarDays } from 'lucide-react'
 
 const packages = [
   {
@@ -257,7 +257,10 @@ export default function PackagesSection() {
                       cursor: 'pointer',
                     }}
                   >
-                    <span>📅 View Day-by-Day Itinerary</span>
+                    <span className="flex items-center gap-2">
+                      <CalendarDays size={14} style={{ color: isOpen ? '#c9a84c' : 'var(--text-light)' }} />
+                      View Day-by-Day Itinerary
+                    </span>
                     {isOpen ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
                   </button>
 

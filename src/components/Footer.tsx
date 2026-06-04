@@ -33,11 +33,8 @@ export default function Footer() {
     { label: 'Home',           href: '/' },
     { label: 'About Us',       href: '/about' },
     { label: 'Rooms & Suites', href: '/rooms-suites' },
-    { label: 'Packages',       href: '/#packages' },
-    { label: 'Price',          href: '/#rooms' },
     { label: 'Blogs',          href: '/blogs' },
     { label: 'Gallery',        href: '/gallery' },
-    { label: 'Booking',        href: '/booking' },
     { label: 'Contact',        href: '/contact' },
   ]
 

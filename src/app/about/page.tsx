@@ -1,65 +1,84 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import Accordion from '@/components/Accordion'
-
-export const metadata: Metadata = {
-  title: 'About Us | Ostia Marari',
-}
 
 export default function AboutPage() {
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="relative flex items-end justify-center overflow-hidden pt-20 lg:pt-24" style={{ minHeight: 260, paddingBottom: 36 }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia2.avif')" }} />
-        <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.65)' }} />
-        <div className="relative z-10 text-center px-4">
+      {/* ── HERO ── */}
+      <section
+        className="relative flex items-center justify-center overflow-hidden px-4"
+        style={{ minHeight: 360, paddingTop: 96, paddingBottom: 48 }}
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/ostia2.avif')" }}
+        />
+        <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.60)' }} />
+        <div className="relative z-10 text-center">
           <span className="section-label">About Us</span>
           <span className="gold-line" />
-          <h1 className="text-4xl md:text-5xl text-white font-semibold" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold mt-2"
+            style={{ fontFamily: 'var(--font-playfair)' }}
+          >
             Discover Ostia Marari
           </h1>
+          <p className="mt-4 text-white/70 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            A boutique beachfront stay in Alleppey, Kerala — where luxury meets the coast.
+          </p>
         </div>
       </section>
 
-      {/* ── About Description ── */}
-    
+      {/* ── ABOUT DESCRIPTION ── */}
+     
 
-      {/* ── Meet Our Founder & Owner ── */}
-      <section className="py-20 md:py-24" style={{ background: '#fafafa' }}>
+      {/* ── FOUNDER & OWNER ── */}
+      <section className="py-16 md:py-20" style={{ background: '#ffffff' }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-14">
+
+          {/* Section heading */}
+          <div className="text-center mb-12">
             <span className="section-label">Owner &amp; Founder</span>
             <span className="gold-line" />
-            <h2 className="text-3xl md:text-4xl font-semibold text-dark" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h2
+              className="text-3xl md:text-4xl font-semibold"
+              style={{ fontFamily: 'var(--font-playfair)', color: 'var(--text)' }}
+            >
               Meet the Woman Behind the Charming Retreat
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-            {/* Image */}
-            <div className="relative">
+            {/* Owner Image */}
+            <div className="w-full">
               <div
-                className="relative overflow-hidden shadow-sm"
+                className="relative overflow-hidden"
                 style={{ border: '1px solid var(--border)' }}
               >
                 <Image
                   src="/ostiamarariowneraboutimg.avif"
                   alt="Saritha Switen – Founder & Owner of Ostia Marari"
                   width={600}
-                  height={580}
-                  className="w-full h-auto object-cover"
+                  height={560}
+                  className="w-full h-auto object-cover object-top"
                 />
-                {/* Name badge pinned to bottom */}
+                {/* Name badge */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 px-6 py-4"
-                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)' }}
+                  className="absolute bottom-0 left-0 right-0 px-6 py-5"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 100%)',
+                  }}
                 >
                   <p
-                    className="text-xs tracking-widest uppercase mb-0.5"
-                    style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)', fontWeight: 600 }}
+                    className="text-xs tracking-widest uppercase mb-1"
+                    style={{
+                      color: '#c9a84c',
+                      fontFamily: 'var(--font-raleway)',
+                      fontWeight: 600,
+                    }}
                   >
                     Founder &amp; Owner
                   </p>
@@ -73,8 +92,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Content */}
-            <div>
+            {/* Owner Bio */}
+            <div className="flex flex-col justify-center">
               <span className="gold-line-left" />
               <h3
                 className="text-2xl md:text-3xl font-semibold mb-6 leading-snug"
@@ -96,28 +115,27 @@ export default function AboutPage() {
                   attention to detail, and uncompromising quality.
                 </p>
                 <p>
-                  A devoted wife and mother of two children, Saritha skillfully balances family life with
-                  her dedication to creating unforgettable guest experiences. Her commitment to personalized
-                  service ensures that every guest enjoys the perfect blend of comfort, privacy, and
-                  authentic Kerala hospitality.
+                  A devoted wife and mother of two children, Saritha skilfully balances family life with
+                  her dedication to creating unforgettable guest experiences. Her commitment to
+                  personalised service ensures that every guest enjoys the perfect blend of comfort,
+                  privacy, and authentic Kerala hospitality.
                 </p>
                 <p>
                   Professionally, Saritha is deeply passionate about cooking and takes pride in preparing
                   traditional Kerala delicacies using authentic recipes and fresh local ingredients. Her
-                  culinary expertise adds a unique personal touch to the Ostia Marari experience, allowing
-                  guests to savour the true flavours of Kerala.
+                  culinary expertise adds a unique personal touch to the Ostia Marari experience,
+                  allowing guests to savour the true flavours of Kerala.
                 </p>
                 <p>
-                  Over the years, Saritha has welcomed and delighted thousands of guests from across India
-                  and around the world. Through her warmth, dedication, and attention to every detail, she
-                  has helped create countless cherished memories, making Ostia Marari a preferred
-                  destination for travellers seeking relaxation, culture, and genuine hospitality in the
-                  heart of Marari Beach, Alappuzha.
+                  Over the years, Saritha has welcomed and delighted thousands of guests from across
+                  India and around the world. Through her warmth, dedication, and attention to every
+                  detail, she has helped create countless cherished memories, making Ostia Marari a
+                  preferred destination for travellers seeking relaxation, culture, and genuine
+                  hospitality in the heart of Marari Beach, Alappuzha.
                 </p>
 
-                {/* Quote */}
                 <blockquote
-                  className="mt-4 px-5 py-4"
+                  className="px-5 py-4 text-sm"
                   style={{
                     borderLeft: '3px solid #c9a84c',
                     background: 'rgba(201,168,76,0.06)',
@@ -130,7 +148,7 @@ export default function AboutPage() {
                 </blockquote>
               </div>
 
-              <div className="pt-8">
+              <div className="mt-8">
                 <Link href="/contact" className="btn-primary">
                   Contact Owner &amp; Team
                 </Link>
@@ -141,11 +159,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Accordion: More About ── */}
-      
+      {/* ── EXPLORE ACCORDION ── */}
+     
 
-      {/* ── Values ── */}
-    
+      {/* ── VALUES ── */}
+      
     </>
   )
 }
