@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { MessageCircle, Mail, ArrowLeft, CalendarDays } from 'lucide-react'
@@ -88,40 +88,33 @@ const labelStyle: React.CSSProperties = {
   marginBottom: '6px',
 }
 
-/* ── Custom date input with calendar icon ── */
-function DateInput(
-  { value, onClick, placeholder }: { value?: string; onClick?: () => void; placeholder: string },
-  ref: React.Ref<HTMLInputElement>
-) {
-  return (
-    <div className="relative">
-      <input
-        ref={ref}
-        value={value}
-        onClick={onClick}
-        onChange={() => {}}
-        placeholder={placeholder}
-        readOnly
-        style={{ ...inputStyle, paddingRight: '42px', cursor: 'pointer' }}
-      />
-      <CalendarDays
-        size={16}
-        style={{
-          position: 'absolute',
-          right: 14,
-          top: '50%',
-          transform: 'translateY(-50%)',
-          color: '#c9a84c',
-          pointerEvents: 'none',
-        }}
-      />
-    </div>
-  )
-}
-const DateInputRef = React.forwardRef(DateInput)
+/* ── Curated list of country codes for mobile number field ── */
+const COUNTRY_CODES = [
+  { code: '+91', country: 'IN', label: 'India (+91)' },
+  { code: '+1', country: 'US/CA', label: 'USA/Canada (+1)' },
+  { code: '+44', country: 'UK', label: 'UK (+44)' },
+  { code: '+61', country: 'AU', label: 'Australia (+61)' },
+  { code: '+971', country: 'AE', label: 'UAE (+971)' },
+  { code: '+49', country: 'DE', label: 'Germany (+49)' },
+  { code: '+33', country: 'FR', label: 'France (+33)' },
+  { code: '+65', country: 'SG', label: 'Singapore (+65)' },
+  { code: '+7', country: 'RU', label: 'Russia (+7)' },
+  { code: '+81', country: 'JP', label: 'Japan (+81)' },
+  { code: '+86', country: 'CN', label: 'China (+86)' },
+  { code: '+39', country: 'IT', label: 'Italy (+39)' },
+  { code: '+34', country: 'ES', label: 'Spain (+34)' },
+  { code: '+41', country: 'CH', label: 'Switzerland (+41)' },
+  { code: '+31', country: 'NL', label: 'Netherlands (+31)' },
+  { code: '+46', country: 'SE', label: 'Sweden (+46)' },
+  { code: '+60', country: 'MY', label: 'Malaysia (+60)' },
+  { code: '+64', country: 'NZ', label: 'New Zealand (+64)' },
+  { code: '+966', country: 'SA', label: 'Saudi Arabia (+966)' },
+  { code: '+974', country: 'QA', label: 'Qatar (+974)' },
+  { code: '+965', country: 'KW', label: 'Kuwait (+965)' },
+  { code: '+968', country: 'OM', label: 'Oman (+968)' },
+  { code: '+973', country: 'BH', label: 'Bahrain (+973)' },
+]
 
-/* We need React for forwardRef */
-import React from 'react'
 
 function BookingFormInner() {
   const searchParams = useSearchParams()
@@ -140,6 +133,7 @@ function BookingFormInner() {
 
   const [checkIn, setCheckIn] = useState<Date | null>(null)
   const [checkOut, setCheckOut] = useState<Date | null>(null)
+  const [countryCode, setCountryCode] = useState('+91')
 
   useEffect(() => {
     setForm(prev => ({ ...prev, selectedRoom: preselect }))
@@ -172,7 +166,7 @@ I would like to enquire about the following booking:
 
 Selected Room / Package: ${form.selectedRoom || 'Not specified'}
 Name: ${form.title}. ${form.fullName}
-Mobile Number: ${form.mobile}
+Mobile Number: ${countryCode} ${form.mobile}
 Email ID: ${form.email}
 Check-In Date: ${checkInStr}
 Check-Out Date: ${checkOutStr}
@@ -252,15 +246,30 @@ Thank You.`
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label style={labelStyle}>Mobile Number *</label>
-            <input
-              type="tel"
-              name="mobile"
-              value={form.mobile}
-              onChange={handleChange}
-              placeholder="Your mobile number"
-              style={inputStyle}
-              required
-            />
+            <div className="flex gap-2">
+              <select
+                name="countryCode"
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                style={{ ...inputStyle, width: '120px', minWidth: '120px', paddingRight: '8px', paddingLeft: '8px' }}
+                required
+              >
+                {COUNTRY_CODES.map(cc => (
+                  <option key={cc.code} value={cc.code}>
+                    {cc.country} ({cc.code})
+                  </option>
+                ))}
+              </select>
+              <input
+                type="tel"
+                name="mobile"
+                value={form.mobile}
+                onChange={handleChange}
+                placeholder="Your mobile number"
+                style={inputStyle}
+                required
+              />
+            </div>
           </div>
           <div>
             <label style={labelStyle}>Email ID *</label>
@@ -280,27 +289,65 @@ Thank You.`
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label style={labelStyle}>Check-In Date *</label>
-            <DatePicker
-              selected={checkIn}
-              onChange={handleCheckInChange}
-              minDate={today}
-              dateFormat="dd MMM yyyy"
-              placeholderText="Select check-in date"
-              customInput={<DateInputRef placeholder="Select check-in date" />}
-              required
-            />
+            <div className="relative">
+              <DatePicker
+                selected={checkIn}
+                onChange={handleCheckInChange}
+                minDate={today}
+                dateFormat="dd MMM yyyy"
+                placeholderText="Select check-in date"
+                showMonthDropdown
+                showYearDropdown
+                dropdownMode="select"
+                selectsStart
+                startDate={checkIn}
+                endDate={checkOut}
+                required
+                className="w-full bg-[#fafafa] border border-[#e8e4dc] text-[#2d2d2d] font-barlow text-sm p-[13px] pr-[42px] outline-none transition-colors duration-300 focus:border-[#c9a84c] cursor-pointer"
+              />
+              <CalendarDays
+                size={16}
+                style={{
+                  position: 'absolute',
+                  right: 14,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  color: '#c9a84c',
+                  pointerEvents: 'none',
+                }}
+              />
+            </div>
           </div>
           <div>
             <label style={labelStyle}>Check-Out Date *</label>
-            <DatePicker
-              selected={checkOut}
-              onChange={(date: Date | null) => setCheckOut(date)}
-              minDate={checkIn ? addDays(checkIn, 1) : addDays(today, 1)}
-              dateFormat="dd MMM yyyy"
-              placeholderText="Select check-out date"
-              customInput={<DateInputRef placeholder="Select check-out date" />}
-              required
-            />
+            <div className="relative">
+              <DatePicker
+                selected={checkOut}
+                onChange={(date: Date | null) => setCheckOut(date)}
+                minDate={checkIn ? addDays(checkIn, 1) : addDays(today, 1)}
+                dateFormat="dd MMM yyyy"
+                placeholderText="Select check-out date"
+                showMonthDropdown
+                showYearDropdown
+                dropdownMode="select"
+                selectsEnd
+                startDate={checkIn}
+                endDate={checkOut}
+                required
+                className="w-full bg-[#fafafa] border border-[#e8e4dc] text-[#2d2d2d] font-barlow text-sm p-[13px] pr-[42px] outline-none transition-colors duration-300 focus:border-[#c9a84c] cursor-pointer"
+              />
+              <CalendarDays
+                size={16}
+                style={{
+                  position: 'absolute',
+                  right: 14,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  color: '#c9a84c',
+                  pointerEvents: 'none',
+                }}
+              />
+            </div>
           </div>
         </div>
 
