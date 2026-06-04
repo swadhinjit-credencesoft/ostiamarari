@@ -132,7 +132,7 @@ export default function RoomsSection() {
                 {/* Buttons — pushed to bottom */}
                 <div className="flex items-center gap-4 pt-4 mt-auto" style={{ borderTop: '1px solid var(--border)' }}>
                   <Link
-                    href={`/booking?select=${encodeURIComponent(room.name)}`}
+                    href={`/booking?select=${encodeURIComponent(room.id)}`}
                     className="btn-primary text-xs px-4 py-2.5"
                   >
                     Book Now

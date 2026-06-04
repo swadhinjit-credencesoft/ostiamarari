@@ -325,7 +325,7 @@ export default function PackagesSection() {
                   )}
 
                   <Link
-                    href={`/booking?select=${encodeURIComponent(pkg.name + ' – ' + pkg.subtitle)}`}
+                    href={`/booking?select=${encodeURIComponent(pkg.id)}`}
                     className="flex items-center justify-center gap-2 w-full py-3.5 font-semibold text-xs tracking-[2px] uppercase transition-all duration-300"
                     style={{
                       background: '#c9a84c',

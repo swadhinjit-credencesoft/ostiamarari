@@ -298,7 +298,7 @@ export default function RoomsSuitesPage() {
 
                 <div className="flex items-center gap-4 flex-wrap">
                   <Link
-                    href={`/booking?select=${encodeURIComponent(room.name)}`}
+                    href={`/booking?select=${encodeURIComponent(room.id)}`}
                     className="btn-primary"
                   >
                     Book This Room <ArrowRight size={14} />
