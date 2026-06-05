@@ -75,7 +75,7 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
                   className="text-dark font-semibold mb-3 leading-snug text-lg group-hover:text-[#c9a84c] transition-colors duration-300"
                   style={{ fontFamily: 'var(--font-playfair)' }}
                 >
-                  <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
+                  <Link href={`/kerala-alleppey-beach-blogs/${blog.id}`}>{blog.title}</Link>
                 </h3>
 
                 <p
@@ -89,7 +89,7 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
 
             <div className="px-6 pb-6">
               <Link
-                href={`/blogs/${blog.id}`}
+                href={`/kerala-alleppey-beach-blogs/${blog.id}`}
                 className="flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase pt-4 w-full text-left transition-colors duration-300 hover:text-[#b8942e]"
                 style={{
                   borderTop: '1px solid var(--border)',

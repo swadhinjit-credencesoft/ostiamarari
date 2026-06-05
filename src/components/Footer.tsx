@@ -14,7 +14,7 @@ import {
 
 export default function Footer() {
   const pathname = usePathname()
-  const hideCtaBanner = pathname?.startsWith('/booking')
+  const hideCtaBanner = pathname?.startsWith('/Hotel-Resort-Booking') || pathname?.startsWith('/booking')
 
   const handleNavClick = (href: string, e: React.MouseEvent) => {
     if (href.startsWith('/#')) {
@@ -31,17 +31,17 @@ export default function Footer() {
 
   const quickLinks = [
     { label: 'Home',           href: '/' },
-    { label: 'About Us',       href: '/about' },
-    { label: 'Rooms & Suites', href: '/rooms-suites' },
-    { label: 'Blogs',          href: '/blogs' },
-    { label: 'Gallery',        href: '/gallery' },
+    { label: 'About Us',       href: '/about-us' },
+    { label: 'Rooms & Suites', href: '/Book-Rooms-Suites' },
+    { label: 'Blogs',          href: '/kerala-alleppey-beach-blogs' },
+    { label: 'Gallery',        href: '/Beach-Resort-Gallery-images' },
     { label: 'Contact',        href: '/contact' },
   ]
 
   const legalLinks = [
     { label: 'Privacy Policy',      href: '/privacy-policy' },
     { label: 'Cancellation Policy', href: '/cancellation-policy' },
-    { label: 'Terms & Conditions',  href: '/terms' },
+    { label: 'Terms & Conditions',  href: '/terms-conditions' },
   ]
 
   const colHeadingStyle: React.CSSProperties = {
@@ -94,7 +94,7 @@ export default function Footer() {
           >
             Book Your Stay at Ostia Marari
           </h2>
-          <Link href="/booking" className="btn-primary">
+          <Link href="/Hotel-Resort-Booking" className="btn-primary">
             Book Now
           </Link>
         </div>

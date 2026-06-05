@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const HERO_IMAGES = [
   '/images/ostia11.avif',
@@ -91,12 +92,12 @@ export default function HeroSection() {
           Luxury boutique beach stay in Alleppey with sea-view rooms, direct beach access, and warm Kerala hospitality
         </p>
 
-        <a
-          href="/booking"
+        <Link
+          href="/Hotel-Resort-Booking"
           className="btn-primary text-sm"
         >
           Book Now
-        </a>
+        </Link>
       </div>
     </section>
   )

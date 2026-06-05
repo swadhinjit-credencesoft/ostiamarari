@@ -1,0 +1,109 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Check, Users, Maximize2, ArrowRight } from 'lucide-react'
+import { seoConfig } from '@/lib/seo'
+
+export const metadata: Metadata = {
+  title: 'Premium Hotel Rooms – Top View Floor Suites | Ostia Marari Alleppey',
+  description: 'Book Premium Top View Floor Suites at Ostia Marari Alleppey. 4 Bedrooms, ocean views, private balconies, complimentary breakfast. Ideal for up to 12 guests.',
+  alternates: { canonical: '/premium-Hotel-Rooms-Topview-Floors-Suites' },
+  openGraph: {
+    title: 'Premium Hotel Rooms – Top View Floor Suites | Ostia Marari',
+    description: 'Book Premium Top Suites at Ostia Marari Alleppey – 4 Bedrooms, ocean views, private balconies for up to 12 guests.',
+    url: `${seoConfig.siteUrl}/premium-Hotel-Rooms-Topview-Floors-Suites`,
+    siteName: seoConfig.shortName,
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: `${seoConfig.siteUrl}/room1.avif`, width: 1200, height: 630, alt: 'Premium Top View Floor Suites – Ostia Marari' }],
+  },
+}
+
+const amenities = [
+  'AC (All Rooms)', 'Complimentary Wi-Fi', 'Queen & Twin Beds', 'Attached Balconies',
+  'Ensuite Bathrooms', 'Electric Kettle', 'Wardrobe', 'Extra Mattress', 'Geyser', 'Complimentary Breakfast',
+]
+
+export default function PremiumTopSuitesPage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative flex min-h-[420px] md:min-h-[520px] items-end justify-center overflow-hidden px-4 pb-12 pt-36">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/room1.avif')" }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.82) 100%)' }} />
+        <div className="relative z-10 max-w-2xl text-center w-full">
+          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4 text-white" style={{ background: '#c9a84c', fontFamily: 'var(--font-raleway)' }}>Most Popular</span>
+          <span className="gold-line" />
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            Premium Top View Floor Suites
+          </h1>
+          <p className="text-white/75 text-sm md:text-base leading-relaxed">
+            4 Bedrooms · Ocean View · Private Balcony · Up to 12 Guests
+          </p>
+        </div>
+      </section>
+
+      {/* Details */}
+      <section className="py-16 md:py-20" style={{ background: '#ffffff' }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+            {/* Images */}
+            <div className="space-y-4">
+              <div className="relative overflow-hidden rounded-sm" style={{ height: 320 }}>
+                <Image src="/room1.avif" alt="Premium Top View Floor Suites – Ostia Marari" fill className="object-cover" unoptimized />
+              </div>
+            </div>
+
+            {/* Info */}
+            <div>
+              <div className="flex items-center gap-5 mb-4">
+                <span className="flex items-center gap-1.5 text-sm" style={{ color: 'var(--text-light)' }}>
+                  <Users size={15} style={{ color: '#c9a84c' }} /> Up to 12 guests
+                </span>
+                <span className="flex items-center gap-1.5 text-sm" style={{ color: 'var(--text-light)' }}>
+                  <Maximize2 size={15} style={{ color: '#c9a84c' }} /> 1000 sq ft
+                </span>
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-semibold mb-3" style={{ fontFamily: 'var(--font-playfair)', color: 'var(--text)' }}>
+                Premium Top Suites – 4 Bedrooms
+              </h2>
+              <div style={{ width: 48, height: 2, background: '#c9a84c', marginBottom: 16 }} />
+
+              <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
+                The Premium Top Suites occupy the entire first floor with 4 beautifully appointed bedrooms. Bedroom 3 &amp; 6 feature Twin Beds with small attached balconies. Bedroom 4 &amp; 5 feature Queen Size Beds with full attached balconies and stunning ocean views. All bedrooms include AC, Wi-Fi, electric kettle, wardrobe, extra mattress, and an ensuite bathroom with geyser, towels, and toiletries.
+              </p>
+
+              <div className="grid grid-cols-2 gap-y-2.5 gap-x-4 mb-8">
+                {amenities.map((a) => (
+                  <div key={a} className="flex items-center gap-2">
+                    <Check size={12} style={{ color: '#c9a84c', flexShrink: 0 }} />
+                    <span className="text-xs" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>{a}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/Hotel-Resort-Booking?select=premium-ocean-suite" className="btn-primary flex items-center gap-2">
+                  Book Now <ArrowRight size={15} />
+                </Link>
+                <Link href="/Book-Rooms-Suites" className="btn-outline">
+                  View All Rooms
+                </Link>
+              </div>
+
+              <div className="mt-6 p-4 rounded-sm" style={{ background: 'rgba(201,168,76,0.06)', border: '1px solid rgba(201,168,76,0.2)' }}>
+                <p className="text-xs" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
+                  📞 For rates and availability, call us at{' '}
+                  <a href="tel:+919846044955" style={{ color: '#c9a84c', fontWeight: 600 }}>+91 98460 44955</a>
+                  {' '}or email{' '}
+                  <a href="mailto:info@ostiamarari.com" style={{ color: '#c9a84c', fontWeight: 600 }}>info@ostiamarari.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

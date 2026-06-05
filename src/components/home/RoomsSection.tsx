@@ -159,13 +159,13 @@ export default function RoomsSection() {
                   style={{ borderTop: '1px solid var(--border)' }}
                 >
                   <Link
-                    href={`/booking?select=${encodeURIComponent(room.id)}`}
+                    href={`/Hotel-Resort-Booking?select=${encodeURIComponent(room.id)}`}
                     className="btn-primary text-xs px-5 py-2.5"
                   >
                     Book Now
                   </Link>
                   <Link
-                    href={`/rooms-suites#${room.id}`}
+                    href={`/Book-Rooms-Suites#${room.id}`}
                     className="flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase"
                     style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
                   >
@@ -179,7 +179,7 @@ export default function RoomsSection() {
 
         {/* View All */}
         <div className="text-center mt-12">
-          <Link href="/rooms-suites" className="btn-outline">
+          <Link href="/Book-Rooms-Suites" className="btn-outline">
             View All Rooms
           </Link>
         </div>

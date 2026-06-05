@@ -14,13 +14,13 @@ import {
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Rooms & Suites', href: '/rooms-suites' },
+  { label: 'About Us', href: '/about-us' },
+  { label: 'Rooms & Suites', href: '/Book-Rooms-Suites' },
   { label: 'Packages', href: '/#packages' },
   { label: 'Price', href: '/#rooms' },
-  { label: 'Blogs', href: '/blogs' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Booking', href: '/booking' },
+  { label: 'Blogs', href: '/kerala-alleppey-beach-blogs' },
+  { label: 'Gallery', href: '/Beach-Resort-Gallery-images' },
+  { label: 'Booking', href: '/Hotel-Resort-Booking' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -134,7 +134,7 @@ export default function Navbar() {
             <FacebookIcon size={16} />
           </a>
           <Link
-            href="/booking"
+            href="/Hotel-Resort-Booking"
             className="ml-1 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] uppercase text-white transition-all duration-300 whitespace-nowrap"
             style={{ background: '#c9a84c', border: '2px solid #c9a84c', fontFamily: 'var(--font-raleway)' }}
             onMouseEnter={(e) => { e.currentTarget.style.background = '#b8952e'; e.currentTarget.style.borderColor = '#b8952e' }}
@@ -201,7 +201,7 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="/booking"
+                href="/Hotel-Resort-Booking"
                 onClick={() => setOpen(false)}
                 className="px-6 py-2.5 text-xs font-semibold tracking-[0.18em] uppercase transition-all duration-300 inline-flex items-center"
                 style={{ background: '#1a1a1a', color: '#ffffff', border: '2px solid #1a1a1a', fontFamily: 'var(--font-raleway)' }}

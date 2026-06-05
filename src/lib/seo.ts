@@ -88,35 +88,35 @@ export const pageSeo = {
     image: '/images/ostia11.avif',
   },
   about: {
-    path: '/about',
+    path: '/about-us',
     title: 'About Ostia Marari | Boutique Beach Stay Alleppey Kerala',
     description:
       'Learn about Ostia Marari, a boutique beachfront stay in Alleppey near Thumpoly Beach. Discover our story, rooms, amenities and the coastal experience.',
     image: '/images/ostia2.avif',
   },
   roomsSuites: {
-    path: '/rooms-suites',
+    path: '/Book-Rooms-Suites',
     title: 'Sea View Rooms Alleppey | Luxury Suites at Ostia Marari',
     description:
       'Explore premium sea-view rooms and luxury suites at Ostia Marari, a boutique beachfront stay in Alleppey for couples, families and groups.',
     image: '/room1.avif',
   },
   booking: {
-    path: '/booking',
+    path: '/Hotel-Resort-Booking',
     title: 'Book Ostia Marari Direct | Beachfront Stay Alleppey',
     description:
       'Book Ostia Marari direct for luxury beachfront accommodation in Alleppey with sea-view suites, breakfast, WiFi and WhatsApp booking support.',
     image: '/images/ostia5.avif',
   },
   gallery: {
-    path: '/gallery',
+    path: '/Beach-Resort-Gallery-images',
     title: 'Ostia Marari Gallery | Beach Villa and Sea View Rooms',
     description:
       'View photos of Ostia Marari, including sea-view rooms, boutique interiors, beachfront access, private lawn and coastal spaces in Alleppey.',
     image: '/images/ostia6.avif',
   },
   blogs: {
-    path: '/blogs',
+    path: '/kerala-alleppey-beach-blogs',
     title: 'Alleppey Beach Travel Blog | Ostia Marari Guides',
     description:
       'Read Alleppey beach guides, Kerala backwater travel tips, Marari Beach inspiration and direct booking advice from Ostia Marari.',
@@ -137,7 +137,7 @@ export const pageSeo = {
     image: '/images/ostia4.avif',
   },
   terms: {
-    path: '/terms',
+    path: '/terms-conditions',
     title: 'Terms and Conditions | Ostia Marari',
     description:
       'Read the booking terms and guest conditions for Ostia Marari, a boutique beach stay in Alleppey, Kerala.',
@@ -662,7 +662,7 @@ export function buildSchemaGraph() {
         ],
         makesOffer: {
           '@type': 'Offer',
-          url: `${siteUrl}/booking`,
+          url: `${siteUrl}/Hotel-Resort-Booking`,
           availability: 'https://schema.org/InStock',
           itemOffered: {
             '@type': 'Service',
@@ -698,7 +698,7 @@ export function buildSchemaGraph() {
         publisher: { '@id': `${siteUrl}/#organization` },
         potentialAction: {
           '@type': 'SearchAction',
-          target: `${siteUrl}/blogs?search={search_term_string}`,
+          target: `${siteUrl}/kerala-alleppey-beach-blogs?search={search_term_string}`,
           'query-input': 'required name=search_term_string',
         },
       },

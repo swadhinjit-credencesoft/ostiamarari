@@ -349,7 +349,7 @@ export default function PackagesSection() {
 
                   {/* CTA Button — always at bottom, always visible */}
                   <Link
-                    href={`/booking?select=${encodeURIComponent(pkg.id)}`}
+                    href={`/Hotel-Resort-Booking?select=${encodeURIComponent(pkg.id)}`}
                     className="flex items-center justify-center gap-2 w-full py-4 font-semibold text-xs tracking-[2px] uppercase transition-all duration-300"
                     style={{
                       background: '#c9a84c',
