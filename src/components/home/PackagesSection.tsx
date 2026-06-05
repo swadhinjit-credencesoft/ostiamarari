@@ -13,7 +13,6 @@ const packages = [
     priceNote: '/ 2 Persons',
     extraPerson: '+ ₹2,000 per extra person',
     tag: 'Popular',
-    tagColor: '#c9a84c',
     highlights: [
       '1 Night Boutique Beach Stay',
       '1 Night Deluxe Houseboat Stay',
@@ -31,7 +30,7 @@ const packages = [
         day: 'Day 1',
         title: 'Ostia Marari | Boutique Beach Stay',
         icon: '🏖️',
-        desc: 'Pickup from Alleppey Railway Station or Bus Station and transfer to Ostia Marari – A Boutique Beach Stay. Check into your private beachside room located just 50 meters from Marari Beach. Relax in the calm and peaceful atmosphere while enjoying the beauty of Kerala\'s coastline. In the evening, enjoy the breathtaking sunset by the beach. Overnight stay at Ostia Marari, Alleppey.',
+        desc: "Pickup from Alleppey Railway Station or Bus Station and transfer to Ostia Marari – A Boutique Beach Stay. Check into your private beachside room located just 50 meters from Marari Beach. Relax in the calm and peaceful atmosphere while enjoying the beauty of Kerala's coastline. In the evening, enjoy the breathtaking sunset by the beach. Overnight stay at Ostia Marari, Alleppey.",
       },
       {
         day: 'Day 2',
@@ -59,7 +58,6 @@ const packages = [
     priceNote: '/ 2 Persons',
     extraPerson: '+ ₹2,000 per extra person',
     tag: 'Best Value',
-    tagColor: '#5da86c',
     highlights: [
       '2 Nights Boutique Beach Stay',
       '1 Night Deluxe Houseboat Stay',
@@ -77,7 +75,7 @@ const packages = [
         day: 'Day 1',
         title: 'Ostia Marari | Boutique Beach Stay',
         icon: '🏖️',
-        desc: 'Pickup from Alleppey Railway Station or Bus Station and transfer to Ostia Marari – A Boutique Beach Stay. Check into your private beachside room located just 50 meters from Marari Beach. Relax, unwind and enjoy the serene coastal ambiance. In the evening, enjoy the breathtaking sunset by the beach. Overnight stay at Ostia Marari, Alleppey.',
+        desc: "Pickup from Alleppey Railway Station or Bus Station and transfer to Ostia Marari – A Boutique Beach Stay. Check into your private beachside room located just 50 meters from Marari Beach. Relax, unwind and enjoy the serene coastal ambiance. In the evening, enjoy the breathtaking sunset by the beach. Overnight stay at Ostia Marari, Alleppey.",
       },
       {
         day: 'Day 2',
@@ -113,23 +111,24 @@ export default function PackagesSection() {
   return (
     <section
       id="packages"
-      className="py-24"
-      style={{ background: '#f8f8f8' }}
+      className="py-16 md:py-24"
+      style={{ background: '#ffffff' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      {/* Full-width container — no max-width cap, consistent side padding only */}
+      <div className="w-full px-4 sm:px-6 lg:px-12">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <span className="section-label">Special Offers</span>
           <span className="gold-line" />
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl text-dark font-semibold"
+            className="text-3xl sm:text-4xl md:text-5xl text-dark font-semibold"
             style={{ fontFamily: 'var(--font-playfair)' }}
           >
             Our Packages
           </h2>
           <p
-            className="mt-4 text-sm md:text-base max-w-2xl mx-auto leading-relaxed"
+            className="mt-4 text-sm md:text-base max-w-2xl mx-auto leading-relaxed px-2"
             style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
           >
             3 Days Kerala Backwater &amp; Beach Special Package 🌴 — Perfect for Couples &amp; Families.
@@ -137,26 +136,29 @@ export default function PackagesSection() {
           </p>
         </div>
 
-        {/* Package Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
+        {/* Package Cards — full width, equal 2-col split, no max-width constraint */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start"
+        >
           {packages.map((pkg) => {
             const Icon = pkg.icon
             const isOpen = expanded === pkg.id
+
             return (
               <div
                 key={pkg.id}
-                className="rounded-sm overflow-hidden"
+                className="rounded-sm overflow-hidden flex flex-col w-full"
                 style={{
                   border: '1px solid var(--border)',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
                   background: '#ffffff',
                   transition: 'box-shadow 0.3s ease',
                 }}
               >
-                {/* Card Header */}
+                {/* Card Header — gradient banner */}
                 <div
-                  className="relative p-8 text-white"
-                  style={{ background: pkg.gradient, minHeight: 200 }}
+                  className="relative p-7 sm:p-8 text-white"
+                  style={{ background: pkg.gradient }}
                 >
                   {/* Badge */}
                   <div
@@ -172,9 +174,9 @@ export default function PackagesSection() {
                     {pkg.tag}
                   </div>
 
-                  {/* Icon */}
+                  {/* Icon circle */}
                   <div
-                    className="w-14 h-14 mb-4 flex items-center justify-center"
+                    className="w-14 h-14 mb-5 flex items-center justify-center"
                     style={{
                       background: 'rgba(255,255,255,0.15)',
                       border: '1px solid rgba(255,255,255,0.3)',
@@ -186,56 +188,59 @@ export default function PackagesSection() {
 
                   <p
                     className="text-xs uppercase tracking-[3px] mb-1"
-                    style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-raleway)' }}
+                    style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-raleway)' }}
                   >
                     {pkg.subtitle}
                   </p>
                   <h3
-                    className="text-2xl font-semibold"
+                    className="text-2xl font-semibold mb-5"
                     style={{ fontFamily: 'var(--font-playfair)', color: '#fff' }}
                   >
                     {pkg.name}
                   </h3>
 
                   {/* Price */}
-                  <div className="mt-4">
-                    <div className="flex items-baseline gap-2">
-                      <span
-                        className="text-3xl font-bold"
-                        style={{ fontFamily: 'var(--font-playfair)', color: '#c9a84c' }}
-                      >
-                        {pkg.price}
-                      </span>
-                      <span
-                        className="text-sm"
-                        style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-raleway)' }}
-                      >
-                        {pkg.priceNote}
-                      </span>
-                    </div>
-                    <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-raleway)' }}>
-                      {pkg.extraPerson}
-                    </p>
+                  <div className="flex items-baseline gap-2 flex-wrap">
+                    <span
+                      className="text-3xl font-bold"
+                      style={{ fontFamily: 'var(--font-playfair)', color: '#c9a84c' }}
+                    >
+                      {pkg.price}
+                    </span>
+                    <span
+                      className="text-sm"
+                      style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-raleway)' }}
+                    >
+                      {pkg.priceNote}
+                    </span>
                   </div>
+                  <p
+                    className="text-xs mt-1.5"
+                    style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--font-raleway)' }}
+                  >
+                    {pkg.extraPerson}
+                  </p>
                 </div>
 
                 {/* Card Body */}
-                <div className="p-7">
+                <div className="p-6 sm:p-7 flex flex-col">
+
                   <p
                     className="text-xs uppercase tracking-widest mb-4"
                     style={{ color: 'var(--gold)', fontFamily: 'var(--font-raleway)' }}
                   >
                     ✅ Package Includes
                   </p>
+
                   <ul className="space-y-2.5 mb-6">
                     {pkg.highlights.map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
                         <Check
                           size={13}
-                          style={{ color: '#c9a84c', flexShrink: 0, marginTop: 2 }}
+                          style={{ color: '#c9a84c', flexShrink: 0, marginTop: 3 }}
                         />
                         <span
-                          className="text-sm"
+                          className="text-sm leading-snug"
                           style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
                         >
                           {item}
@@ -244,10 +249,10 @@ export default function PackagesSection() {
                     ))}
                   </ul>
 
-                  {/* Toggle Itinerary */}
+                  {/* Toggle Itinerary Button */}
                   <button
                     onClick={() => toggle(pkg.id)}
-                    className="w-full flex items-center justify-between py-3 px-4 mb-5 text-xs font-semibold tracking-wider uppercase transition-all duration-200"
+                    className="w-full flex items-center justify-between py-3 px-4 mb-0 text-xs font-semibold tracking-wider uppercase transition-all duration-200"
                     style={{
                       background: isOpen ? 'rgba(201,168,76,0.08)' : '#f5f5f5',
                       border: '1px solid',
@@ -258,75 +263,94 @@ export default function PackagesSection() {
                     }}
                   >
                     <span className="flex items-center gap-2">
-                      <CalendarDays size={14} style={{ color: isOpen ? '#c9a84c' : 'var(--text-light)' }} />
+                      <CalendarDays
+                        size={14}
+                        style={{ color: isOpen ? '#c9a84c' : 'var(--text-light)' }}
+                      />
                       View Day-by-Day Itinerary
                     </span>
                     {isOpen ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
                   </button>
 
-                  {/* Itinerary Accordion */}
-                  {isOpen && (
-                    <div className="mb-6 space-y-4">
-                      {pkg.itinerary.map((item, i) => (
+                  {/* Itinerary Accordion — CSS grid trick, smooth open/close, never unmounts */}
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateRows: isOpen ? '1fr' : '0fr',
+                      transition: 'grid-template-rows 0.35s ease',
+                    }}
+                  >
+                    <div style={{ overflow: 'hidden' }}>
+                      <div className="pt-5 space-y-4">
+                        {pkg.itinerary.map((item, i) => (
+                          <div
+                            key={i}
+                            className="p-4"
+                            style={{
+                              background: '#faf9f7',
+                              border: '1px solid var(--border)',
+                              borderLeft: '3px solid #c9a84c',
+                            }}
+                          >
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-lg">{item.icon}</span>
+                              <span
+                                className="text-xs font-bold uppercase tracking-widest"
+                                style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
+                              >
+                                {item.day}
+                              </span>
+                            </div>
+                            <h4
+                              className="text-dark font-semibold text-sm mb-1.5"
+                              style={{ fontFamily: 'var(--font-playfair)' }}
+                            >
+                              {item.title}
+                            </h4>
+                            <p
+                              className="text-xs leading-relaxed"
+                              style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+                            >
+                              {item.desc}
+                            </p>
+                          </div>
+                        ))}
+
+                        {/* Food Plan */}
                         <div
-                          key={i}
-                          className="p-4 rounded-sm"
+                          className="p-4"
                           style={{
-                            background: '#faf9f7',
-                            border: '1px solid var(--border)',
-                            borderLeft: '3px solid #c9a84c',
+                            background: 'rgba(201,168,76,0.05)',
+                            border: '1px solid rgba(201,168,76,0.2)',
                           }}
                         >
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-lg">{item.icon}</span>
-                            <span
-                              className="text-xs font-bold uppercase tracking-widest"
-                              style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
-                            >
-                              {item.day}
-                            </span>
-                          </div>
-                          <h4
-                            className="text-dark font-semibold text-sm mb-1"
-                            style={{ fontFamily: 'var(--font-playfair)' }}
-                          >
-                            {item.title}
-                          </h4>
                           <p
-                            className="text-xs leading-relaxed"
-                            style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+                            className="text-xs font-bold uppercase tracking-widest mb-2"
+                            style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
                           >
-                            {item.desc}
+                            🍴 Food Plan
                           </p>
+                          {pkg.foodPlan.map((f, idx) => (
+                            <p
+                              key={idx}
+                              className="text-xs mb-1"
+                              style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+                            >
+                              <strong style={{ color: 'var(--text)' }}>{f.place}:</strong> {f.detail}
+                            </p>
+                          ))}
                         </div>
-                      ))}
-
-                      {/* Food Plan */}
-                      <div
-                        className="p-4 rounded-sm"
-                        style={{
-                          background: 'rgba(201,168,76,0.05)',
-                          border: '1px solid rgba(201,168,76,0.2)',
-                        }}
-                      >
-                        <p
-                          className="text-xs font-bold uppercase tracking-widest mb-2"
-                          style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
-                        >
-                          🍴 Food Plan
-                        </p>
-                        {pkg.foodPlan.map((f, i) => (
-                          <p key={i} className="text-xs mb-1" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
-                            <strong style={{ color: 'var(--text)' }}>{f.place}:</strong> {f.detail}
-                          </p>
-                        ))}
                       </div>
                     </div>
-                  )}
+                  </div>
 
+                  {/* Spacer between accordion and CTA */}
+                  <div className="mt-6" />
+
+                  {/* CTA Button — always at bottom, always visible */}
                   <Link
                     href={`/booking?select=${encodeURIComponent(pkg.id)}`}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 font-semibold text-xs tracking-[2px] uppercase transition-all duration-300"
+                    className="flex items-center justify-center gap-2 w-full py-4 font-semibold text-xs tracking-[2px] uppercase transition-all duration-300"
                     style={{
                       background: '#c9a84c',
                       color: '#ffffff',
@@ -357,7 +381,9 @@ export default function PackagesSection() {
             className="text-sm"
             style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
           >
-            ✨ <strong style={{ color: 'var(--text)' }}>Ideal for Couples &amp; Families</strong> — Pickup &amp; Drop from Alleppey Railway / Bus Station included.
+            ✨{' '}
+            <strong style={{ color: 'var(--text)' }}>Ideal for Couples &amp; Families</strong>{' '}
+            — Pickup &amp; Drop from Alleppey Railway / Bus Station included.
           </p>
         </div>
       </div>

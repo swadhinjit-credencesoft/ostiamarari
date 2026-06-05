@@ -13,11 +13,12 @@ export default function BeforeYouArriveSection() {
   return (
     <section
       id="before-you-arrive"
-      className="py-24"
+      className="py-16 md:py-20"
       style={{ background: '#f8f6f1' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="text-center mb-14">
+      {/* Header */}
+      <div className="w-full px-4 sm:px-6 lg:px-12">
+        <div className="text-center mb-12">
           <span className="section-label">Guest Information</span>
           <span className="gold-line" />
           <h2
@@ -33,7 +34,10 @@ export default function BeforeYouArriveSection() {
             Practical details to help you plan your journey and settle in smoothly.
           </p>
         </div>
+      </div>
 
+      {/* Grid — full viewport width, no side padding */}
+      <div className="w-full px-0">
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           style={{ borderTop: '1px solid var(--border)', borderLeft: '1px solid var(--border)' }}
@@ -69,7 +73,10 @@ export default function BeforeYouArriveSection() {
             </div>
           ))}
         </div>
+      </div>
 
+      {/* Footer note */}
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="mt-8 flex items-center justify-center gap-2 text-center">
           <Clock size={15} style={{ color: '#c9a84c', flexShrink: 0 }} />
           <p

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 
-type Cat = 'All' | 'Rooms' | 'Beach' | 'Exterior'| 'interior'
+type Cat = 'All' | 'Rooms' | 'Beach' | 'Exterior' | 'interior'
 
 const gallery: { src: string; alt: string; cat: Cat }[] = [
   { src: '/images/ostia11.avif', alt: 'Ostia Marari beach view', cat: 'Exterior' },
@@ -26,17 +26,14 @@ const gallery: { src: string; alt: string; cat: Cat }[] = [
   { src: '/images/interior2.avif', alt: 'Sea view terrace', cat: 'interior' },
   { src: '/images/interior3.avif', alt: 'Sea view terrace', cat: 'interior' },
   { src: '/images/interior4.avif', alt: 'Sea view terrace', cat: 'interior' },
-  
-
   { src: '/room1.avif', alt: 'Premium Top Suite', cat: 'Rooms' },
   { src: '/room2.avif', alt: 'Premium Top Suite', cat: 'Rooms' },
   { src: '/room3.avif', alt: 'Premium Top Suite', cat: 'Rooms' },
   { src: '/room4.avif', alt: 'Premium Top Suite', cat: 'Rooms' },
   { src: '/room5.avif', alt: 'Premium Top Suite', cat: 'Rooms' },
- 
 ]
 
-const CATS: Cat[] = ['All', 'Rooms', 'Beach', 'Exterior','interior']
+const CATS: Cat[] = ['All', 'Rooms', 'Beach', 'Exterior', 'interior']
 
 export default function GalleryPage() {
   const [active, setActive] = useState<Cat>('All')
@@ -65,7 +62,10 @@ export default function GalleryPage() {
         <div className="relative z-10 max-w-2xl text-center">
           <span className="section-label">Gallery</span>
           <span className="gold-line" />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold"
+            style={{ fontFamily: 'var(--font-playfair)' }}
+          >
             Gallery
           </h1>
           <p className="text-white/70 mt-3 text-sm md:text-base leading-relaxed">
@@ -75,8 +75,9 @@ export default function GalleryPage() {
       </section>
 
       <section className="py-16" style={{ background: '#f8f8f8' }}>
+
+        {/* Filter tabs — keeps its own padding */}
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          {/* Filter tabs */}
           <div className="flex items-center justify-center gap-3 flex-wrap mb-10">
             {CATS.map(cat => (
               <button
@@ -95,8 +96,10 @@ export default function GalleryPage() {
               </button>
             ))}
           </div>
+        </div>
 
-          {/* Grid */}
+        {/* Grid — full viewport width, no side padding */}
+        <div className="w-full px-0">
           <div className="gallery-grid">
             {filtered.map((item, i) => (
               <div
@@ -130,6 +133,7 @@ export default function GalleryPage() {
             ))}
           </div>
         </div>
+
       </section>
 
       {/* Lightbox */}

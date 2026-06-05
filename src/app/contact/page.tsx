@@ -11,7 +11,7 @@ import {
 export default function ContactPage() {
   return (
     <>
-      {/* ── HERO ── */}
+      {/* ── HERO — full bleed, unchanged ── */}
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -35,9 +35,9 @@ export default function ContactPage() {
 
       {/* ── CONTENT ── */}
       <section className="py-16 md:py-20" style={{ background: '#ffffff' }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
-          {/* Section heading */}
+        {/* Section heading — keeps its own padding */}
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <span className="section-label">Reach Us</span>
             <span className="gold-line" />
@@ -54,12 +54,14 @@ export default function ContactPage() {
               Plan your stay at Ostia Marari. We&apos;re here to help with bookings, queries, and special requests.
             </p>
           </div>
+        </div>
 
-          {/* Two-column: info left | map right */}
+        {/* Two-column grid — full viewport width */}
+        <div className="w-full px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-            {/* LEFT — Contact details */}
-            <div className="flex flex-col gap-5">
+            {/* LEFT — Contact details, add readable padding */}
+            <div className="flex flex-col gap-5 px-6 lg:pl-10">
 
               {/* Address */}
               <div
@@ -215,7 +217,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* RIGHT — Map */}
+            {/* RIGHT — Map, flush to right edge */}
             <div
               className="w-full overflow-hidden"
               style={{
@@ -236,6 +238,7 @@ export default function ContactPage() {
 
           </div>
         </div>
+
       </section>
     </>
   )

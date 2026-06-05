@@ -218,13 +218,13 @@ export default function TestimonialsSection() {
   return (
     <section
       id="reviews"
-      className="py-24 overflow-hidden"
+      className="py-16 md:py-20 overflow-hidden"
       style={{ background: '#ffffff' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-12">
           <span className="section-label">
             Guest Reviews
           </span>

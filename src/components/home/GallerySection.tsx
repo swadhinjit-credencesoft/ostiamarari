@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 
-type Cat = 'All' | 'Rooms' | 'Exterior'| "interior"
+type Cat = 'All' | 'Rooms' | 'Exterior' | 'interior'
 
 const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   {
@@ -61,19 +61,19 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
     cat: 'interior',
     aspect: 'aspect-[4/3]',
   },
-   {
+  {
     src: '/room2.avif',
     alt: 'Deluxe Group Room',
     cat: 'Rooms',
     aspect: 'aspect-[4/3]',
   },
-   {
+  {
     src: '/room3.avif',
     alt: 'Deluxe Group Room',
     cat: 'Rooms',
     aspect: 'aspect-[4/3]',
   },
-   {
+  {
     src: '/room1.avif',
     alt: 'Deluxe Group Room',
     cat: 'Rooms',
@@ -81,7 +81,7 @@ const gallery: { src: string; alt: string; cat: Cat; aspect: string }[] = [
   },
 ]
 
-const CATS: Cat[] = ['All', 'Rooms', 'Exterior','interior']
+const CATS: Cat[] = ['All', 'Rooms', 'Exterior', 'interior']
 
 export default function GallerySection() {
   const [active, setActive] = useState<Cat>('All')
@@ -93,15 +93,18 @@ export default function GallerySection() {
     } else {
       document.body.style.overflow = ''
     }
-    return () => { document.body.style.overflow = '' }
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [lightbox])
 
   const filtered = active === 'All' ? gallery : gallery.filter(g => g.cat === active)
 
   return (
-    <section id="gallery" className="py-24" style={{ background: '#f8f8f8' }}>
+    <section id="gallery" className="py-16 md:py-20" style={{ background: '#f8f8f8' }}>
+
+      {/* Header — keeps its own padding */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Header */}
         <div className="text-center mb-12">
           <span className="section-label">Visual Journey</span>
           <span className="gold-line" />
@@ -133,8 +136,10 @@ export default function GallerySection() {
             </button>
           ))}
         </div>
+      </div>
 
-        {/* Grid */}
+      {/* Grid — full viewport width, no side padding */}
+      <div className="w-full px-0">
         <div className="gallery-grid">
           {filtered.map((item, i) => (
             <div

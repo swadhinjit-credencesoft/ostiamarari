@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function AboutPage() {
   return (
     <>
-      {/* ── HERO ── */}
+      {/* ── HERO — full bleed, unchanged ── */}
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -28,14 +28,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── ABOUT DESCRIPTION ── */}
-     
-
       {/* ── FOUNDER & OWNER ── */}
       <section className="py-16 md:py-20" style={{ background: '#ffffff' }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
-          {/* Section heading */}
+        {/* Section heading — keeps its own padding */}
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <span className="section-label">Owner &amp; Founder</span>
             <span className="gold-line" />
@@ -46,10 +43,13 @@ export default function AboutPage() {
               Meet the Woman Behind the Charming Retreat
             </h2>
           </div>
+        </div>
 
+        {/* Two-column grid — full viewport width */}
+        <div className="w-full px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-            {/* Owner Image */}
+            {/* Owner Image — flush left edge */}
             <div className="w-full">
               <div
                 className="relative overflow-hidden"
@@ -71,11 +71,7 @@ export default function AboutPage() {
                 >
                   <p
                     className="text-xs tracking-widest uppercase mb-1"
-                    style={{
-                      color: '#c9a84c',
-                      fontFamily: 'var(--font-raleway)',
-                      fontWeight: 600,
-                    }}
+                    style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)', fontWeight: 600 }}
                   >
                     Founder &amp; Owner
                   </p>
@@ -89,8 +85,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Owner Bio */}
-            <div className="flex flex-col justify-center">
+            {/* Owner Bio — add readable padding on the right column */}
+            <div className="flex flex-col justify-center px-6 lg:pr-10">
               <span className="gold-line-left" />
               <h3
                 className="text-2xl md:text-3xl font-semibold mb-6 leading-snug"
@@ -154,13 +150,8 @@ export default function AboutPage() {
 
           </div>
         </div>
+
       </section>
-
-      {/* ── EXPLORE ACCORDION ── */}
-     
-
-      {/* ── VALUES ── */}
-      
     </>
   )
 }

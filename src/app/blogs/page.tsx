@@ -17,7 +17,10 @@ export default function BlogsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/ostia7.avif')" }}
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.78) 100%)' }} />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.78) 100%)' }}
+        />
         <div className="relative z-10 max-w-2xl text-center">
           <span className="section-label">Blogs</span>
           <span className="gold-line" />
@@ -35,6 +38,8 @@ export default function BlogsPage() {
 
       {/* Blog Grid */}
       <section className="py-20" style={{ background: '#f8f8f8' }}>
+
+        {/* Header — keeps its own padding */}
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-14">
             <span className="section-label">Latest Articles</span>
@@ -53,10 +58,15 @@ export default function BlogsPage() {
               to make the most of your Alleppey coastal experience.
             </p>
           </div>
+        </div>
 
+        {/* Blog Grid — full viewport width, no side padding */}
+        <div className="w-full px-0">
           <BlogGrid blogs={blogs} />
+        </div>
 
-          {/* CTA */}
+        {/* CTA — keeps its own padding */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mt-16">
             <p
               className="text-sm mb-6"
@@ -69,8 +79,8 @@ export default function BlogsPage() {
             </Link>
           </div>
         </div>
+
       </section>
     </>
   )
 }
-

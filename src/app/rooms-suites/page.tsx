@@ -128,7 +128,8 @@ export default function RoomsSuitesPage() {
   return (
     <>
       <JsonLd data={[buildWebPageSchema('roomsSuites'), roomsSchema]} />
-      {/* Page hero */}
+
+      {/* Hero — full bleed, unchanged */}
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -136,10 +137,7 @@ export default function RoomsSuitesPage() {
         />
         <div
           className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.78) 100%)',
-          }}
+          style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.78) 100%)' }}
         />
         <div className="relative z-10 max-w-2xl text-center">
           <span className="section-label">Rooms &amp; Suites</span>
@@ -156,7 +154,7 @@ export default function RoomsSuitesPage() {
         </div>
       </section>
 
-      {/* Description Banner */}
+      {/* Description Banner — full width */}
       <section
         className="py-10"
         style={{ background: '#faf9f7', borderBottom: '1px solid var(--border)' }}
@@ -167,8 +165,7 @@ export default function RoomsSuitesPage() {
             style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
           >
             Discover elegant{' '}
-            <strong style={{ color: 'var(--text)' }}>6 Bedrooms</strong> crafted for
-            comfort —{' '}
+            <strong style={{ color: 'var(--text)' }}>6 Bedrooms</strong> crafted for comfort —{' '}
             <span style={{ color: '#c9a84c' }}>Bottom Floor: 2 Bedrooms</span> &amp;{' '}
             <span style={{ color: '#c9a84c' }}>Top Floor: 4 Bedrooms</span> with an{' '}
             <strong style={{ color: 'var(--text)' }}>Elegant Beach View Terrace</strong>.{' '}
@@ -177,9 +174,9 @@ export default function RoomsSuitesPage() {
         </div>
       </section>
 
-      {/* Rooms */}
+      {/* Rooms — full viewport width */}
       <section className="py-20" style={{ background: '#f8f8f8' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 space-y-20">
+        <div className="w-full px-0 space-y-20">
           {rooms.map((room, idx) => (
             <div
               key={room.id}
@@ -189,7 +186,7 @@ export default function RoomsSuitesPage() {
               } gap-0 overflow-hidden`}
               style={{ border: '1px solid var(--border)', background: '#ffffff' }}
             >
-              {/* Image */}
+              {/* Image — flush to viewport edge */}
               <div
                 className="lg:w-1/2 relative overflow-hidden img-zoom-wrap"
                 style={{ minHeight: 340 }}
@@ -204,19 +201,12 @@ export default function RoomsSuitesPage() {
                 />
                 <div
                   className="absolute inset-0"
-                  style={{
-                    background:
-                      'linear-gradient(to right, transparent 60%, rgba(0,0,0,0.05))',
-                  }}
+                  style={{ background: 'linear-gradient(to right, transparent 60%, rgba(0,0,0,0.05))' }}
                 />
                 {/* Tag */}
                 <div
                   className="absolute top-5 left-5 px-3 py-1.5 text-xs font-semibold tracking-widest uppercase"
-                  style={{
-                    background: room.tagColor,
-                    color: '#fff',
-                    fontFamily: 'var(--font-raleway)',
-                  }}
+                  style={{ background: room.tagColor, color: '#fff', fontFamily: 'var(--font-raleway)' }}
                 >
                   {room.tag}
                 </div>
@@ -226,17 +216,11 @@ export default function RoomsSuitesPage() {
               <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                 {/* Meta */}
                 <div className="flex items-center gap-5 mb-3">
-                  <span
-                    className="flex items-center gap-1.5 text-xs"
-                    style={{ color: 'var(--text-light)' }}
-                  >
+                  <span className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-light)' }}>
                     <Users size={13} style={{ color: '#c9a84c' }} />
                     Up to {room.capacity} guests
                   </span>
-                  <span
-                    className="flex items-center gap-1.5 text-xs"
-                    style={{ color: 'var(--text-light)' }}
-                  >
+                  <span className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-light)' }}>
                     <Maximize2 size={13} style={{ color: '#c9a84c' }} />
                     {room.size}
                   </span>
@@ -250,19 +234,9 @@ export default function RoomsSuitesPage() {
                 </h2>
 
                 {/* Gold line */}
-                <div
-                  style={{
-                    width: 48,
-                    height: 2,
-                    background: '#c9a84c',
-                    marginBottom: 16,
-                  }}
-                />
+                <div style={{ width: 48, height: 2, background: '#c9a84c', marginBottom: 16 }} />
 
-                <p
-                  className="text-sm leading-relaxed mb-4"
-                  style={{ color: 'var(--text-light)' }}
-                >
+                <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-light)' }}>
                   {room.fullDesc}
                 </p>
 
@@ -289,9 +263,7 @@ export default function RoomsSuitesPage() {
                   {room.amenities.map((a) => (
                     <div key={a} className="flex items-center gap-2">
                       <Check size={12} style={{ color: '#c9a84c', flexShrink: 0 }} />
-                      <span className="text-xs" style={{ color: 'var(--text-light)' }}>
-                        {a}
-                      </span>
+                      <span className="text-xs" style={{ color: 'var(--text-light)' }}>{a}</span>
                     </div>
                   ))}
                 </div>
@@ -312,4 +284,3 @@ export default function RoomsSuitesPage() {
     </>
   )
 }
-

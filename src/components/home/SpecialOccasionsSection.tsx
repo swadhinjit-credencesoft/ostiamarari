@@ -19,12 +19,15 @@ export default function SpecialOccasionsSection() {
   return (
     <section
       id="special-occasions"
-      className="py-24"
+      className="py-16 md:py-20"
       style={{ background: '#ffffff' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      {/* Full-width wrapper — no side padding */}
+      <div className="w-full px-0">
         <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-center">
-          <div>
+
+          {/* Left text — add back readable padding */}
+          <div className="px-6 lg:px-10">
             <span className="section-label">Special Occasions</span>
             <span className="gold-line !mx-0" />
             <h2
@@ -42,8 +45,9 @@ export default function SpecialOccasionsSection() {
             </p>
           </div>
 
+          {/* Right card — flush right edge, padding on left only */}
           <div
-            className="p-7 md:p-8"
+            className="p-7 md:p-8 lg:mr-0"
             style={{ background: '#faf9f7', border: '1px solid var(--border)' }}
           >
             <div className="flex items-center gap-3 mb-6">
@@ -84,6 +88,7 @@ export default function SpecialOccasionsSection() {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

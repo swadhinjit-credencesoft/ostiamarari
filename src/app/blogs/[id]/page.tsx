@@ -67,7 +67,6 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
 
   const relatedBlogs = blogs.filter((b) => b.id !== blog.id).slice(0, 2)
 
-  // Generate schema structured data
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -109,7 +108,7 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
     <>
       <JsonLd data={jsonLd} />
 
-      {/* Hero section */}
+      {/* Hero — full bleed, unchanged */}
       <section className="relative flex min-h-[440px] md:min-h-[520px] items-end justify-center overflow-hidden px-4 pb-12 pt-36 md:pt-44">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105"
@@ -125,13 +124,9 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
             <span>/</span>
             <span className="text-white/90 truncate max-w-[200px] md:max-w-xs">{blog.title}</span>
           </div>
-
           <span
             className="inline-block px-3.5 py-1 text-[11px] font-semibold tracking-wider uppercase mb-4 text-white"
-            style={{
-              background: blog.color,
-              fontFamily: 'var(--font-raleway)',
-            }}
+            style={{ background: blog.color, fontFamily: 'var(--font-raleway)' }}
           >
             {blog.category}
           </span>
@@ -141,8 +136,6 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
           >
             {blog.title}
           </h1>
-
-          {/* Meta Info */}
           <div className="flex items-center justify-center md:justify-start gap-6 flex-wrap border-t border-white/10 pt-4 text-white/80">
             <span className="flex items-center gap-2 text-xs tracking-wider uppercase" style={{ fontFamily: 'var(--font-raleway)' }}>
               <Calendar size={13} className="text-[#c9a84c]" />
@@ -160,76 +153,88 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
         </div>
       </section>
 
-      {/* Blog content section */}
+      {/* Blog content — full width, article stays readable via max-w-3xl */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="article-body">
-            {blog.content.split('\n\n').map((paragraph, index) => {
-              const trimmed = paragraph.trim()
-              if (!trimmed) return null
+        <div className="w-full px-0">
+          <div className="max-w-3xl mx-auto px-6">
+            <div className="article-body">
+              {blog.content.split('\n\n').map((paragraph, index) => {
+                const trimmed = paragraph.trim()
+                if (!trimmed) return null
 
-              if (trimmed.startsWith('•')) {
-                return (
-                  <div key={index} className="flex gap-3.5 items-start my-4 pl-4 text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
-                    <span className="text-[#c9a84c] text-xl leading-none">•</span>
-                    <p className="flex-1 m-0">{trimmed.slice(1).trim()}</p>
-                  </div>
-                )
-              }
-              if (/^\d+\./.test(trimmed)) {
-                const match = trimmed.match(/^(\d+)\.(.*)/)
-                if (match) {
-                  const num = match[1]
-                  const text = match[2].trim()
+                if (trimmed.startsWith('•')) {
                   return (
-                    <div key={index} className="flex gap-3.5 items-start my-4 pl-4 text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}>
-                      <span className="text-[#c9a84c] font-semibold text-lg leading-none">{num}.</span>
-                      <p className="flex-1 m-0">{text}</p>
+                    <div
+                      key={index}
+                      className="flex gap-3.5 items-start my-4 pl-4 text-base md:text-lg leading-relaxed"
+                      style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+                    >
+                      <span className="text-[#c9a84c] text-xl leading-none">•</span>
+                      <p className="flex-1 m-0">{trimmed.slice(1).trim()}</p>
                     </div>
                   )
                 }
-              }
+                if (/^\d+\./.test(trimmed)) {
+                  const match = trimmed.match(/^(\d+)\.(.*)/)
+                  if (match) {
+                    const num = match[1]
+                    const text = match[2].trim()
+                    return (
+                      <div
+                        key={index}
+                        className="flex gap-3.5 items-start my-4 pl-4 text-base md:text-lg leading-relaxed"
+                        style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+                      >
+                        <span className="text-[#c9a84c] font-semibold text-lg leading-none">{num}.</span>
+                        <p className="flex-1 m-0">{text}</p>
+                      </div>
+                    )
+                  }
+                }
 
-              const isFirstParagraph = index === 0
-              if (isFirstParagraph) {
+                const isFirstParagraph = index === 0
+                if (isFirstParagraph) {
+                  return (
+                    <p
+                      key={index}
+                      className="text-base md:text-lg leading-relaxed mb-6 font-light first-letter:text-6xl first-letter:font-serif first-letter:text-[#c9a84c] first-letter:float-left first-letter:mr-3.5 first-letter:mt-1.5 first-letter:font-semibold"
+                      style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+                    >
+                      {paragraph}
+                    </p>
+                  )
+                }
                 return (
                   <p
                     key={index}
-                    className="text-base md:text-lg leading-relaxed mb-6 font-light first-letter:text-6xl first-letter:font-serif first-letter:text-[#c9a84c] first-letter:float-left first-letter:mr-3.5 first-letter:mt-1.5 first-letter:font-semibold"
+                    className="text-base md:text-lg leading-relaxed mb-6 font-light"
                     style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
                   >
                     {paragraph}
                   </p>
                 )
-              }
-              return (
-                <p
-                  key={index}
-                  className="text-base md:text-lg leading-relaxed mb-6 font-light"
-                  style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
-                >
-                  {paragraph}
-                </p>
-              )
-            })}
-          </div>
+              })}
+            </div>
 
-          {/* Action Footer */}
-          <div className="mt-16 pt-8 border-t border-[#e8e4dc] flex flex-col sm:flex-row justify-between items-center gap-6">
-            <Link href="/blogs" className="btn-outline flex items-center gap-2 group">
-              <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
-              Back to Blogs
-            </Link>
-            <Link href="/booking" className="btn-primary">
-              Book Your Stay
-            </Link>
+            {/* Action Footer */}
+            <div className="mt-16 pt-8 border-t border-[#e8e4dc] flex flex-col sm:flex-row justify-between items-center gap-6">
+              <Link href="/blogs" className="btn-outline flex items-center gap-2 group">
+                <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+                Back to Blogs
+              </Link>
+              <Link href="/booking" className="btn-primary">
+                Book Your Stay
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* More stories / related section */}
+      {/* Related stories — full width grid */}
       {relatedBlogs.length > 0 && (
         <section className="py-16 md:py-20 border-t border-[#e8e4dc]" style={{ background: '#f8f8f8' }}>
+
+          {/* Heading — keeps its own padding */}
           <div className="max-w-5xl mx-auto px-6">
             <h3
               className="text-2xl md:text-3xl font-semibold mb-10 text-center"
@@ -237,6 +242,10 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
             >
               More Stories
             </h3>
+          </div>
+
+          {/* Cards grid — full viewport width */}
+          <div className="w-full px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {relatedBlogs.map((related) => (
                 <article
@@ -264,7 +273,10 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
                       >
                         <Link href={`/blogs/${related.id}`}>{related.title}</Link>
                       </h4>
-                      <div className="flex items-center gap-3 text-[11px] mb-3" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)' }}>
+                      <div
+                        className="flex items-center gap-3 text-[11px] mb-3"
+                        style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-raleway)' }}
+                      >
                         <span>{related.date}</span>
                         <span>•</span>
                         <span>{related.readTime}</span>
@@ -291,6 +303,7 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
               ))}
             </div>
           </div>
+
         </section>
       )}
     </>
