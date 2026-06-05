@@ -110,7 +110,7 @@ export default function BlogDetailPage({ params }: BlogPageProps) {
       <JsonLd data={jsonLd} />
 
       {/* Hero section */}
-      <section className="relative flex min-h-[400px] md:min-h-[500px] items-end justify-center overflow-hidden px-4 pb-12 pt-28 md:pt-32">
+      <section className="relative flex min-h-[440px] md:min-h-[520px] items-end justify-center overflow-hidden px-4 pb-12 pt-36 md:pt-44">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105"
           style={{ backgroundImage: `url('${blog.image}')` }}
