@@ -1,23 +1,10 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Check, Users, Maximize2, ArrowRight } from 'lucide-react'
-import { seoConfig } from '@/lib/seo'
+import { seoConfig, createPageMetadata, buildWebPageSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
-export const metadata: Metadata = {
-  title: 'Premium Hotel Rooms – Top View Floor Suites | Ostia Marari Alleppey',
-  description: 'Book Premium Top View Floor Suites at Ostia Marari Alleppey. 4 Bedrooms, ocean views, private balconies, complimentary breakfast. Ideal for up to 12 guests.',
-  alternates: { canonical: '/premium-Hotel-Rooms-Topview-Floors-Suites' },
-  openGraph: {
-    title: 'Premium Hotel Rooms – Top View Floor Suites | Ostia Marari',
-    description: 'Book Premium Top Suites at Ostia Marari Alleppey – 4 Bedrooms, ocean views, private balconies for up to 12 guests.',
-    url: `${seoConfig.siteUrl}/premium-Hotel-Rooms-Topview-Floors-Suites`,
-    siteName: seoConfig.shortName,
-    locale: 'en_IN',
-    type: 'website',
-    images: [{ url: `${seoConfig.siteUrl}/room1.avif`, width: 1200, height: 630, alt: 'Premium Top View Floor Suites – Ostia Marari' }],
-  },
-}
+export const metadata = createPageMetadata('premiumTopSuites')
 
 const amenities = [
   'AC (All Rooms)', 'Complimentary Wi-Fi', 'Queen & Twin Beds', 'Attached Balconies',
@@ -27,6 +14,7 @@ const amenities = [
 export default function PremiumTopSuitesPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('premiumTopSuites')} />
       {/* Hero */}
       <section className="relative flex min-h-[420px] md:min-h-[520px] items-end justify-center overflow-hidden px-4 pb-12 pt-36">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/room1.avif')" }} />

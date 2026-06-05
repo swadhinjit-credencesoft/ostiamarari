@@ -1,14 +1,59 @@
 import type { Metadata } from 'next'
+import { seoConfig, buildWebPageSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
+
+const siteUrl = seoConfig.siteUrl
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Ostia Marari Beach Stay – Alleppey',
-  description: 'Read the terms and conditions for booking your stay at Ostia Marari boutique beach resort in Alleppey, Kerala.',
+  description:
+    'Read the terms and conditions for booking your stay at Ostia Marari boutique beach resort in Alleppey, Kerala.',
   alternates: { canonical: '/terms-conditions' },
+  openGraph: {
+    title: 'Terms & Conditions | Ostia Marari Beach Stay – Alleppey',
+    description:
+      'Read the booking terms and guest conditions for Ostia Marari, a boutique beach stay in Alleppey, Kerala.',
+    url: `${siteUrl}/terms-conditions`,
+    siteName: seoConfig.shortName,
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia4.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Terms and conditions – Ostia Marari boutique beach stay Alleppey Kerala',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms & Conditions | Ostia Marari Beach Stay – Alleppey',
+    description:
+      'Read the booking terms and guest conditions for Ostia Marari, a boutique beach stay in Alleppey, Kerala.',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia4.avif`,
+        alt: 'Ostia Marari terms and conditions',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function TermsConditionsPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('terms')} />
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia4.avif')" }} />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.65)' }} />

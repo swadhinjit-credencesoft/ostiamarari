@@ -1,0 +1,28 @@
+export type Cat = 'All' | 'Rooms' | 'Beach' | 'Exterior' | 'interior'
+
+export const gallery: { src: string; alt: string; cat: Cat }[] = [
+  { src: '/images/ostia11.avif', alt: 'Ostia Marari beach view from property', cat: 'Exterior' },
+  { src: '/images/ostia1.avif', alt: 'Ostia Marari boutique stay exterior view', cat: 'Beach' },
+  { src: '/images/ostia2.avif', alt: 'Luxury room interior at Ostia Marari Alleppey', cat: 'Exterior' },
+  { src: '/images/ostia3.avif', alt: 'Premium suite at Ostia Marari beachfront stay', cat: 'Exterior' },
+  { src: '/images/ostia4.avif', alt: 'Beachfront view from Ostia Marari Alleppey', cat: 'interior' },
+  { src: '/images/ostia5.avif', alt: 'Boutique stay exterior at Ostia Marari Kerala', cat: 'Exterior' },
+  { src: '/images/ostia6.avif', alt: 'Coastal view near Ostia Marari Thumpoly Beach', cat: 'interior' },
+  { src: '/images/ostia7.avif', alt: 'Resort interior design at Ostia Marari Alleppey', cat: 'interior' },
+  { src: '/images/ostia8.avif', alt: 'Luxury bedroom at Ostia Marari boutique beach stay', cat: 'interior' },
+  { src: '/images/ostia9.avif', alt: 'Garden and lawn area at Ostia Marari', cat: 'Exterior' },
+  { src: '/images/ostia10.avif', alt: 'Sea view terrace at Ostia Marari Kerala', cat: 'interior' },
+  { src: '/images/ostia12.avif', alt: 'Ostia Marari property exterior Alleppey', cat: 'Exterior' },
+  { src: '/images/ostia13.avif', alt: 'Ostia Marari boutique stay front view', cat: 'Exterior' },
+  { src: '/images/ostia14.avif', alt: 'Ostia Marari outdoor spaces Alleppey Kerala', cat: 'Exterior' },
+  { src: '/images/ostia15.avif', alt: 'Private lawn at Ostia Marari beachfront villa', cat: 'Exterior' },
+  { src: '/images/ostia16.avif', alt: 'Ostia Marari villa surroundings near beach', cat: 'Exterior' },
+  { src: '/images/interior2.avif', alt: 'Elegant interior room at Ostia Marari Alleppey', cat: 'interior' },
+  { src: '/images/interior3.avif', alt: 'Premium suite interior view at Ostia Marari', cat: 'interior' },
+  { src: '/images/interior4.avif', alt: 'Luxury room decor at Ostia Marari beach stay', cat: 'interior' },
+  { src: '/room1.avif', alt: 'Premium Top Suite at Ostia Marari – 4 Bedrooms Ocean View', cat: 'Rooms' },
+  { src: '/room2.avif', alt: 'Premium Floor Suite at Ostia Marari – Garden View Rooms', cat: 'Rooms' },
+  { src: '/room3.avif', alt: 'Premium Full Villa at Ostia Marari – 6 Bedrooms Entire Property', cat: 'Rooms' },
+  { src: '/room4.avif', alt: 'Premium Double Suite at Ostia Marari – Couple Stay Kerala', cat: 'Rooms' },
+  { src: '/room5.avif', alt: 'Premium Suite bedroom at Ostia Marari Alleppey', cat: 'Rooms' },
+]

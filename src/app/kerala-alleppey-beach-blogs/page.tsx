@@ -2,8 +2,10 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import BlogGrid from '@/components/BlogGrid'
 import JsonLd from '@/components/JsonLd'
-import { buildCollectionSchema, buildWebPageSchema, createPageMetadata, seoConfig } from '@/lib/seo'
+import { seoConfig, buildCollectionSchema } from '@/lib/seo'
 import { blogs } from '@/lib/blogs'
+
+const siteUrl = seoConfig.siteUrl
 
 export const metadata: Metadata = {
   title: 'Kerala Alleppey Beach Blogs | Travel Guide & Tips – Ostia Marari',
@@ -11,17 +13,57 @@ export const metadata: Metadata = {
   alternates: { canonical: '/kerala-alleppey-beach-blogs' },
   openGraph: {
     title: 'Kerala Alleppey Beach Blogs | Travel Guide & Tips – Ostia Marari',
-    description: 'Read Kerala and Alleppey travel blogs, beach guides, and coastal travel stories.',
-    url: `${seoConfig.siteUrl}/kerala-alleppey-beach-blogs`,
+    description: 'Read Kerala and Alleppey travel blogs, beach guides, and coastal travel stories from Ostia Marari.',
+    url: `${siteUrl}/kerala-alleppey-beach-blogs`,
     siteName: seoConfig.shortName,
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia7.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Kerala Alleppey beach travel blogs – Ostia Marari boutique beach stay',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kerala Alleppey Beach Blogs | Travel Guide & Tips – Ostia Marari',
+    description: 'Read Alleppey beach guides, Kerala backwater travel tips and coastal travel stories from Ostia Marari.',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia7.avif`,
+        alt: 'Kerala Alleppey beach travel blogs by Ostia Marari',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
 export default function KeralaAlleppeyBlogsPage() {
+  const collectionSchema = buildCollectionSchema(
+    'blogs',
+    blogs.map((b) => ({
+      name: b.title,
+      url: `${siteUrl}/kerala-alleppey-beach-blogs/${b.id}`,
+      image: `${siteUrl}${b.image}`,
+      description: b.excerpt,
+    }))
+  )
+
   return (
     <>
+      <JsonLd data={collectionSchema} />
       {/* Hero */}
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia7.avif')" }} />

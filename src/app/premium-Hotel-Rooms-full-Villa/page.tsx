@@ -1,23 +1,10 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Check, Users, Maximize2, ArrowRight } from 'lucide-react'
-import { seoConfig } from '@/lib/seo'
+import { seoConfig, createPageMetadata, buildWebPageSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
-export const metadata: Metadata = {
-  title: 'Premium Hotel Rooms – Full Villa (6 Bedrooms, Entire Property) | Ostia Marari',
-  description: 'Book the entire Premium Full Villa at Ostia Marari Alleppey. 6 Bedrooms, private lawn, BBQ, ocean views, indoor parking. Ideal for up to 18 guests.',
-  alternates: { canonical: '/premium-Hotel-Rooms-full-Villa' },
-  openGraph: {
-    title: 'Premium Hotel Rooms – Full Villa (Entire Property) | Ostia Marari',
-    description: 'Book the entire Ostia Marari property – 6 Bedrooms, private lawn, ocean views for up to 18 guests in Alleppey.',
-    url: `${seoConfig.siteUrl}/premium-Hotel-Rooms-full-Villa`,
-    siteName: seoConfig.shortName,
-    locale: 'en_IN',
-    type: 'website',
-    images: [{ url: `${seoConfig.siteUrl}/room3.avif`, width: 1200, height: 630, alt: 'Premium Full Villa – Ostia Marari' }],
-  },
-}
+export const metadata = createPageMetadata('premiumFullVilla')
 
 const amenities = [
   'All 6 Bedrooms', 'AC Throughout', 'Complimentary Wi-Fi', 'Private 1,000 sq ft Lawn',
@@ -28,6 +15,7 @@ const amenities = [
 export default function PremiumFullVillaPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('premiumFullVilla')} />
       {/* Hero */}
       <section className="relative flex min-h-[420px] md:min-h-[520px] items-end justify-center overflow-hidden px-4 pb-12 pt-36">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/room3.avif')" }} />

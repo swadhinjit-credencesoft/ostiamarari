@@ -79,6 +79,10 @@ export type SeoPageKey =
   | 'privacyPolicy'
   | 'terms'
   | 'cancellationPolicy'
+  | 'roomRentTariff'
+  | 'premiumTopSuites'
+  | 'premiumGardenSuites'
+  | 'premiumFullVilla'
 
 export const pageSeo = {
   home: {
@@ -150,11 +154,40 @@ export const pageSeo = {
       'Review Ostia Marari cancellation terms, refund conditions and booking cancellation contact details.',
     image: '/images/ostia4.avif',
   },
+  roomRentTariff: {
+    path: '/Room-Rent-Tariff',
+    title: 'Room Rent Tariff | Ostia Marari – Beach Resort Pricing Alleppey',
+    description:
+      'View room rent tariff and pricing for Ostia Marari beach resort in Alleppey, Kerala. Premium Top Suites, Floor Suites, Full Villa and Double Suites with complimentary breakfast.',
+    image: '/images/ostia1.avif',
+  },
+  premiumTopSuites: {
+    path: '/premium-Hotel-Rooms-Topview-Floors-Suites',
+    title: 'Premium Hotel Rooms – Top View Floor Suites | Ostia Marari Alleppey',
+    description:
+      'Book Premium Top View Floor Suites at Ostia Marari Alleppey. 4 Bedrooms, ocean views, private balconies, complimentary breakfast. Ideal for up to 12 guests.',
+    image: '/room1.avif',
+  },
+  premiumGardenSuites: {
+    path: '/premium-Hotel-Rooms-garden-view-Floors-Suites',
+    title: 'Premium Hotel Rooms – Garden View Floor Suites | Ostia Marari Alleppey',
+    description:
+      'Book Premium Garden View Floor Suites at Ostia Marari Alleppey. 2 Bedrooms, garden views, ensuite bathrooms, private lawn access. Ideal for up to 6 guests.',
+    image: '/room2.avif',
+  },
+  premiumFullVilla: {
+    path: '/premium-Hotel-Rooms-full-Villa',
+    title: 'Premium Hotel Rooms – Full Villa (6 Bedrooms, Entire Property) | Ostia Marari',
+    description:
+      'Book the entire Premium Full Villa at Ostia Marari Alleppey. 6 Bedrooms, private lawn, BBQ, ocean views, indoor parking. Ideal for up to 18 guests.',
+    image: '/room3.avif',
+  },
 } satisfies Record<SeoPageKey, { path: string; title: string; description: string; image: string }>
 
 export function createPageMetadata(pageKey: SeoPageKey): Metadata {
   const page = pageSeo[pageKey]
   const absoluteUrl = `${siteUrl}${page.path}`
+  const absoluteImageUrl = page.image.startsWith('http') ? page.image : `${siteUrl}${page.image}`
 
   return {
     title: page.title,
@@ -171,7 +204,7 @@ export function createPageMetadata(pageKey: SeoPageKey): Metadata {
       type: 'website',
       images: [
         {
-          url: page.image,
+          url: absoluteImageUrl,
           width: 1200,
           height: 630,
           alt: `${page.title} - ${seoConfig.shortName}`,
@@ -184,7 +217,7 @@ export function createPageMetadata(pageKey: SeoPageKey): Metadata {
       description: page.description,
       images: [
         {
-          url: page.image,
+          url: absoluteImageUrl,
           alt: `${page.title} - ${seoConfig.shortName}`,
         },
       ],
@@ -563,12 +596,24 @@ export function buildSchemaGraph() {
         '@id': `${siteUrl}/#organization`,
         name: seoConfig.businessName,
         url: siteUrl,
-        logo: seoConfig.logo,
+        logo: {
+          '@type': 'ImageObject',
+          url: seoConfig.logo,
+          width: 200,
+          height: 60,
+        },
         image: seoConfig.primaryImage,
         telephone: seoConfig.phone,
         email: seoConfig.email,
         address,
         sameAs: seoConfig.sameAs,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: seoConfig.phone,
+          contactType: 'reservations',
+          areaServed: 'IN',
+          availableLanguage: ['English', 'Malayalam'],
+        },
       },
       {
         '@type': 'Hotel',
@@ -579,6 +624,8 @@ export function buildSchemaGraph() {
         image: [
           seoConfig.primaryImage,
           `${siteUrl}/images/ostia1.avif`,
+          `${siteUrl}/images/ostia2.avif`,
+          `${siteUrl}/images/ostia3.avif`,
           `${siteUrl}/room1.avif`,
           `${siteUrl}/room2.avif`,
           `${siteUrl}/room3.avif`,
@@ -588,13 +635,30 @@ export function buildSchemaGraph() {
         description: homepageSeo.description,
         telephone: seoConfig.phone,
         email: seoConfig.email,
-        priceRange: '$$',
+        priceRange: '₹₹',
+        currenciesAccepted: 'INR',
+        paymentAccepted: 'Cash, Credit Card, UPI, Bank Transfer',
+        starRating: {
+          '@type': 'Rating',
+          ratingValue: '4',
+        },
         address,
         geo: {
           '@type': 'GeoCoordinates',
           latitude: seoConfig.geo.latitude,
           longitude: seoConfig.geo.longitude,
         },
+        hasMap: `https://www.google.com/maps/search/?api=1&query=${seoConfig.geo.latitude},${seoConfig.geo.longitude}`,
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '00:00',
+            closes: '23:59',
+          },
+        ],
+        checkinTime: 'T14:00',
+        checkoutTime: 'T11:00',
         amenityFeature: [
           'Beachfront property',
           'Direct beach access',
@@ -615,8 +679,10 @@ export function buildSchemaGraph() {
           {
             '@type': 'HotelRoom',
             name: 'Premium Top Suites',
+            description: '4 Bedrooms on the first floor with ocean views, private balconies and premium comfort for up to 12 guests.',
             occupancy: { '@type': 'QuantitativeValue', maxValue: 12 },
-            amenityFeature: ['Ocean View', 'Private Balcony', 'Air Conditioning'].map(name => ({
+            url: `${siteUrl}/premium-Hotel-Rooms-Topview-Floors-Suites`,
+            amenityFeature: ['Ocean View', 'Private Balcony', 'Air Conditioning', 'Complimentary Breakfast', 'Free WiFi'].map(name => ({
               '@type': 'LocationFeatureSpecification',
               name,
               value: true,
@@ -625,17 +691,37 @@ export function buildSchemaGraph() {
           {
             '@type': 'HotelRoom',
             name: 'Premium Floor Suites',
+            description: '2 Bedrooms on the ground floor with garden views, private lawn access for up to 6 guests.',
             occupancy: { '@type': 'QuantitativeValue', maxValue: 6 },
+            url: `${siteUrl}/premium-Hotel-Rooms-garden-view-Floors-Suites`,
+            amenityFeature: ['Garden View', 'Private Lawn Access', 'Air Conditioning', 'Complimentary Breakfast'].map(name => ({
+              '@type': 'LocationFeatureSpecification',
+              name,
+              value: true,
+            })),
           },
           {
             '@type': 'HotelRoom',
-            name: 'Premium Full Suites',
+            name: 'Premium Full Suites – Entire Property',
+            description: '6 Bedrooms across 2 floors, private lawn, BBQ, ocean views for up to 18 guests. Entire property booking.',
             occupancy: { '@type': 'QuantitativeValue', maxValue: 18 },
+            url: `${siteUrl}/premium-Hotel-Rooms-full-Villa`,
+            amenityFeature: ['Ocean View', 'Private Lawn', 'BBQ', 'Indoor Parking', 'Air Conditioning'].map(name => ({
+              '@type': 'LocationFeatureSpecification',
+              name,
+              value: true,
+            })),
           },
           {
             '@type': 'HotelRoom',
             name: 'Premium Double Suites',
+            description: '1 Bedroom suite ideal for couples with beach access, private balcony for up to 3 guests.',
             occupancy: { '@type': 'QuantitativeValue', maxValue: 3 },
+            amenityFeature: ['Beach Access', 'Private Balcony', 'Air Conditioning', 'Complimentary Breakfast'].map(name => ({
+              '@type': 'LocationFeatureSpecification',
+              name,
+              value: true,
+            })),
           },
         ],
         aggregateRating: {
@@ -643,6 +729,7 @@ export function buildSchemaGraph() {
           ratingValue: '4.9',
           reviewCount: '7',
           bestRating: '5',
+          worstRating: '1',
         },
         review: [
           {
@@ -651,6 +738,7 @@ export function buildSchemaGraph() {
             reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
             reviewBody:
               'Beautiful beachfront stay with amazing hospitality and very clean rooms. Highly recommended for a peaceful getaway in Alleppey.',
+            datePublished: '2024-12-01',
           },
           {
             '@type': 'Review',
@@ -658,19 +746,31 @@ export function buildSchemaGraph() {
             reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
             reviewBody:
               'Loved the ambience, food, and private beach experience. The staff was extremely friendly and helpful throughout our stay.',
+            datePublished: '2025-01-15',
           },
         ],
-        makesOffer: {
-          '@type': 'Offer',
-          url: `${siteUrl}/Hotel-Resort-Booking`,
-          availability: 'https://schema.org/InStock',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Direct booking for luxury beachfront accommodation in Alleppey',
+        makesOffer: [
+          {
+            '@type': 'Offer',
+            url: `${siteUrl}/Hotel-Resort-Booking`,
+            availability: 'https://schema.org/InStock',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Direct booking for luxury beachfront accommodation in Alleppey, Kerala',
+            },
           },
-        },
-        checkinTime: '12:00',
-        checkoutTime: '11:00',
+          {
+            '@type': 'Offer',
+            url: `${siteUrl}/Hotel-Resort-Booking?select=beach-boats-2nights`,
+            availability: 'https://schema.org/InStock',
+            name: 'Beach & Boats Package – 2 Nights 3 Days',
+            itemOffered: {
+              '@type': 'TouristTrip',
+              name: 'Beach and Boats Kerala Package – 2 Nights 3 Days',
+              description: 'Combined beach stay at Ostia Marari with Kerala backwater houseboat experience.',
+            },
+          },
+        ],
       },
       {
         '@type': 'LocalBusiness',
@@ -686,7 +786,18 @@ export function buildSchemaGraph() {
           latitude: seoConfig.geo.latitude,
           longitude: seoConfig.geo.longitude,
         },
-        priceRange: '$$',
+        hasMap: `https://www.google.com/maps/search/?api=1&query=${seoConfig.geo.latitude},${seoConfig.geo.longitude}`,
+        priceRange: '₹₹',
+        currenciesAccepted: 'INR',
+        paymentAccepted: 'Cash, Credit Card, UPI',
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '00:00',
+            closes: '23:59',
+          },
+        ],
         areaServed: ['Alappuzha', 'Alleppey', 'Marari Beach', 'Thumpoly Beach', 'Kerala'],
         parentOrganization: { '@id': `${siteUrl}/#organization` },
       },
@@ -695,6 +806,9 @@ export function buildSchemaGraph() {
         '@id': `${siteUrl}/#website`,
         name: seoConfig.businessName,
         url: siteUrl,
+        description: homepageSeo.description,
+        inLanguage: 'en-IN',
+        dateModified: new Date().toISOString().split('T')[0],
         publisher: { '@id': `${siteUrl}/#organization` },
         potentialAction: {
           '@type': 'SearchAction',

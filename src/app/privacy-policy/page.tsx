@@ -1,12 +1,61 @@
 import type { Metadata } from 'next'
+import { seoConfig, buildWebPageSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
+
+const siteUrl = seoConfig.siteUrl
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Ostia Marari',
+  title: 'Privacy Policy | Ostia Marari Boutique Beach Stay',
+  description:
+    'Read the Ostia Marari privacy policy covering booking enquiries, guest communication, data collection and website data handling for our Alleppey beach stay.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
+  openGraph: {
+    title: 'Privacy Policy | Ostia Marari Boutique Beach Stay',
+    description:
+      'Learn how Ostia Marari collects, uses and protects your personal data for booking enquiries and guest communication.',
+    url: `${siteUrl}/privacy-policy`,
+    siteName: seoConfig.shortName,
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia4.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Privacy policy – Ostia Marari boutique beach stay Alleppey Kerala',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Ostia Marari Boutique Beach Stay',
+    description:
+      'Read how Ostia Marari handles your personal data and privacy when booking or contacting us.',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia4.avif`,
+        alt: 'Ostia Marari privacy policy',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('privacyPolicy')} />
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia4.avif')" }} />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.65)' }} />

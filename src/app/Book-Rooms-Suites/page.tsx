@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Check, Users, Maximize2, ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import JsonLd from '@/components/JsonLd'
-import { seoConfig } from '@/lib/seo'
+import { seoConfig, buildWebPageSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Book Rooms & Suites | Ostia Marari – Alleppey Beach Stay',
@@ -16,6 +16,41 @@ export const metadata: Metadata = {
     siteName: seoConfig.shortName,
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: `${seoConfig.siteUrl}/room1.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Premium rooms and suites at Ostia Marari boutique beach stay Alleppey',
+      },
+      {
+        url: `${seoConfig.siteUrl}/images/ostia3.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Sea view rooms and beachfront suites at Ostia Marari Alleppey Kerala',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Book Rooms & Suites | Ostia Marari – Alleppey Beach Stay',
+    description: 'Explore premium sea-view rooms and luxury suites at Ostia Marari, Alleppey. Top Suites, Floor Suites, Full Villa and Double Suites.',
+    images: [
+      {
+        url: `${seoConfig.siteUrl}/room1.avif`,
+        alt: 'Premium rooms and suites at Ostia Marari Alleppey beach stay',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
@@ -102,6 +137,7 @@ const rooms = [
 export default function BookRoomsSuitesPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('roomsSuites')} />
       <JsonLd data={{
         '@context': 'https://schema.org',
         '@type': 'ItemList',

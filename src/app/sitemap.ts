@@ -7,6 +7,7 @@ const staticRoutes = [
   { path: '/about-us', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/Book-Rooms-Suites', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/Hotel-Resort-Booking', priority: 0.95, changeFrequency: 'daily' },
+  { path: '/Room-Rent-Tariff', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/Beach-Resort-Gallery-images', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/kerala-alleppey-beach-blogs', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/contact', priority: 0.8, changeFrequency: 'monthly' },

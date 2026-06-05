@@ -1,11 +1,63 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { seoConfig, buildWebPageSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
+
+const siteUrl = seoConfig.siteUrl
+
+export const metadata: Metadata = {
+  title: 'About Ostia Marari | Boutique Beach Stay Alleppey Kerala',
+  description:
+    'Learn about Ostia Marari, a boutique beachfront stay in Alleppey near Thumpoly Beach. Discover the story of founder Saritha Switen, our rooms, amenities and the coastal experience.',
+  alternates: {
+    canonical: '/about-us',
+  },
+  openGraph: {
+    title: 'About Ostia Marari | Boutique Beach Stay Alleppey Kerala',
+    description:
+      'Discover the story of Ostia Marari, a boutique beachfront stay near Thumpoly Beach, Alleppey. Meet founder Saritha Switen and explore our coastal Kerala hospitality.',
+    url: `${siteUrl}/about-us`,
+    siteName: seoConfig.shortName,
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia2.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Ostia Marari boutique beach stay in Alleppey Kerala – About Us',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Ostia Marari | Boutique Beach Stay Alleppey Kerala',
+    description:
+      'Meet the founder and discover the story behind Ostia Marari, a boutique beachfront stay near Thumpoly Beach, Alleppey.',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia2.avif`,
+        alt: 'Ostia Marari boutique beach stay – About page',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
 
 export default function AboutUsPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('about')} />
       {/* Hero */}
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia2.avif')" }} />
@@ -41,7 +93,7 @@ export default function AboutUsPage() {
               <div className="relative overflow-hidden" style={{ border: '1px solid var(--border)' }}>
                 <Image
                   src="/ostiamarariowneraboutimg.avif"
-                  alt="Saritha Switen – Founder & Owner of Ostia Marari"
+                  alt="Saritha Switen – Founder &amp; Owner of Ostia Marari boutique beach stay in Alleppey"
                   width={600}
                   height={560}
                   className="w-full h-auto object-cover object-top"

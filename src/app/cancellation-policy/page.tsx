@@ -1,12 +1,61 @@
 import type { Metadata } from 'next'
+import { seoConfig, buildWebPageSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
+
+const siteUrl = seoConfig.siteUrl
 
 export const metadata: Metadata = {
-  title: 'Cancellation Policy | Ostia Marari',
+  title: 'Cancellation Policy | Ostia Marari Alleppey Beach Stay',
+  description:
+    'Review Ostia Marari cancellation terms, refund conditions and booking cancellation contact details for your beach stay in Alleppey, Kerala.',
+  alternates: {
+    canonical: '/cancellation-policy',
+  },
+  openGraph: {
+    title: 'Cancellation Policy | Ostia Marari Alleppey Beach Stay',
+    description:
+      'Read the full cancellation and refund policy for bookings at Ostia Marari boutique beach stay in Alleppey, Kerala.',
+    url: `${siteUrl}/cancellation-policy`,
+    siteName: seoConfig.shortName,
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia4.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Ostia Marari cancellation policy – boutique beach stay Alleppey Kerala',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cancellation Policy | Ostia Marari Alleppey Beach Stay',
+    description:
+      'Read the cancellation and refund terms for Ostia Marari boutique beach stay in Alleppey, Kerala.',
+    images: [
+      {
+        url: `${siteUrl}/images/ostia4.avif`,
+        alt: 'Ostia Marari cancellation policy',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function CancellationPolicyPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('cancellationPolicy')} />
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia4.avif')" }} />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.65)' }} />

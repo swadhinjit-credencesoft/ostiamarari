@@ -1,22 +1,10 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Check, Users, Maximize2 } from 'lucide-react'
-import { seoConfig } from '@/lib/seo'
+import { seoConfig, createPageMetadata, buildWebPageSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
-export const metadata: Metadata = {
-  title: 'Room Rent Tariff | Ostia Marari – Beach Resort Pricing Alleppey',
-  description: 'View room rent tariff and pricing for Ostia Marari beach resort in Alleppey, Kerala. Premium Top Suites, Floor Suites, Full Villa and Double Suites with complimentary breakfast.',
-  alternates: { canonical: '/Room-Rent-Tariff' },
-  openGraph: {
-    title: 'Room Rent Tariff | Ostia Marari – Beach Resort Pricing Alleppey',
-    description: 'View room rent tariff and pricing at Ostia Marari, Alleppey beach resort.',
-    url: `${seoConfig.siteUrl}/Room-Rent-Tariff`,
-    siteName: seoConfig.shortName,
-    locale: 'en_IN',
-    type: 'website',
-  },
-}
+export const metadata = createPageMetadata('roomRentTariff')
 
 const tariff = [
   {
@@ -76,6 +64,7 @@ const tariff = [
 export default function RoomRentTariffPage() {
   return (
     <>
+      <JsonLd data={buildWebPageSchema('roomRentTariff')} />
       {/* Hero */}
       <section className="relative flex min-h-[360px] md:min-h-[420px] items-center justify-center overflow-hidden px-4 pt-28 md:pt-32">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia1.avif')" }} />
