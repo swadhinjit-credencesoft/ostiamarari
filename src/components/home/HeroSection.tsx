@@ -51,7 +51,7 @@ export default function HeroSection() {
       {/* Dark gradient overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.7) 100%)' }}
+        style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }}
       />
 
       {/* Decorative corner frames */}
@@ -69,13 +69,13 @@ export default function HeroSection() {
           transition: 'opacity 1s ease 0.2s, transform 1s ease 0.2s',
         }}
       >
-        <span className="section-label" style={{ opacity: loaded ? 1 : 0, transition: 'opacity 1s ease 0.4s' }}>
+        <span className="section-label" style={{ opacity: loaded ? 1 : 0, transition: 'opacity 1s ease 0.4s', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
           Ostia Marari
         </span>
 
         <h1
           className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight"
-          style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700, letterSpacing: '0.05em' }}
+          style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700, letterSpacing: '0.05em', textShadow: '0 2px 10px rgba(0,0,0,0.7)' }}
         >
           Ostia Marari
         </h1>
@@ -88,7 +88,7 @@ export default function HeroSection() {
         </div>
 
         <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10"
-           style={{ fontFamily: 'var(--font-raleway)', letterSpacing: '0.03em' }}>
+           style={{ fontFamily: 'var(--font-raleway)', letterSpacing: '0.03em', textShadow: '0 2px 6px rgba(0,0,0,0.7)' }}>
           Luxury boutique beach stay in Alleppey with sea-view rooms, direct beach access, and warm Kerala hospitality
         </p>
 
