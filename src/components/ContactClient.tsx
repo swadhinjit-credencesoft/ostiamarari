@@ -230,7 +230,7 @@ export default function ContactClient() {
                   <WhatsAppIcon size={16} />
                 </a>
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr"
                   className={socialIconCls}
                   aria-label="Facebook"
                   target="_blank"

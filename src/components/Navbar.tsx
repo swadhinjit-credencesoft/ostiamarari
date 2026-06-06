@@ -18,8 +18,8 @@ const NAV_LINKS = [
   { label: 'Rooms & Suites', href: '/Book-Rooms-Suites' },
   { label: 'Packages', href: '/#packages' },
   { label: 'Price', href: '/#rooms' },
-  { label: 'Blogs', href: '/kerala-alleppey-beach-blogs' },
   { label: 'Gallery', href: '/Beach-Resort-Gallery-images' },
+  { label: 'Blogs', href: '/kerala-alleppey-beach-blogs' },
   { label: 'Booking', href: '/Hotel-Resort-Booking' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -130,7 +130,7 @@ export default function Navbar() {
           <a href="tel:+919846044955" aria-label="Call" className={socialIconCls}>
             <PhoneCallIcon size={16} />
           </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls}>
+          <a href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls}>
             <FacebookIcon size={16} />
           </a>
           <Link
@@ -195,7 +195,7 @@ export default function Navbar() {
                 <a href="tel:+919846044955" aria-label="Call" className={socialIconCls}>
                   <PhoneCallIcon size={17} />
                 </a>
-                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls}>
+                <a href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls}>
                   <FacebookIcon size={17} />
                 </a>
               </div>

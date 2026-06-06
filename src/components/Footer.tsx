@@ -302,7 +302,7 @@ export default function Footer() {
                 <PhoneCallIcon size={18} />
               </a>
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
