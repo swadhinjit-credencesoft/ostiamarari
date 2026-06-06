@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 const rooms = [
   {
     id: 'premium-ocean-suite',
-    name: 'Premium Top Suites',
+    name: 'Premium Top Suites (Luxury 4 Bedrooms)',
     tag: 'Most Popular',
     tagColor: '#c9a84c',
     capacity: '12',
@@ -76,7 +76,7 @@ const rooms = [
   },
   {
     id: 'boutique-deluxe-room',
-    name: 'Premium Floor Suites',
+    name: 'Premium Floor Suites (Luxury 1 Bedroom)',
     tag: 'Garden View',
     tagColor: '#4a9fd4',
     capacity: '6',
@@ -115,7 +115,7 @@ const rooms = [
   },
   {
     id: 'premium-double-suites',
-    name: 'Premium Double Suites',
+    name: 'Premium Double Suites(1 Double Bedroom)',
     tag: 'Best Value',
     tagColor: '#c97d4c',
     capacity: '3',

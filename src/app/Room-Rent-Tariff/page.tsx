@@ -9,7 +9,7 @@ export const metadata = createPageMetadata('roomRentTariff')
 const tariff = [
   {
     id: 'premium-top-suites',
-    name: 'Premium Top Suites',
+    name: 'Premium Top Suites (Luxury 4 Bedrooms)',
     bedrooms: '4 Bedrooms',
     capacity: '12 Guests',
     size: '1000 sq ft',

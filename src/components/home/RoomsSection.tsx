@@ -7,7 +7,7 @@ import { Users, Maximize2, ArrowRight, Check } from 'lucide-react'
 const rooms = [
   {
     id: 'premium-ocean-suite',
-    name: 'Premium Top Suites',
+    name: 'Premium Top Suites (Luxury 4 Bedrooms)',
     tag: 'Most Popular',
     tagColor: '#c9a84c',
     shortDesc: 'Luxury 4 Bedrooms with beachfront access, panoramic sea views, private balcony, and premium comfort for up to 12 guests.',
@@ -18,7 +18,7 @@ const rooms = [
   },
   {
     id: 'boutique-deluxe-room',
-    name: 'Premium Floor Suites',
+    name: 'Premium Floor Suites(Luxury 1 Bedroom)',
     tag: 'Garden View',
     tagColor: '#4a9fd4',
     shortDesc: 'Luxury 2 Bedrooms beachfront living with elegant interiors, garden views, and premium comfort for up to 6 guests.',
@@ -40,7 +40,7 @@ const rooms = [
   },
   {
     id: 'premium-double-suites',
-    name: 'Premium Double Suites',
+    name: 'Premium Double Suites(1 Double Bedroom)',
     tag: 'Best Value',
     tagColor: '#c97d4c',
     shortDesc: 'Luxury 1 Bedroom beachfront living with elegant interiors, private balcony, and premium comfort for up to 3 guests.',
