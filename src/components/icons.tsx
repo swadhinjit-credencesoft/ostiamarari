@@ -1,8 +1,15 @@
 export const socialIconCls =
-  'w-10 h-10 rounded-full border border-dark-2 text-dark-2 flex items-center justify-center hover:bg-[#c9a84c] hover:text-white hover:border-[#c9a84c] transition-all duration-300 shrink-0'
+  'w-10 h-10 rounded-full border border-dark-2 text-dark-2 flex items-center justify-center hover:text-white hover:border-transparent transition-all duration-300 shrink-0'
 
 export const socialIconClsDark =
-  'w-10 h-10 rounded-full border border-white/30 text-white/70 flex items-center justify-center hover:bg-[#c9a84c] hover:text-white hover:border-[#c9a84c] transition-all duration-300 shrink-0'
+  'w-10 h-10 rounded-full border border-white/30 text-white/70 flex items-center justify-center hover:text-white hover:border-transparent transition-all duration-300 shrink-0'
+
+export const BRAND_COLORS = {
+  instagram: '#e4405f',
+  whatsapp: '#25d366',
+  facebook: '#1877F2',
+  phone: '#007aff',
+} as const
 
 export function WhatsAppIcon({ size = 16 }: { size?: number }) {
   return (

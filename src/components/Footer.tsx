@@ -10,6 +10,7 @@ import {
   InstagramIcon,
   FacebookIcon,
   socialIconClsDark,
+  BRAND_COLORS,
 } from '@/components/icons'
 
 export default function Footer() {
@@ -279,7 +280,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label="Instagram"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px', flexShrink: 0 }}
+                style={{ color: BRAND_COLORS.instagram, width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <InstagramIcon size={18} />
               </a>
@@ -289,7 +290,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label="WhatsApp"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px', flexShrink: 0 }}
+                style={{ color: BRAND_COLORS.whatsapp, width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <WhatsAppIcon size={18} />
               </a>
@@ -297,7 +298,7 @@ export default function Footer() {
                 href="tel:+919846044955"
                 aria-label="Call"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px', flexShrink: 0 }}
+                style={{ color: BRAND_COLORS.phone, width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <PhoneCallIcon size={18} />
               </a>
@@ -307,7 +308,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label="Facebook"
                 className={socialIconClsDark}
-                style={{ width: '40px', height: '40px', flexShrink: 0 }}
+                style={{ color: BRAND_COLORS.facebook, width: '40px', height: '40px', flexShrink: 0 }}
               >
                 <FacebookIcon size={18} />
               </a>

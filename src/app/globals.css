@@ -189,6 +189,12 @@ body {
   box-shadow: 0 6px 30px rgba(37,211,102,0.55);
 }
 
+/* ── SOCIAL ICON BRAND HOVER COLORS ── */
+a[aria-label="Instagram"]:hover { background: #e4405f !important; border-color: #e4405f !important; color: #fff !important; }
+a[aria-label="WhatsApp"]:hover { background: #25d366 !important; border-color: #25d366 !important; color: #fff !important; }
+a[aria-label="Facebook"]:hover { background: #1877F2 !important; border-color: #1877F2 !important; color: #fff !important; }
+a[aria-label="Call"]:hover { background: #007aff !important; border-color: #007aff !important; color: #fff !important; }
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity:0; transform: translateY(28px); }

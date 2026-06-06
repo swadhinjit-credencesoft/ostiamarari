@@ -10,6 +10,7 @@ import {
   PhoneCallIcon,
   FacebookIcon,
   socialIconCls,
+  BRAND_COLORS,
 } from '@/components/icons'
 
 const NAV_LINKS = [
@@ -121,16 +122,16 @@ export default function Navbar() {
 
         {/* Desktop Right — xl+ */}
         <div className="hidden xl:flex items-center gap-2 shrink-0">
-          <a href="https://www.instagram.com/ostiamarari/" target="_blank" rel="noreferrer" aria-label="Instagram" className={socialIconCls}>
+          <a href="https://www.instagram.com/ostiamarari/" target="_blank" rel="noreferrer" aria-label="Instagram" className={socialIconCls} style={{ color: BRAND_COLORS.instagram }}>
             <InstagramIcon size={16} />
           </a>
-          <a href="https://wa.me/919846044955" target="_blank" rel="noreferrer" aria-label="WhatsApp" className={socialIconCls}>
+          <a href="https://wa.me/919846044955" target="_blank" rel="noreferrer" aria-label="WhatsApp" className={socialIconCls} style={{ color: BRAND_COLORS.whatsapp }}>
             <WhatsAppIcon size={16} />
           </a>
-          <a href="tel:+919846044955" aria-label="Call" className={socialIconCls}>
+          <a href="tel:+919846044955" aria-label="Call" className={socialIconCls} style={{ color: BRAND_COLORS.phone }}>
             <PhoneCallIcon size={16} />
           </a>
-          <a href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls}>
+          <a href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls} style={{ color: BRAND_COLORS.facebook }}>
             <FacebookIcon size={16} />
           </a>
           <Link
@@ -186,16 +187,16 @@ export default function Navbar() {
             {/* Social + CTA row */}
             <div className="flex flex-wrap items-center justify-between gap-4 pt-5">
               <div className="flex items-center gap-3">
-                <a href="https://www.instagram.com/ostiamarari/" target="_blank" rel="noreferrer" aria-label="Instagram" className={socialIconCls}>
+                <a href="https://www.instagram.com/ostiamarari/" target="_blank" rel="noreferrer" aria-label="Instagram" className={socialIconCls} style={{ color: BRAND_COLORS.instagram }}>
                   <InstagramIcon size={17} />
                 </a>
-                <a href="https://wa.me/919846044955" target="_blank" rel="noreferrer" aria-label="WhatsApp" className={socialIconCls}>
+                <a href="https://wa.me/919846044955" target="_blank" rel="noreferrer" aria-label="WhatsApp" className={socialIconCls} style={{ color: BRAND_COLORS.whatsapp }}>
                   <WhatsAppIcon size={17} />
                 </a>
-                <a href="tel:+919846044955" aria-label="Call" className={socialIconCls}>
+                <a href="tel:+919846044955" aria-label="Call" className={socialIconCls} style={{ color: BRAND_COLORS.phone }}>
                   <PhoneCallIcon size={17} />
                 </a>
-                <a href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls}>
+                <a href="https://www.facebook.com/share/1BZemNeCWQ/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook" className={socialIconCls} style={{ color: BRAND_COLORS.facebook }}>
                   <FacebookIcon size={17} />
                 </a>
               </div>
@@ -204,9 +205,9 @@ export default function Navbar() {
                 href="/Hotel-Resort-Booking"
                 onClick={() => setOpen(false)}
                 className="px-6 py-2.5 text-xs font-semibold tracking-[0.18em] uppercase transition-all duration-300 inline-flex items-center"
-                style={{ background: '#1a1a1a', color: '#ffffff', border: '2px solid #1a1a1a', fontFamily: 'var(--font-raleway)' }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = '#c9a84c'; e.currentTarget.style.borderColor = '#c9a84c' }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = '#1a1a1a'; e.currentTarget.style.borderColor = '#1a1a1a' }}
+                style={{ background: '#c9a84c', color: '#ffffff', border: '2px solid #c9a84c', fontFamily: 'var(--font-raleway)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#b8952e'; e.currentTarget.style.borderColor = '#b8952e' }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#c9a84c'; e.currentTarget.style.borderColor = '#c9a84c' }}
               >
                 Book Now
               </Link>
