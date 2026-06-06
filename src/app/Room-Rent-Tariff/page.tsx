@@ -88,7 +88,7 @@ export default function RoomRentTariffPage() {
             📞 <strong style={{ color: 'var(--text)' }}>Room rates vary by season and dates.</strong> Contact us directly on{' '}
             <a href="tel:+919846044955" style={{ color: '#c9a84c', fontWeight: 600 }}>+91 98460 44955</a>{' '}
             or{' '}
-            <a href="mailto:info@ostiamarari.com" style={{ color: '#c9a84c', fontWeight: 600 }}>info@ostiamarari.com</a>{' '}
+            <a href="mailto:ostiamarari@gmail.com" style={{ color: '#c9a84c', fontWeight: 600 }}>ostiamarari@gmail.com</a>{' '}
             for the best rates and availability.
           </p>
         </div>

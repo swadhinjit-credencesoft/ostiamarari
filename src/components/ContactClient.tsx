@@ -1,6 +1,6 @@
 'use client'
 
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Smartphone } from 'lucide-react'
 import {
   InstagramIcon,
   WhatsAppIcon,
@@ -91,7 +91,35 @@ export default function ContactClient() {
                 </div>
               </div>
 
-              {/* Phone */}
+              {/* Mobile Phone */}
+              <div
+                className="flex items-start gap-4 p-6 transition-shadow duration-300 hover:shadow-md"
+                style={{ border: '1px solid var(--border)', background: '#fafafa' }}
+              >
+                <div
+                  className="flex-shrink-0 w-10 h-10 flex items-center justify-center"
+                  style={{ background: 'rgba(201,168,76,0.10)', border: '1px solid rgba(201,168,76,0.30)' }}
+                >
+                  <Smartphone size={18} style={{ color: '#c9a84c' }} />
+                </div>
+                <div>
+                  <p
+                    className="text-xs font-semibold tracking-widest uppercase mb-1"
+                    style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
+                  >
+                    Mobile
+                  </p>
+                  <a
+                    href="tel:+919846044955"
+                    className="text-sm transition-colors duration-200 hover:text-[#c9a84c]"
+                    style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
+                  >
+                    +91 98460 44955
+                  </a>
+                </div>
+              </div>
+
+              {/* Landline */}
               <div
                 className="flex items-start gap-4 p-6 transition-shadow duration-300 hover:shadow-md"
                 style={{ border: '1px solid var(--border)', background: '#fafafa' }}
@@ -107,14 +135,14 @@ export default function ContactClient() {
                     className="text-xs font-semibold tracking-widest uppercase mb-1"
                     style={{ color: '#c9a84c', fontFamily: 'var(--font-raleway)' }}
                   >
-                    Phone
+                    Landline
                   </p>
                   <a
-                    href="tel:+919846044955"
+                    href="tel:+914772239902"
                     className="text-sm transition-colors duration-200 hover:text-[#c9a84c]"
                     style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
                   >
-                    +91 98460 44955
+                    +91 4772239902
                   </a>
                 </div>
               </div>
@@ -138,11 +166,11 @@ export default function ContactClient() {
                     Email
                   </p>
                   <a
-                    href="mailto:info@ostiamarari.com"
+                    href="mailto:ostiamarari@gmail.com"
                     className="text-sm transition-colors duration-200 hover:text-[#c9a84c]"
                     style={{ color: 'var(--text-light)', fontFamily: 'var(--font-raleway)' }}
                   >
-                    info@ostiamarari.com
+                    ostiamarari@gmail.com
                   </a>
                 </div>
               </div>

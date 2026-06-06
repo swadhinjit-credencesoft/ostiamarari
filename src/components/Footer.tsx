@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Phone, Mail, Smartphone } from 'lucide-react'
 import {
   WhatsAppIcon,
   PhoneCallIcon,
@@ -212,7 +212,7 @@ export default function Footer() {
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                <Phone size={17} style={{ color: '#c9a84c', flexShrink: 0 }} />
+                <Smartphone size={17} style={{ color: '#c9a84c', flexShrink: 0 }} />
                 <a
                   href="tel:+919846044955"
                   className="hover:!text-[#c9a84c]"
@@ -222,13 +222,23 @@ export default function Footer() {
                 </a>
               </li>
               <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                <Mail size={17} style={{ color: '#c9a84c', flexShrink: 0 }} />
+                <Phone size={17} style={{ color: '#c9a84c', flexShrink: 0 }} />
                 <a
-                  href="mailto:info@ostiamarari.com"
+                  href="tel:+914772239902"
                   className="hover:!text-[#c9a84c]"
                   style={{ color: 'rgba(255,255,255,0.62)', fontSize: '15px', textDecoration: 'none', transition: 'color 0.2s' }}
                 >
-                  info@ostiamarari.com
+                  +91 4772239902
+                </a>
+              </li>
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                <Mail size={17} style={{ color: '#c9a84c', flexShrink: 0 }} />
+                <a
+                  href="mailto:ostiamarari@gmail.com"
+                  className="hover:!text-[#c9a84c]"
+                  style={{ color: 'rgba(255,255,255,0.62)', fontSize: '15px', textDecoration: 'none', transition: 'color 0.2s' }}
+                >
+                  ostiamarari@gmail.com
                 </a>
               </li>
             </ul>

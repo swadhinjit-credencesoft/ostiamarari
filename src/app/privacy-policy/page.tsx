@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
             },
             {
               title: '5. Contact Us',
-              text: 'If you have questions about this Privacy Policy, please contact us at info@ostiamarari.com or call +91 98460 44955.',
+              text: 'If you have questions about this Privacy Policy, please contact us at ostiamarari@gmail.com or call +91 98460 44955.',
             },
           ].map(({ title, text }) => (
             <div key={title}>

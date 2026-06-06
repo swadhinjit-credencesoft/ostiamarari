@@ -76,7 +76,7 @@ export default function CancellationPolicyPage() {
             { title: 'Free Cancellation', text: 'Bookings cancelled more than 7 days before the check-in date will receive a full refund of the booking amount.' },
             { title: 'Partial Refund', text: 'Cancellations made between 3–7 days before check-in will receive a 50% refund of the total booking amount.' },
             { title: 'No Refund', text: 'Cancellations made within 72 hours of check-in are non-refundable. No-shows are also non-refundable.' },
-            { title: 'How to Cancel', text: 'To cancel your booking, please contact us at info@ostiamarari.com or call +91 98460 44955 with your booking reference number.' },
+            { title: 'How to Cancel', text: 'To cancel your booking, please contact us at ostiamarari@gmail.com or call +91 98460 44955 with your booking reference number.' },
             { title: 'Special Circumstances', text: 'In case of medical emergencies or unavoidable circumstances, we will consider refund requests on a case-by-case basis at the management\'s discretion.' },
           ].map(({ title, text }) => (
             <div key={title}>

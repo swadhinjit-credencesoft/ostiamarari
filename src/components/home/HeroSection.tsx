@@ -4,17 +4,16 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 const HERO_IMAGES = [
-  '/images/ostia11.avif',
-  '/images/ostia1.avif',
-  '/images/ostia2.avif',
-  '/images/ostia3.avif',
-  '/images/ostia4.avif',
-  '/images/ostia5.avif',
-  '/images/ostia6.avif',
-  '/images/ostia7.avif',
-  '/images/ostia8.avif',
-  '/images/ostia9.avif',
-  '/images/ostia10.avif',
+  'https://bookonelocal.in/cdn/heroimage1.avif',
+  'https://bookonelocal.in/cdn/heroimage3.avif',
+  'https://bookonelocal.in/cdn/heroimage2.avif',
+   'https://bookonelocal.in/cdn/heroimage9.jpeg',
+  'https://bookonelocal.in/cdn/heroimage5.avif',
+  'https://bookonelocal.in/cdn/heroimage4.avif',
+  'https://bookonelocal.in/cdn/heroimage6.avif',
+  'https://bookonelocal.in/cdn/heroimage7.avif',
+  'https://bookonelocal.in/cdn/heroimage8.avif',
+ 
 ]
 
 export default function HeroSection() {

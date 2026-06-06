@@ -17,7 +17,7 @@ export const faqItems = [
   {
     question: 'Can I book Ostia Marari directly?',
     answer:
-      'Yes. Guests can book directly through the official website, WhatsApp at +91 9846044955 or email at info@ostiamarari.com.',
+      'Yes. Guests can book directly through the official website, WhatsApp at +91 9846044955 or email at ostiamarari@gmail.com.',
   },
   {
     question: 'Is Ostia Marari near Marari Beach and Alleppey Backwaters?',

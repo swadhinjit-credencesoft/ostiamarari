@@ -86,7 +86,7 @@ export default function PremiumFullVillaPage() {
                   📞 For group rates and availability, call us at{' '}
                   <a href="tel:+919846044955" style={{ color: '#c9a84c', fontWeight: 600 }}>+91 98460 44955</a>
                   {' '}or email{' '}
-                  <a href="mailto:info@ostiamarari.com" style={{ color: '#c9a84c', fontWeight: 600 }}>info@ostiamarari.com</a>
+                  <a href="mailto:ostiamarari@gmail.com" style={{ color: '#c9a84c', fontWeight: 600 }}>ostiamarari@gmail.com</a>
                 </p>
               </div>
             </div>

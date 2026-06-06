@@ -124,7 +124,7 @@ function BookingFormInner() {
       return
     }
     if (sendMethod === 'email') {
-      window.location.href = `mailto:info@ostiamarari.com?subject=${encodeURIComponent(`Booking Enquiry - ${form.selectedRoom || 'General'}`)}&body=${encodeURIComponent(msg)}`
+      window.location.href = `mailto:ostiamarari@gmail.com?subject=${encodeURIComponent(`Booking Enquiry - ${form.selectedRoom || 'General'}`)}&body=${encodeURIComponent(msg)}`
     }
   }
 
@@ -267,7 +267,7 @@ export default function BookingPageClient() {
               Or contact us directly:{' '}
               <a href="tel:+919846044955" className="hover:underline" style={{ color: '#c9a84c' }}>+91 98460 44955</a>
               {' '}·{' '}
-              <a href="mailto:info@ostiamarari.com" className="hover:underline" style={{ color: '#c9a84c' }}>info@ostiamarari.com</a>
+              <a href="mailto:ostiamarari@gmail.com" className="hover:underline" style={{ color: '#c9a84c' }}>ostiamarari@gmail.com</a>
             </p>
           </div>
 
