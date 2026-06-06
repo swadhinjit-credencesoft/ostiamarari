@@ -6,11 +6,12 @@ import Link from 'next/link'
 const HERO_IMAGES = [
   'https://bookonelocal.in/cdn/heroimage1.avif',
   'https://bookonelocal.in/cdn/heroimage3.avif',
-  'https://bookonelocal.in/cdn/heroimage2.avif',
+  '/images/ostia1.avif',
    'https://bookonelocal.in/cdn/heroimage9.jpeg',
   'https://bookonelocal.in/cdn/heroimage5.avif',
   'https://bookonelocal.in/cdn/heroimage4.avif',
   'https://bookonelocal.in/cdn/heroimage6.avif',
+  'https://bookonelocal.in/cdn/heroimage2.avif',
   'https://bookonelocal.in/cdn/heroimage7.avif',
   'https://bookonelocal.in/cdn/heroimage8.avif',
  
