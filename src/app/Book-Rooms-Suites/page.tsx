@@ -76,7 +76,7 @@ const rooms = [
   },
   {
     id: 'boutique-deluxe-room',
-    name: 'Premium Floor Suites (Luxury 1 Bedroom)',
+    name: 'Premium Floor Suites (Luxury 2 Bedroom)',
     tag: 'Garden View',
     tagColor: '#4a9fd4',
     capacity: '6',
