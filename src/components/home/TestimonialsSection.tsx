@@ -2,61 +2,54 @@
 
 const reviews = [
   {
-    author: 'Akhil Raj',
-    text: 'Beautiful beachfront stay with amazing hospitality and very clean rooms. Highly recommended for a peaceful getaway in Alleppey.',
-    rating: 5,
-    time: '2 months ago',
-  },
-
-  {
-    author: 'Sneha Menon',
-    text: 'Loved the ambience, food, and private beach experience. The staff was extremely friendly and helpful throughout our stay.',
+    author: 'Arun S',
+    text: 'Had a truly pleasant and memorable stay. The ambience was serene, the property was well maintained, and the hospitality was excellent. A perfect beachside getaway.',
     rating: 5,
     time: '3 months ago',
   },
-
   {
-    author: 'Rahul Nair',
-    text: 'One of the best boutique stays in Kerala. Spacious rooms, calm surroundings, and excellent service.',
+    author: 'Aparajita Ponnarasu',
+    text: 'Had a good stay here. The staff were very helpful and friendly. Special thanks to Manager Nibin Thomas for making our stay comfortable.',
+    rating: 5,
+    time: '3 months ago',
+  },
+  {
+    author: 'Jeeva K',
+    text: 'Good experience overall. Neat rooms, pleasant environment, and friendly staff. Would recommend this place.',
+    rating: 5,
+    time: '3 months ago',
+  },
+  {
+    author: 'Mohammed Abdul Moid',
+    text: 'Very good property close to the beach. The rooms are clean and the manager was extremely accommodating and helpful throughout our stay.',
     rating: 5,
     time: '4 months ago',
   },
-
   {
-    author: 'Priya Sharma',
-    text: 'Amazing experience with stunning coastal views and luxurious interiors. Perfect place for families and couples.',
+    author: 'Asha R',
+    text: 'Excellent property within walking distance of the beach. Friendly staff, good food, and great travel guidance. Our entire family enjoyed the stay.',
     rating: 5,
-    time: '5 months ago',
+    time: '1 month ago',
   },
-
   {
-    author: 'Arjun Pillai',
-    text: 'The property is beautifully maintained and the hospitality was outstanding. Will definitely visit again.',
+    author: 'Paul Googlemail',
+    text: 'A modern, clean, and hospitable guesthouse with beach views. Comfortable beds and excellent air conditioning made for a relaxing stay.',
     rating: 5,
-    time: '6 months ago',
+    time: '1 month ago',
   },
-
   {
-    author: 'Meera Joseph',
-    text: 'Excellent rooms, peaceful atmosphere, and delicious food. Truly a memorable beachside stay.',
+    author: 'Vaneshree Reddy',
+    text: 'Clean rooms, great value for money, and very close to the beach. The staff were attentive and we loved having breakfast in the beautiful garden.',
     rating: 5,
-    time: '7 months ago',
+    time: '2 weeks ago',
   },
-
   {
-    author: 'Vikram Das',
-    text: 'Loved the boutique vibe and the beach access. Everything was neat, comfortable, and professionally managed.',
+    author: 'Krithi Y',
+    text: 'Had a wonderful stay. Everything was smooth and comfortable. A special mention to Manager Nibin Thomas for his helpful guidance and support.',
     rating: 5,
-    time: '8 months ago',
+    time: '1 week ago',
   },
-
-  {
-    author: 'Neha Kapoor',
-    text: 'Perfect destination for a relaxing vacation. Great service, beautiful property, and amazing hospitality.',
-    rating: 5,
-    time: '9 months ago',
-  },
-]
+];
 
 function StarRating({
   count,
@@ -257,24 +250,23 @@ export default function TestimonialsSection() {
               ))}
             </div>
 
-            <span
-              className="text-dark font-bold text-2xl"
-              style={{
-                fontFamily:
-                  'var(--font-playfair)',
-              }}
-            >
-              4.9
-            </span>
+           <span
+  className="text-dark font-bold text-2xl"
+  style={{
+    fontFamily: 'var(--font-playfair)',
+  }}
+>
+  ⭐ 5.0
+</span>
 
-            <span
-              className="text-sm"
-              style={{
-                color: 'var(--text-muted)',
-              }}
-            >
-              · 7 Reviews &nbsp;·&nbsp; ⭐ Guest Favourite on StayVista
-            </span>
+{/* <span
+  className="text-sm"
+  style={{
+    color: 'var(--text-muted)',
+  }}
+>
+  · 29 Reviews
+</span> */}
           </div>
         </div>
       </div>
