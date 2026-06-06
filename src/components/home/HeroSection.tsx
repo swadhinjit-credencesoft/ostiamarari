@@ -45,14 +45,10 @@ export default function HeroSection() {
             opacity: i === current ? 1 : 0,
             transition: 'opacity 1.5s ease-in-out',
             animation: 'kenBurns 10s ease-in-out infinite alternate',
+            filter: 'brightness(1.15)',
           }}
         />
       ))}
-      {/* Dark gradient overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.2) 100%)' }}
-      />
 
       {/* Decorative corner frames */}
       {/* <div className="absolute top-28 left-10 w-16 h-16 border-t-2 border-l-2 hidden lg:block" style={{ borderColor: 'rgba(201,168,76,0.5)' }} />
