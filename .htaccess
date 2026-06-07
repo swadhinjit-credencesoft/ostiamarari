@@ -1,9 +1,22 @@
 RewriteEngine On
 RewriteBase /
 
-# If the request is not a real file or folder
+# Map clean URLs (without .html extension) to their .html files when they exist.
+# This handles:
+#   1. Simple routes: /about-us  ->  about-us.html
+#   2. Parent routes that also have child directories:
+#      /kerala-alleppey-beach-blogs  ->  kerala-alleppey-beach-blogs.html
+#      Without this rule, Apache sees the directory and returns 403
+#      (no DirectoryIndex inside the child directory).
+#   3. Child routes: /kerala-alleppey-beach-blogs/thumpoly-beach-alleppey
+#      -> kerala-alleppey-beach-blogs/thumpoly-beach-alleppey.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^/(.+?)/?$
+RewriteCond %{DOCUMENT_ROOT}/%1.html -f
+RewriteRule ^ /%1.html [L]
+
+# Fallback: serve index.html for any other unmatched request
+# (e.g., client-side fallback or unknown paths)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-# Serve index.html
 RewriteRule ^ index.html [L]
