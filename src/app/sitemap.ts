@@ -14,6 +14,7 @@ const staticRoutes = [
   { path: '/privacy-policy/', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/terms-conditions/', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/cancellation-policy/', priority: 0.3, changeFrequency: 'yearly' },
+  { path: '/partnership/', priority: 0.7, changeFrequency: 'monthly' },
   
   // Dedicated room landing pages
   { path: '/premium-Hotel-Rooms-Topview-Floors-Suites/', priority: 0.85, changeFrequency: 'weekly' },

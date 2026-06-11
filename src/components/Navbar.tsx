@@ -21,6 +21,7 @@ const NAV_LINKS = [
   { label: 'Price', href: '/#rooms' },
   { label: 'Gallery', href: '/Beach-Resort-Gallery-images' },
   { label: 'Blogs', href: '/kerala-alleppey-beach-blogs' },
+  { label: 'Partnership', href: '/partnership' },
   { label: 'Booking', href: '/Hotel-Resort-Booking' },
   { label: 'Contact', href: '/contact' },
 ]

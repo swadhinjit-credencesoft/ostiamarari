@@ -84,6 +84,7 @@ export type SeoPageKey =
   | 'premiumTopSuites'
   | 'premiumGardenSuites'
   | 'premiumFullVilla'
+  | 'partnership'
 
 export const pageSeo = {
   home: {
@@ -182,6 +183,13 @@ export const pageSeo = {
     description:
       'Book the entire Premium Full Villa at Ostia Marari Alleppey. 6 Bedrooms, private lawn, BBQ, ocean views, indoor parking. Ideal for up to 18 guests.',
     image: '/room3.avif',
+  },
+  partnership: {
+    path: '/partnership',
+    title: 'Partnership & Investment Opportunities | Ostia Marari Alleppey',
+    description:
+      'Explore strategic partnership and investment opportunities with Ostia Marari, a premium boutique beach hospitality brand in Alleppey, Kerala.',
+    image: '/images/ostia11.avif',
   },
 } satisfies Record<SeoPageKey, { path: string; title: string; description: string; image: string }>
 
