@@ -295,7 +295,7 @@ export default function PartnershipPage() {
       {/* ============ OUR VISION (image bg) ============ */}
       <section className="relative py-24 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/partner2.avif')" }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.62), rgba(0,0,0,0.42))' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 100%)' }} />
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <div className="max-w-2xl">
             <span className="inline-block px-4 py-1.5 text-[10px] font-semibold tracking-[0.25em] uppercase text-white border border-white/20" style={{ fontFamily: 'var(--font-raleway)', background: 'rgba(201,168,76,0.15)' }}>
@@ -305,7 +305,7 @@ export default function PartnershipPage() {
               Building a Premium Coastal{' '}
               <span style={{ color: '#c9a84c' }}>Lifestyle Brand</span>
             </h2>
-            <p className="text-white/78 text-sm md:text-base leading-relaxed mb-8" style={{ fontFamily: 'var(--font-raleway)' }}>
+            <p className="text-white/90 text-sm md:text-base leading-relaxed mb-8" style={{ fontFamily: 'var(--font-raleway)' }}>
               We envision a portfolio of exceptional beachfront properties and curated travel experiences
               that define luxury coastal hospitality in Kerala. With the right partners, we can scale
               this vision across India&apos;s most beautiful coastlines.
@@ -317,9 +317,9 @@ export default function PartnershipPage() {
                 { val: 'Sustainable', label: 'Growth' },
                 { val: 'Global', label: 'Standards' },
               ].map(({ val, label }) => (
-                <div key={val} className="text-center px-4 py-5" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                <div key={val} className="text-center px-4 py-5" style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.15)' }}>
                   <p className="text-sm font-semibold text-white" style={{ fontFamily: 'var(--font-playfair)' }}>{val}</p>
-                  <p className="text-[10px] uppercase tracking-wider mt-1 text-white/55" style={{ fontFamily: 'var(--font-raleway)' }}>{label}</p>
+                  <p className="text-[10px] uppercase tracking-wider mt-1 text-white/70" style={{ fontFamily: 'var(--font-raleway)' }}>{label}</p>
                 </div>
               ))}
             </div>
