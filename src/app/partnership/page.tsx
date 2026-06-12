@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${siteUrl}/images/ostia2.avif`,
+        url: `${siteUrl}/images/partnership5.avif`,
         width: 1200,
         height: 630,
         alt: 'Partnership opportunities with Ostia Marari boutique beach stay in Alleppey Kerala',
@@ -91,7 +91,7 @@ export default function PartnershipPage() {
       {/* ============ HERO ============ */}
       <section className="relative flex min-h-[520px] md:min-h-[620px] items-center overflow-hidden pt-28 md:pt-32">
         {/* Background: aerial beach photo left, content right */}
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/partner1.avif')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/partnership5.avif')" }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.72) 55%, rgba(0,0,0,0.85) 100%)' }} />
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-10">
           <div className="ml-auto max-w-xl text-left">
@@ -157,7 +157,7 @@ export default function PartnershipPage() {
 
           {/* Col 2: Expanding Horizons (large image with overlay text) */}
           <div className="relative min-h-[380px] md:min-h-0 overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia11.avif')" }} />
+            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/partnership13.avif')" }} />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.20) 60%)' }} />
             <div className="absolute bottom-0 left-0 right-0 z-10 px-8 py-8">
               <p className="text-[10px] font-semibold tracking-[0.20em] uppercase mb-2 text-[#c9a84c]" style={{ fontFamily: 'var(--font-raleway)' }}>Growth</p>
@@ -241,7 +241,7 @@ export default function PartnershipPage() {
             </div>
             <div className="relative">
               <div className="overflow-hidden" style={{ border: '1px solid var(--border)' }}>
-                <div className="aspect-[4/5] bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia11.avif')" }} />
+                <div className="aspect-[4/5] bg-cover bg-center" style={{ backgroundImage: "url('/partnership14.avif')" }} />
               </div>
               <div className="absolute -bottom-5 -right-5 px-7 py-5 hidden md:block shadow-lg" style={{ background: '#c9a84c' }}>
                 <p className="text-white text-sm font-semibold tracking-wider uppercase" style={{ fontFamily: 'var(--font-raleway)' }}>Since 1997</p>
@@ -411,7 +411,7 @@ export default function PartnershipPage() {
 
       {/* ============ STATS (image bg) ============ */}
       <section className="relative py-20 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia5.avif')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/partnership18.avif')" }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.58), rgba(0,0,0,0.68))' }} />
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-14">

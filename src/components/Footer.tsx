@@ -15,7 +15,7 @@ import {
 
 export default function Footer() {
   const pathname = usePathname()
-  const hideCtaBanner = pathname?.startsWith('/Hotel-Resort-Booking') || pathname?.startsWith('/booking')
+  const hideCtaBanner = pathname?.startsWith('/Hotel-Resort-Booking') || pathname?.startsWith('/booking') || pathname?.startsWith('/partnership')
 
   const handleNavClick = (href: string, e: React.MouseEvent) => {
     if (href.startsWith('/#')) {
@@ -34,8 +34,9 @@ export default function Footer() {
     { label: 'Home',           href: '/' },
     { label: 'About Us',       href: '/about-us' },
     { label: 'Rooms & Suites', href: '/Book-Rooms-Suites' },
-    { label: 'Blogs',          href: '/kerala-alleppey-beach-blogs' },
-    { label: 'Gallery',        href: '/Beach-Resort-Gallery-images' },
+    { label: 'Gallery',          href: '/kerala-alleppey-beach-blogs' },
+    { label: 'Blogs',        href: '/Beach-Resort-Gallery-images' },
+    { label: 'Partnership',    href: '/partnership' },
     { label: 'Contact',        href: '/contact' },
   ]
 
