@@ -137,7 +137,7 @@ export default function PartnershipPage() {
 
           {/* Col 1: Strategic Investment Opportunity */}
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('/images/ostia5.avif')" }} />
+            <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('/partner21.avif')" }} />
             <div className="absolute inset-0" style={{ background: 'rgba(13,17,23,0.80)' }} />
             <div className="relative z-10 px-8 py-14 lg:py-16">
               <p className="text-[10px] font-semibold tracking-[0.20em] uppercase mb-4 text-[#c9a84c]" style={{ fontFamily: 'var(--font-raleway)' }}>Strategic</p>
@@ -172,7 +172,7 @@ export default function PartnershipPage() {
 
           {/* Col 3: Wellness & Experiences */}
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: "url('/images/ostia6.avif')" }} />
+            <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: "url('/partner2.avif')" }} />
             <div className="absolute inset-0" style={{ background: 'rgba(30,20,10,0.88)' }} />
             <div className="relative z-10 px-8 py-14 lg:py-16">
               <div className="w-10 h-10 flex items-center justify-center mb-5" style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.25)' }}>
