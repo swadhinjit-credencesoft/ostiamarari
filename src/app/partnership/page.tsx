@@ -360,7 +360,7 @@ export default function PartnershipPage() {
 
           {/* Rooted in Nature */}
           <div className="relative overflow-hidden min-h-[340px]">
-            <div className="absolute inset-0 bg-cover bg-center opacity-35" style={{ backgroundImage: "url('/images/ostia5.avif')" }} />
+            <div className="absolute inset-0 bg-cover bg-center opacity-35" style={{ backgroundImage: "url('/Partnership11.avif')" }} />
             <div className="absolute inset-0" style={{ background: 'rgba(5,20,10,0.82)' }} />
             <div className="relative z-10 px-8 py-14">
               <Leaf size={28} className="text-[#c9a84c] mb-5" />
@@ -375,7 +375,7 @@ export default function PartnershipPage() {
 
           {/* Partner With Us */}
           <div className="relative overflow-hidden min-h-[340px]">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/ostia2.avif')" }} />
+            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/partnership14.avif')" }} />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.50) 100%)' }} />
             <div className="relative z-10 px-8 py-14 flex flex-col justify-end h-full">
               <Users size={28} className="text-[#c9a84c] mb-4" />
@@ -393,7 +393,7 @@ export default function PartnershipPage() {
 
           {/* Invest Today */}
           <div className="relative overflow-hidden min-h-[340px]">
-            <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('/images/ostia6.avif')" }} />
+            <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('/partner1.avif')" }} />
             <div className="absolute inset-0" style={{ background: 'rgba(20,10,5,0.88)' }} />
             <div className="relative z-10 px-8 py-14">
               <div className="w-10 h-1 mb-6" style={{ background: '#c9a84c' }} />
@@ -484,6 +484,13 @@ export default function PartnershipPage() {
                 how we can create value together.
               </p>
               <div className="space-y-3">
+                <div className="flex items-center gap-3.5 px-6 py-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', borderLeft: '3px solid #c9a84c' }}>
+                  <Users size={20} className="text-[#c9a84c] shrink-0" />
+                  <div>
+                    <p className="text-[10px] tracking-widest uppercase mb-0.5 text-white/50" style={{ fontFamily: 'var(--font-raleway)' }}>Contact Person</p>
+                    <p className="text-sm font-medium text-white" style={{ fontFamily: 'var(--font-raleway)' }}>Switen George</p>
+                  </div>
+                </div>
                 <a href="mailto:ostiamarari@gmail.com" className="flex items-center gap-4 px-6 py-4 transition-all duration-200 group" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', borderLeft: '3px solid #c9a84c' }}>
                   <div className="w-10 h-10 flex items-center justify-center shrink-0" style={{ background: 'rgba(201,168,76,0.18)' }}>
                     <Mail size={18} className="text-[#c9a84c]" />
@@ -499,8 +506,18 @@ export default function PartnershipPage() {
                     <Phone size={18} className="text-[#c9a84c]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] tracking-widest uppercase mb-0.5 text-white/50" style={{ fontFamily: 'var(--font-raleway)' }}>WhatsApp</p>
+                    <p className="text-[10px] tracking-widest uppercase mb-0.5 text-white/50" style={{ fontFamily: 'var(--font-raleway)' }}>Mobile / WhatsApp</p>
                     <p className="text-sm font-medium text-white" style={{ fontFamily: 'var(--font-raleway)' }}>+91 98460 44955</p>
+                  </div>
+                  <ExternalLink size={15} className="text-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                </a>
+                <a href="tel:+914772239902" className="flex items-center gap-4 px-6 py-4 transition-all duration-200 group" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', borderLeft: '3px solid #c9a84c' }}>
+                  <div className="w-10 h-10 flex items-center justify-center shrink-0" style={{ background: 'rgba(201,168,76,0.18)' }}>
+                    <Phone size={18} className="text-[#c9a84c]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[10px] tracking-widest uppercase mb-0.5 text-white/50" style={{ fontFamily: 'var(--font-raleway)' }}>Land Phone</p>
+                    <p className="text-sm font-medium text-white" style={{ fontFamily: 'var(--font-raleway)' }}>+91 477 2239902</p>
                   </div>
                   <ExternalLink size={15} className="text-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                 </a>
