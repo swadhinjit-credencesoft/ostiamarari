@@ -14,19 +14,19 @@ type FormState = {
 }
 
 const ROOM_OPTIONS = [
-  'Premium Top Suites (4 Bedrooms – Up to 12 Guests)',
-  'Premium Floor Suites (2 Bedrooms – Up to 6 Guests)',
-  'Premium Full Suites (6 Bedrooms – Entire Property, Up to 18 Guests)',
   'Premium Double Suites (1 Bedroom – Up to 3 Guests)',
+  'Premium Floor Suites (2 Bedrooms – Up to 6 Guests)',
+  'Premium Top Suites (4 Bedrooms – Up to 12 Guests)',
+  'Premium Full Suites (6 Bedrooms – Entire Property, Up to 18 Guests)',
   'Beach & Boats Package – 2 Nights · 3 Days (₹14,800 / 2 Persons)',
   'Beach & Boats Package – 3 Nights · 4 Days (₹18,800 / 2 Persons)',
 ]
 
 const BOOKING_SELECTION_ALIASES = [
-  { option: ROOM_OPTIONS[0], aliases: ['Premium Top Suites', 'Premium Top Suites 4 Bedrooms', 'premium-ocean-suite'] },
+  { option: ROOM_OPTIONS[0], aliases: ['Premium Double Suites', 'Premium Double Suites 1 Bedroom', 'premium-double-suites'] },
   { option: ROOM_OPTIONS[1], aliases: ['Premium Floor Suites', 'Premium Floor Suites 2 Bedrooms', 'boutique-deluxe-room'] },
-  { option: ROOM_OPTIONS[2], aliases: ['Premium Full Suites', 'Premium Full Suites 6 Bedrooms Entire Property', 'Premium Full Suites (6 Bedrooms Entire Property)', 'family-beach-villa'] },
-  { option: ROOM_OPTIONS[3], aliases: ['Premium Double Suites', 'Premium Double Suites 1 Bedroom', 'premium-double-suites'] },
+  { option: ROOM_OPTIONS[2], aliases: ['Premium Top Suites', 'Premium Top Suites 4 Bedrooms', 'premium-ocean-suite'] },
+  { option: ROOM_OPTIONS[3], aliases: ['Premium Full Suites', 'Premium Full Suites 6 Bedrooms Entire Property', 'Premium Full Suites (6 Bedrooms Entire Property)', 'family-beach-villa'] },
   { option: ROOM_OPTIONS[4], aliases: ['Beach and Boats Package 2 Nights 3 Days', 'Beach & Boats Package 2 Nights 3 Days', 'beach-boats-2nights'] },
   { option: ROOM_OPTIONS[5], aliases: ['Beach and Boats Package 3 Nights 4 Days', 'Beach & Boats Package 3 Nights 4 Days', 'beach-boats-3nights'] },
 ]
